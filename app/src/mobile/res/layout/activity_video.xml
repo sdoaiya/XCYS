@@ -81,7 +81,8 @@
         android:id="@+id/swipeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/video">
+        android:layout_below="@+id/video"
+        android:background="@drawable/bg_wall_scrim">
 
         <com.fongmi.android.tv.ui.custom.ProgressLayout
             android:id="@+id/progressLayout"

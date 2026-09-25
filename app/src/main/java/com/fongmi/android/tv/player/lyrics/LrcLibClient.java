@@ -21,7 +21,7 @@ public class LrcLibClient {
 
     private static final String TAG = "lyrics";
     private static final String BASE = "https://lrclib.net/api";
-    private static final String USER_AGENT = "WebHTV Lyrics/1.0 (https://github.com/fongmi)";
+    private static final String USER_AGENT = "XCTV Lyrics/1.0 (https://github.com/sdoaiya/XCYS)";
     private static final Type LIST_TYPE = new TypeToken<List<Entry>>() {}.getType();
     private static final OkHttpClient CLIENT = OkHttp.client()
             .newBuilder()

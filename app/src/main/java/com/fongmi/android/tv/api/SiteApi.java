@@ -8,6 +8,7 @@ import androidx.collection.ArrayMap;
 import com.fongmi.android.tv.App;
 import com.fongmi.android.tv.R;
 import com.fongmi.android.tv.api.config.VodConfig;
+import com.fongmi.android.tv.api.loader.SpiderJarCompatibility;
 import com.fongmi.android.tv.bean.Class;
 import com.fongmi.android.tv.bean.Result;
 import com.fongmi.android.tv.bean.Site;
@@ -61,8 +62,8 @@ public class SiteApi {
         if (isSpider(site)) {
             Spider spider = site.recent().spider();
             boolean crash = Prefers.getBoolean("crash");
-            String home = crash ? "" : spider.homeContent(true);
-            String video = crash ? "" : spider.homeVideoContent();
+            String home = crash ? "" : SpiderJarCompatibility.call(() -> spider.homeContent(true));
+            String video = crash ? "" : SpiderJarCompatibility.call(spider::homeVideoContent);
             Prefers.put("crash", false);
             SpiderDebug.log("home", home);
             SpiderDebug.log("homeVideo", video);
@@ -96,7 +97,7 @@ public class SiteApi {
         SpiderDebug.log("category", "key=%s,tid=%s,page=%s,filter=%s,extend=%s", key, tid, page, filter, extend);
         Site site = VodConfig.get().getSite(key);
         if (isSpider(site)) {
-            String categoryContent = site.recent().spider().categoryContent(tid, page, filter, extend);
+            String categoryContent = SpiderJarCompatibility.call(() -> site.recent().spider().categoryContent(tid, page, filter, extend));
             SpiderDebug.log("category", categoryContent);
             return FamilyFilter.apply(Result.fromJson(categoryContent));
         } else {
@@ -127,7 +128,7 @@ public class SiteApi {
             Source.get().parse(vod.setFlags());
             return Result.vod(vod);
         } else if (isSpider(site)) {
-            String detailContent = site.recent().spider().detailContent(Arrays.asList(id));
+            String detailContent = SpiderJarCompatibility.call(() -> site.recent().spider().detailContent(Arrays.asList(id)));
             SpiderDebug.log("detail", detailContent);
             Result result = FamilyFilter.apply(Result.fromJson(detailContent));
             Source.get().parse(result.getVod().setFlags());
@@ -151,7 +152,7 @@ public class SiteApi {
         Site site = VodConfig.get().getSite(key);
         Source.get().stop();
         if (site.getType() == 3) {
-            String playerContent = site.recent().spider().playerContent(flag, id, VodConfig.get().getFlags());
+            String playerContent = SpiderJarCompatibility.call(() -> site.recent().spider().playerContent(flag, id, VodConfig.get().getFlags()));
             SpiderDebug.log("player", "key=%s,flag=%s,id=%s,len=%d", key, flag, id, playerContent == null ? 0 : playerContent.length());
             Result result = Result.fromJson(playerContent);
             if (result.getFlag().isEmpty()) result.setFlag(flag);
@@ -196,7 +197,7 @@ public class SiteApi {
         SpiderDebug.log("search", "site=%s,keyword=%s,quick=%s,page=%s", site.getName(), keyword, quick, page);
         boolean hasPage = !page.equals("1");
         if (isSpider(site)) {
-            String searchContent = hasPage ? site.spider().searchContent(keyword, quick, page) : site.spider().searchContent(keyword, quick);
+            String searchContent = SpiderJarCompatibility.call(() -> hasPage ? site.spider().searchContent(keyword, quick, page) : site.spider().searchContent(keyword, quick));
             SpiderDebug.log("search", searchContent);
             Result result = FamilyFilter.apply(Result.fromJson(searchContent));
             return applySearchRelevance(site, result, keyword);
@@ -263,7 +264,7 @@ public class SiteApi {
     public static Result action(@NonNull String key, @NonNull String action) throws Exception {
         Site site = VodConfig.get().getSite(key);
         SpiderDebug.log("action", "key=%s,action=%s", key, action);
-        if (site.getType() == 3) return Result.fromJson(site.recent().spider().action(action));
+        if (site.getType() == 3) return Result.fromJson(SpiderJarCompatibility.call(() -> site.recent().spider().action(action)));
         if (site.getType() == 4) return Result.fromJson(OkHttp.string(action));
         return Result.empty();
     }

@@ -82,9 +82,12 @@ public class JarLoader {
 
     private void invokeInit(DexClassLoader loader) {
         try {
-            Class<?> clz = loader.loadClass("com.github.catvod.spider.Init");
-            Method method = clz.getMethod("init", Context.class);
-            method.invoke(clz, App.get());
+            SpiderJarCompatibility.call(() -> {
+                Class<?> clz = loader.loadClass("com.github.catvod.spider.Init");
+                Method method = clz.getMethod("init", Context.class);
+                method.invoke(null, App.get());
+                return null;
+            });
         } catch (Throwable e) {
             SpiderDebug.log(e);
         }
@@ -185,13 +188,15 @@ public class JarLoader {
         String spKey = jaKey + key;
         return spiders.computeIfAbsent(spKey, k -> {
             try {
-                parseJar(jaKey, jar);
-                DexClassLoader loader = loaders.get(jaKey);
-                if (loader == null) return new SpiderNull();
-                Spider spider = (Spider) loader.loadClass("com.github.catvod.spider." + api.split("csp_")[1]).newInstance();
-                spider.siteKey = key;
-                spider.init(App.get(), ext);
-                return spider;
+                return SpiderJarCompatibility.call(() -> {
+                    parseJar(jaKey, jar);
+                    DexClassLoader loader = loaders.get(jaKey);
+                    if (loader == null) return new SpiderNull();
+                    Spider spider = (Spider) loader.loadClass("com.github.catvod.spider." + api.split("csp_")[1]).newInstance();
+                    spider.siteKey = key;
+                    spider.init(App.get(), ext);
+                    return spider;
+                });
             } catch (Throwable e) {
                 SpiderDebug.log(e);
                 return new SpiderNull();
@@ -230,7 +235,7 @@ public class JarLoader {
 
     private Object[] proxyInvoke(Method method, Map<String, String> params) {
         try {
-            return method == null ? null : (Object[]) method.invoke(null, params);
+            return method == null ? null : SpiderJarCompatibility.call(() -> (Object[]) method.invoke(null, params));
         } catch (Throwable e) {
             SpiderDebug.log(e);
             return null;

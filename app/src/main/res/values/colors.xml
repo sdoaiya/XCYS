@@ -34,4 +34,11 @@
     <color name="white_80">#CCFFFFFF</color>
     <color name="white_90">#E6FFFFFF</color>
 
+    <!-- Local copies of palette colors previously pulled from the materialdesigncolors library -->
+    <color name="grey_200">#EEEEEE</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_700">#616161</color>
+    <color name="grey_800">#424242</color>
+    <color name="yellow_500">#FFEB3B</color>
+
 </resources>

@@ -29,25 +29,4 @@
         app:iconTint="@color/white"
         app:showAsAction="always" />
 
-    <item
-        android:id="@+id/sync"
-        android:icon="@drawable/ic_action_sync"
-        android:title="@string/setting_one_key_sync"
-        app:iconTint="@color/white"
-        app:showAsAction="always" />
-
-    <item
-        android:id="@+id/push_apk"
-        android:icon="@drawable/ic_popup_apk"
-        android:title="@string/menu_push_apk"
-        app:iconTint="@color/white"
-        app:showAsAction="never" />
-
-    <item
-        android:id="@+id/push_play"
-        android:icon="@drawable/ic_popup_push"
-        android:title="@string/menu_push_play"
-        app:iconTint="@color/white"
-        app:showAsAction="never" />
-
 </menu>

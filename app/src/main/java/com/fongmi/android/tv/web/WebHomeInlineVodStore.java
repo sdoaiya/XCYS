@@ -41,7 +41,7 @@ public class WebHomeInlineVodStore {
         vod.setId(id);
         if (vod.getName().isEmpty()) vod.setName(first(Json.safeString(payload, "vodName"), Json.safeString(payload, "title"), id));
         if (vod.getPic().isEmpty()) vod.setPic(first(Json.safeString(payload, "vodPic"), Json.safeString(payload, "pic")));
-        if (vod.getPlayFrom().isEmpty()) vod.setPlayFrom(first(Json.safeString(payload, "vodPlayFrom"), Json.safeString(payload, "playFrom"), "WebHome"));
+        if (vod.getPlayFrom().isEmpty()) vod.setPlayFrom(first(Json.safeString(payload, "vodPlayFrom"), Json.safeString(payload, "playFrom"), "XCTV"));
         if (vod.getPlayUrl().isEmpty()) vod.setPlayUrl(playUrl);
         ITEMS.put(id, new Entry(App.gson().toJson(vod), headerSpec, resolver));
         return id;
@@ -49,7 +49,7 @@ public class WebHomeInlineVodStore {
 
     public static Result detail(String id) {
         Entry entry = ITEMS.get(id);
-        if (entry == null || TextUtils.isEmpty(entry.vod)) return Result.error("WebHome inline VOD not found");
+        if (entry == null || TextUtils.isEmpty(entry.vod)) return Result.error("XCTV inline VOD not found");
         SpiderDebug.log("webhome-inline", "detail id=%s found=%s", id, true);
         return Result.vod(Vod.objectFrom(entry.vod));
     }
@@ -145,7 +145,7 @@ public class WebHomeInlineVodStore {
         SpiderDebug.log("webhome-inline", "resolve episode start id=%s page=%s", id, Json.safeString(episodeSpec.payload, "pageUrl"));
         JsonObject resolved = resolver.resolve(episodeSpec.payload.deepCopy());
         String url = Json.safeString(resolved, "url");
-        if (TextUtils.isEmpty(url)) throw new IllegalStateException("WebHome inline episode resolve failed");
+        if (TextUtils.isEmpty(url)) throw new IllegalStateException("XCTV inline episode resolve failed");
         HeaderSpec headerSpec = resolvedHeaders(resolved, episodeSpec.headerSpec);
         String format = first(Json.safeString(resolved, "format"), isHls(url) ? HLS_FORMAT : episodeSpec.format);
         URL_HEADERS.put(url, headerSpec);

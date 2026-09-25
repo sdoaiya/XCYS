@@ -81,7 +81,7 @@ public class WebHomeRawAdapter {
         } catch (Throwable e) {
             if (response != null) response.close();
             SpiderDebug.log("webhome-raw", e);
-            return error("Raw WebHome load failed: " + e.getMessage());
+            return error("Raw XCTV load failed: " + e.getMessage());
         }
     }
 
@@ -129,7 +129,7 @@ public class WebHomeRawAdapter {
         ContentType contentType = getContentType(target, body, request.isForMainFrame());
         if (body != null && contentType.text && body.contentLength() > MAX_TEXT_BYTES) {
             closeQuietly(response);
-            return error(413, "Payload Too Large", "Raw WebHome text resource is too large");
+            return error(413, "Payload Too Large", "Raw XCTV text resource is too large");
         }
         int rawCode = response.code();
         int code = statusCode(rawCode);

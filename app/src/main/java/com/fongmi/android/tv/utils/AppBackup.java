@@ -261,7 +261,7 @@ public final class AppBackup {
 
     private static String manifest(SyncFiles.Archive shared, LoginStateSync.Archive login, int customCspSourceFiles, int customCspFiles, int webHomeExtensionPrefs, int webHomeExtensionSources, String warning) {
         JsonObject object = new JsonObject();
-        object.addProperty("app", "WebHTV");
+        object.addProperty("app", "XCTV");
         object.addProperty("version", 3);
         object.addProperty("createdAt", System.currentTimeMillis());
         object.addProperty("sharedFiles", shared == null ? 0 : shared.getCount());
@@ -293,9 +293,9 @@ public final class AppBackup {
             appendWarning(warning, "站点注入文件无法校验");
         }
         int expectedWebHomePrefs = integer(object, "webHomeExtensionPrefs");
-        if (backup.getWebHomeExtensionPreferenceCount() < expectedWebHomePrefs) appendWarning(warning, "WebHome 扩展配置不完整");
+        if (backup.getWebHomeExtensionPreferenceCount() < expectedWebHomePrefs) appendWarning(warning, "XCTV 扩展配置不完整");
         int expectedWebHomeSources = integer(object, "webHomeExtensionSources");
-        if (backup.getWebHomeExtensionSourceCount() < expectedWebHomeSources) appendWarning(warning, "WebHome 扩展源不完整");
+        if (backup.getWebHomeExtensionSourceCount() < expectedWebHomeSources) appendWarning(warning, "XCTV 扩展源不完整");
         if (warning.length() > 0) SpiderDebug.log("backup", "restore manifest warning=%s", warning);
         return warning.toString();
     }

@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- 4/8dp spacing rhythm -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+
+    <!-- corner radius scale -->
+    <dimen name="radius_sm">8dp</dimen>
+    <dimen name="radius_md">12dp</dimen>
+    <dimen name="radius_lg">16dp</dimen>
+    <dimen name="radius_sheet">22dp</dimen>
+
+    <!-- touch targets -->
+    <dimen name="touch_target">48dp</dimen>
+    <dimen name="touch_target_compact">40dp</dimen>
+
+    <!-- screen edge insets -->
+    <dimen name="screen_edge">16dp</dimen>
+    <dimen name="screen_edge_tablet">24dp</dimen>
+
+</resources>

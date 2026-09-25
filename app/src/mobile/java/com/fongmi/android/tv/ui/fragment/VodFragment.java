@@ -17,17 +17,10 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.net.Uri;
-
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-
-import com.fongmi.android.tv.App;
 import com.fongmi.android.tv.R;
 import com.fongmi.android.tv.api.config.VodConfig;
 import com.fongmi.android.tv.bean.Class;
 import com.fongmi.android.tv.bean.Config;
-import com.fongmi.android.tv.bean.Device;
 import com.fongmi.android.tv.bean.Result;
 import com.fongmi.android.tv.bean.Site;
 import com.fongmi.android.tv.bean.Value;
@@ -48,15 +41,9 @@ import com.fongmi.android.tv.ui.activity.KeepActivity;
 import com.fongmi.android.tv.ui.activity.SearchActivity;
 import com.fongmi.android.tv.ui.adapter.TypeAdapter;
 import com.fongmi.android.tv.ui.base.BaseFragment;
-import com.fongmi.android.tv.ui.dialog.ApkPushDialog;
-import com.fongmi.android.tv.ui.dialog.ApkPushMethodDialog;
-import com.fongmi.android.tv.ui.dialog.ApkPushUrlDialog;
 import com.fongmi.android.tv.ui.dialog.FilterDialog;
 import com.fongmi.android.tv.ui.dialog.HistoryDialog;
 import com.fongmi.android.tv.ui.dialog.LinkDialog;
-import com.fongmi.android.tv.ui.dialog.OneKeySyncDialog;
-import com.fongmi.android.tv.ui.dialog.PushPlayDialog;
-import com.fongmi.android.tv.ui.dialog.PushPlayUrlDialog;
 import com.fongmi.android.tv.ui.dialog.ReceiveDialog;
 import com.fongmi.android.tv.ui.dialog.SiteDialog;
 import com.fongmi.android.tv.utils.ImgUtil;
@@ -83,9 +70,6 @@ public class VodFragment extends BaseFragment implements ConfigListener, SiteLis
     private Result mResult;
     private boolean mWebFullscreen;
     private int mHomeWebTopMargin;
-    private Device pendingApkDevice;
-
-    private final ActivityResultLauncher<String[]> apkLauncher = registerForActivityResult(new ActivityResultContracts.OpenDocument(), this::onApkSelected);
 
     public static VodFragment newInstance() {
         return new VodFragment();
@@ -262,46 +246,7 @@ public class VodFragment extends BaseFragment implements ConfigListener, SiteLis
         } else if (item.getItemId() == R.id.keep) KeepActivity.start(requireActivity());
         else if (item.getItemId() == R.id.search) SearchActivity.start(requireActivity());
         else if (item.getItemId() == R.id.history) HistoryActivity.start(requireActivity());
-        else if (item.getItemId() == R.id.sync) OneKeySyncDialog.create().show(requireActivity());
-        else if (item.getItemId() == R.id.push_apk) ApkPushDialog.create().listener(this::onApkDeviceSelected).show(requireActivity());
-        else if (item.getItemId() == R.id.push_play) PushPlayDialog.create().listener(this::onPushPlayDeviceSelected).show(requireActivity());
         return true;
-    }
-
-    private void onApkSelected(Uri uri) {
-        Device device = pendingApkDevice;
-        pendingApkDevice = null;
-        if (uri != null && device != null) ApkPushDialog.create(device, uri).show(requireActivity());
-    }
-
-    private void onApkDeviceSelected(Device device) {
-        App.post(() -> {
-            if (!isAdded()) return;
-            ApkPushMethodDialog.create(device).listener(new ApkPushMethodDialog.Listener() {
-                @Override
-                public void onLocal(Device device) {
-                    selectLocalApk(device);
-                }
-
-                @Override
-                public void onLink(Device device) {
-                    ApkPushUrlDialog.create(device).show(requireActivity());
-                }
-            }).show(requireActivity());
-        });
-    }
-
-    private void selectLocalApk(Device device) {
-        pendingApkDevice = device;
-        App.post(() -> {
-            if (isAdded()) apkLauncher.launch(new String[]{"application/vnd.android.package-archive", "application/octet-stream"});
-        });
-    }
-
-    private void onPushPlayDeviceSelected(Device device) {
-        App.post(() -> {
-            if (isAdded()) PushPlayUrlDialog.create(device).show(requireActivity());
-        });
     }
 
     private void setSearchLongClick() {

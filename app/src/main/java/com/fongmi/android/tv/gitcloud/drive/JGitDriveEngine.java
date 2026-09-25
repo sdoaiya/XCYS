@@ -78,8 +78,8 @@ public class JGitDriveEngine implements GitDriveEngine {
                 result.message = "没有文件变化";
                 return result;
             }
-            String message = "upload: WebHTV files " + System.currentTimeMillis();
-            ObjectId id = git.commit().setMessage(message).setAuthor("WebHTV", "webhtv@app.local").call().getId();
+            String message = "upload: XCTV files " + System.currentTimeMillis();
+            ObjectId id = git.commit().setMessage(message).setAuthor("XCTV", "xctv@app.local").call().getId();
             pushWithRebase(git, config);
             CommitResult result = new CommitResult();
             result.commitSha = id == null ? "" : id.name();

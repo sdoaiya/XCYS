@@ -130,7 +130,7 @@ public final class PanNetworkDiagnosticDialog extends DialogFragment implements 
         root.addView(resultFooter, footerParams);
         resolveEndpoint();
         showConfig();
-        Dialog dialog = new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_WebHTV_LightDialog).setView(root).create();
+        Dialog dialog = new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_XCTV_LightDialog).setView(root).create();
         dialog.setCanceledOnTouchOutside(false);
         return dialog;
     }
@@ -440,7 +440,7 @@ public final class PanNetworkDiagnosticDialog extends DialogFragment implements 
         long bytes = PanBenchmarkPlan.estimateTotalBytes(required, threads, mode, 0)
                 + PanBenchmarkPlan.roundBudgetBytes(required, 1, mode)
                 + PanBenchmarkPlan.roundBudgetBytes(required, maxThreads, mode);
-        new MaterialAlertDialogBuilder(requireContext(), R.style.ThemeOverlay_WebHTV_LightDialog)
+        new MaterialAlertDialogBuilder(requireContext(), R.style.ThemeOverlay_XCTV_LightDialog)
                 .setTitle("确认高线程诊断")
                 .setMessage("将测试到 " + maxThreads + " 线程，预计流量上限约 " + PanNetworkDiagnosticRunner.formatBytes(bytes) + "。高线程可能增加耗电、内存占用，并触发源站或网盘限流、风控。")
                 .setNegativeButton("返回调整", null)

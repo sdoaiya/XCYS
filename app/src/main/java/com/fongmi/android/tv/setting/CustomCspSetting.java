@@ -566,7 +566,7 @@ public class CustomCspSetting {
         }
 
         public String getDefaultName() {
-            return isLive() ? "直播" : isWebHome() ? "WebHome" : "通用 CSP";
+            return isLive() ? "直播" : isWebHome() ? "XCTV" : "通用 CSP";
         }
 
         public void setEnabled(boolean enabled) {

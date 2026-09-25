@@ -1021,7 +1021,7 @@ public final class MpvConfigStore {
     }
 
     static String defaultConfig() {
-        return "# WebHTV MPV default config\n"
+        return "# XCTV MPV default config\n"
                 + "# Loaded by libmpv from files/mpv/mpv.conf. Keep Android-only output options in app code.\n"
                 + "\n"
                 + "profile=fast\n"

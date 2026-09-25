@@ -1178,7 +1178,7 @@ public class LoginStateSync {
         String value = path.trim().replace('\\', '/').toLowerCase(Locale.ROOT);
         if (value.isEmpty()) return false;
         String name = basename(value);
-        if (name.equals("webhtv-debug-log.txt") || name.startsWith("webhtv-debug-log-")) return true;
+        if (name.equals("xctv-debug-log.txt") || name.startsWith("xctv-debug-log-") || name.equals("webhtv-debug-log.txt") || name.startsWith("webhtv-debug-log-")) return true;
         if (name.endsWith(".log") || isRotatedLog(name)) return true;
         if (isDiagnosticTextFile(name)) return true;
         for (String segment : value.split("/")) {

@@ -1,9 +1,12 @@
 package com.fongmi.android.tv.ui.fragment;
 
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -16,6 +19,7 @@ import com.fongmi.android.tv.api.config.LiveConfig;
 import com.fongmi.android.tv.api.config.VodConfig;
 import com.fongmi.android.tv.api.config.WallConfig;
 import com.fongmi.android.tv.bean.Config;
+import com.fongmi.android.tv.bean.Device;
 import com.fongmi.android.tv.bean.Live;
 import com.fongmi.android.tv.bean.Site;
 import com.fongmi.android.tv.databinding.FragmentSettingBinding;
@@ -34,10 +38,16 @@ import com.fongmi.android.tv.ui.activity.ConfigCenterActivity;
 import com.fongmi.android.tv.ui.activity.HomeActivity;
 import com.fongmi.android.tv.ui.base.BaseFragment;
 import com.fongmi.android.tv.ui.dialog.AboutDialog;
+import com.fongmi.android.tv.ui.dialog.ApkPushDialog;
+import com.fongmi.android.tv.ui.dialog.ApkPushMethodDialog;
+import com.fongmi.android.tv.ui.dialog.ApkPushUrlDialog;
 import com.fongmi.android.tv.ui.dialog.CodecCapabilityDialog;
 import com.fongmi.android.tv.ui.dialog.ConfigDialog;
 import com.fongmi.android.tv.ui.dialog.HistoryDialog;
 import com.fongmi.android.tv.ui.dialog.LiveDialog;
+import com.fongmi.android.tv.ui.dialog.OneKeySyncDialog;
+import com.fongmi.android.tv.ui.dialog.PushPlayDialog;
+import com.fongmi.android.tv.ui.dialog.PushPlayUrlDialog;
 import com.fongmi.android.tv.ui.dialog.RestoreDialog;
 import com.fongmi.android.tv.ui.dialog.SiteBlockDialog;
 import com.fongmi.android.tv.ui.dialog.SiteDialog;
@@ -64,6 +74,9 @@ public class SettingFragment extends BaseFragment implements ConfigListener, Sit
     private String[] size;
     private String[] language;
     private String[] uiScale;
+    private Device pendingApkDevice;
+
+    private final ActivityResultLauncher<String[]> apkLauncher = registerForActivityResult(new ActivityResultContracts.OpenDocument(), this::onApkSelected);
 
     public static SettingFragment newInstance() {
         return new SettingFragment();
@@ -121,6 +134,54 @@ public class SettingFragment extends BaseFragment implements ConfigListener, Sit
         });
     }
 
+    private void onSync(View view) {
+        OneKeySyncDialog.create().show(requireActivity());
+    }
+
+    private void onApkPush(View view) {
+        ApkPushDialog.create().listener(this::onApkDeviceSelected).show(requireActivity());
+    }
+
+    private void onPushPlay(View view) {
+        PushPlayDialog.create().listener(this::onPushPlayDeviceSelected).show(requireActivity());
+    }
+
+    private void onApkSelected(Uri uri) {
+        Device device = pendingApkDevice;
+        pendingApkDevice = null;
+        if (uri != null && device != null) ApkPushDialog.create(device, uri).show(requireActivity());
+    }
+
+    private void onApkDeviceSelected(Device device) {
+        App.post(() -> {
+            if (!isAdded()) return;
+            ApkPushMethodDialog.create(device).listener(new ApkPushMethodDialog.Listener() {
+                @Override
+                public void onLocal(Device device) {
+                    selectLocalApk(device);
+                }
+
+                @Override
+                public void onLink(Device device) {
+                    ApkPushUrlDialog.create(device).show(requireActivity());
+                }
+            }).show(requireActivity());
+        });
+    }
+
+    private void selectLocalApk(Device device) {
+        pendingApkDevice = device;
+        App.post(() -> {
+            if (isAdded()) apkLauncher.launch(new String[]{"application/vnd.android.package-archive", "application/octet-stream"});
+        });
+    }
+
+    private void onPushPlayDeviceSelected(Device device) {
+        App.post(() -> {
+            if (isAdded()) PushPlayUrlDialog.create(device).show(requireActivity());
+        });
+    }
+
     @Override
     protected void initEvent() {
         mBinding.vod.setOnClickListener(this::onVod);
@@ -136,6 +197,9 @@ public class SettingFragment extends BaseFragment implements ConfigListener, Sit
         mBinding.player.setOnClickListener(this::onPlayer);
         mBinding.danmaku.setOnClickListener(this::onDanmaku);
         mBinding.recordSync.setOnClickListener(this::setRecordSync);
+        mBinding.sync.setOnClickListener(this::onSync);
+        mBinding.apkPush.setOnClickListener(this::onApkPush);
+        mBinding.pushPlay.setOnClickListener(this::onPushPlay);
         mBinding.siteBlock.setOnClickListener(view -> SiteBlockDialog.show(requireActivity()));
         mBinding.codec.setOnClickListener(view -> CodecCapabilityDialog.show(requireActivity(), null));
         mBinding.about.setOnClickListener(view -> AboutDialog.show(requireActivity(), () -> Updater.create().force().start(requireActivity())));
@@ -292,15 +356,14 @@ public class SettingFragment extends BaseFragment implements ConfigListener, Sit
         getRoot().change(4);
     }
 
-    private void setRecordSync(View view) {
-        ViewingRecordSyncStore.setEnabled(!ViewingRecordSyncStore.isEnabled());
-        mBinding.recordSyncText.setText(getSwitch(ViewingRecordSyncStore.isEnabled()));
-    }
-
     private void onEnhance(View view) {
         getRoot().change(3);
     }
 
+    private void setRecordSync(View view) {
+        ViewingRecordSyncStore.setEnabled(!ViewingRecordSyncStore.isEnabled());
+        mBinding.recordSyncText.setText(getSwitch(ViewingRecordSyncStore.isEnabled()));
+    }
 
     private void onVersion(View view) {
         Updater.create().force().start(requireActivity());

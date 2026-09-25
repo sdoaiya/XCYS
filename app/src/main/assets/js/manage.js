@@ -59,7 +59,7 @@ const UPLOAD_TIMEOUT = 60000;
 const SYNC_TIMEOUT = 600000;
 const REMOTE_HEALTH_INTERVAL = 6000;
 const REMOTE_HEALTH_BLOCK_MS = 18000;
-const CONFIG_UPLOAD_DIR = 'WebHTV/Config';
+const CONFIG_UPLOAD_DIR = 'XCTV/Config';
 const LOGIN_TEXTAREA_LIMIT = 32 * 1024;
 const LOGIN_TEXTAREA_LINE_LIMIT = 1600;
 const LOGIN_PREVIEW_ROW_CHARS = 1200;
@@ -1213,7 +1213,7 @@ function cspKind(item = {}) {
     const home = String(siteValue(item, 'homePage', siteValue(item, 'webHome', '')));
     return !api && !!home ? 'webHome' : 'csp';
 }
-function cspKindName(kind) { return kind === 'live' ? '直播' : kind === 'webHome' ? 'WebHome' : '通用 CSP'; }
+function cspKindName(kind) { return kind === 'live' ? '直播' : kind === 'webHome' ? 'XCTV' : '通用 CSP'; }
 function liveDefaultObject(name = '') { return { name, type: 0, playerType: 2, ua: 'okhttp' }; }
 function siteValue(item, key, fallback = '') {
     if (item[key] !== undefined && item[key] !== null && item[key] !== '') return item[key];
@@ -1434,12 +1434,12 @@ function buildCspCard(item, index) {
     const invalid = item.enabled && !cspItemValid(item) ? ' invalid' : '';
     const title = item.name || cspKindName(item.kind);
     const source = item.webHome ? `<div class="source-actions"><button class="md-btn md-btn-tonal md-btn-compact" type="button" onclick="chooseCspFile(${index})">文件</button><button class="md-btn md-btn-tonal md-btn-compact" type="button" onclick="openCspCode(${index})">代码</button><button class="md-btn md-btn-tonal md-btn-compact" type="button" onclick="openCspLink(${index})">链接</button></div>` : '';
-    const typeButtons = `<div class="segmented csp-type-toggle"><button class="segment ${item.kind === 'webHome' ? 'active' : ''}" onclick="setCspKind(${index},'webHome')" type="button">WebHome</button><button class="segment ${item.kind === 'csp' ? 'active' : ''}" onclick="setCspKind(${index},'csp')" type="button">通用 CSP</button><button class="segment ${item.kind === 'live' ? 'active' : ''}" onclick="setCspKind(${index},'live')" type="button">直播</button></div>`;
+    const typeButtons = `<div class="segmented csp-type-toggle"><button class="segment ${item.kind === 'webHome' ? 'active' : ''}" onclick="setCspKind(${index},'webHome')" type="button">XCTV</button><button class="segment ${item.kind === 'csp' ? 'active' : ''}" onclick="setCspKind(${index},'csp')" type="button">通用 CSP</button><button class="segment ${item.kind === 'live' ? 'active' : ''}" onclick="setCspKind(${index},'live')" type="button">直播</button></div>`;
     const nameRow = item.kind === 'live'
         ? `<div class="field-row compact">${buildLiveTextField('name', '名称', item.name, '直播名称', true)}</div>`
         : `<div class="field-row compact"><input class="md-input csp-field" data-key="name" value="${escHtml(item.name)}" placeholder="名称"><input class="md-input csp-field" data-key="key" value="${escHtml(item.key)}" placeholder="Key"></div>`;
     const homeLine = item.kind === 'live' ? '' : `<div class="csp-home-line">${buildHomeCheck(item, index)}${source}</div>`;
-    const homePage = item.kind === 'live' ? '' : `<div class="md-field"><input class="md-input csp-field" data-key="homePage" value="${escHtml(item.homePage)}" placeholder="${item.webHome ? 'WebHome 地址' : 'WebHome 首页地址，可选'}"></div>`;
+    const homePage = item.kind === 'live' ? '' : `<div class="md-field"><input class="md-input csp-field" data-key="homePage" value="${escHtml(item.homePage)}" placeholder="${item.webHome ? 'XCTV 地址' : 'XCTV 首页地址，可选'}"></div>`;
     const fields = item.kind === 'live' ? buildLiveFields(item) : item.webHome ? buildAdvancedSiteFields(item) : buildCommonCspFields(item);
     return `<div class="manage-card csp-card${invalid}" data-index="${index}"><div class="csp-head"><div class="csp-title-block"><label class="check-row"><input class="csp-field" data-key="enabled" type="checkbox" ${item.enabled ? 'checked' : ''}><span>${escHtml(title)}</span></label>${typeButtons}</div><div class="card-actions"><button class="file-action" type="button" onclick="moveCspItem(${index},-1)">上移</button><button class="file-action" type="button" onclick="moveCspItem(${index},1)">下移</button><button class="file-action danger" type="button" onclick="removeCspItem(${index})">删除</button></div></div>${nameRow}${homeLine}${homePage}${fields}</div>`;
 }
@@ -1521,7 +1521,7 @@ function setCspKind(index, kind) {
     if (kind === false) kind = 'csp';
     if (!item || item.kind === kind || !CSP_KINDS.includes(kind)) return;
     const oldKind = item.kind;
-    const oldAuto = /^(WebHome|通用 CSP|直播) \d+$/.test(item.name || '');
+    const oldAuto = /^(XCTV|WebHome|通用 CSP|直播) \d+$/.test(item.name || '');
     if (item.kind !== 'live' && kind === 'live' && cspRegistry.homeKey === item.key) cspRegistry.homeKey = '';
     item.kind = kind;
     item.webHome = kind === 'webHome';
@@ -1594,9 +1594,9 @@ function saveCspPage(index, data, message) {
         item.homePage = res.homePage || item.homePage;
         syncCspSite(item);
         renderCspManage();
-        warnToast(message || 'WebHome 已更新，请保存生效');
+        warnToast(message || 'XCTV 已更新，请保存生效');
         pendingCspIndex = -1;
-    }, 'WebHome 保存失败');
+    }, 'XCTV 保存失败');
 }
 function saveCspManage() {
     if (!cspRawDirty) syncCspFromCards(true);

@@ -94,6 +94,11 @@ public class SiteViewModel extends ViewModel {
     }
 
     public void homeContent() {
+        // 尚未导入任何源时没有可请求的站点，直接给空结果，避免空 api 触发 OkHttp 原始异常被弹成 toast。
+        if (VodConfig.get().getSites().isEmpty()) {
+            result.postValue(Result.empty());
+            return;
+        }
         execute(TaskType.RESULT, result, () -> SiteApi.homeContent(VodConfig.get().getHome()), null, null, true);
     }
 

@@ -62,7 +62,7 @@ public class MpvConfigDialog extends BaseAlertDialog implements MpvConfigProfile
 
     @Override
     protected MaterialAlertDialogBuilder getBuilder() {
-        return new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_WebHTV_LightDialog).setView(getBinding().getRoot());
+        return new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_XCTV_LightDialog).setView(getBinding().getRoot());
     }
 
     @Override
@@ -313,9 +313,9 @@ public class MpvConfigDialog extends BaseAlertDialog implements MpvConfigProfile
     @Override
     public void onText(String name) {
         String template;
-        if (MpvConfigStore.TARGET_SCRIPTS.equals(target)) template = "-- WebHTV MPV script\n\n";
-        else if (MpvConfigStore.TARGET_INPUT_CONF.equals(target)) template = "# WebHTV input.conf\n\n";
-        else template = "# WebHTV mpv.conf\n\n";
+        if (MpvConfigStore.TARGET_SCRIPTS.equals(target)) template = "-- XCTV MPV script\n\n";
+        else if (MpvConfigStore.TARGET_INPUT_CONF.equals(target)) template = "# XCTV input.conf\n\n";
+        else template = "# XCTV mpv.conf\n\n";
         String displayName = TextUtils.isEmpty(name) ? getString(R.string.mpv_config_untitled) : name;
         showEditor(target, null, displayName, template, true);
     }

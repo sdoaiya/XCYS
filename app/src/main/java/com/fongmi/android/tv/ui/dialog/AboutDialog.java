@@ -20,7 +20,6 @@ public final class AboutDialog {
                 .setPositiveButton(R.string.about_check_update, (dialog, which) -> {
                     if (updateAction != null) updateAction.run();
                 })
-                .setNegativeButton(R.string.update_settings, (dialog, which) -> UpdateSettingsDialog.show(activity))
                 .setNeutralButton(R.string.dialog_negative, null)
                 .show();
     }

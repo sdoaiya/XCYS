@@ -15,7 +15,7 @@
     <div id="app" class="manage-app">
         <header class="manage-top">
             <div class="manage-heading">
-                <div class="manage-kicker">WebHTV</div>
+                <div class="manage-kicker">XCTV</div>
                 <div class="manage-title">管理页面</div>
                 <div class="manage-subtitle" id="manageTargetText">本机管理 · 当前 App 设备</div>
             </div>
@@ -123,7 +123,7 @@
                                 <label class="option-check"><input id="syncOptConfig" type="checkbox" checked><span><strong>接口与站源列表</strong><small>接口配置、站源、直播源</small></span></label>
                                 <label class="option-check"><input id="syncOptSpider" type="checkbox" checked onchange="updateSyncPathsVisible()"><span><strong>Jar/脚本保存数据</strong><small>包含下方选中的同步目录</small></span></label>
                                 <label class="option-check"><input id="syncOptLoginState" type="checkbox" checked><span><strong>登录态</strong><small>学习到的 Cookie、Token 与登录状态文件</small></span></label>
-                                <label class="option-check"><input id="syncOptWebHome" type="checkbox" checked><span><strong>WebHome 主页数据</strong><small>WebHome 缓存与主页状态</small></span></label>
+                                <label class="option-check"><input id="syncOptWebHome" type="checkbox" checked><span><strong>XCTV 主页数据</strong><small>XCTV 缓存与主页状态</small></span></label>
                                 <label class="option-check"><input id="syncOptSearch" type="checkbox" checked><span><strong>搜索记录</strong><small>关键词与热词</small></span></label>
                                 <label class="option-check"><input id="syncOptHistory" type="checkbox" checked><span><strong>观看记录</strong><small>播放历史与进度</small></span></label>
                                 <label class="option-check"><input id="syncOptKeep" type="checkbox" checked><span><strong>收藏数据</strong><small>收藏夹内容</small></span></label>
@@ -230,7 +230,7 @@
                     <button class="md-btn md-btn-filled" onclick="saveCspManage()">保存</button>
                 </div>
                 <div class="md-toolbar">
-                    <button class="md-btn md-btn-tonal" onclick="addCspItem('webHome')">新增 WebHome</button>
+                    <button class="md-btn md-btn-tonal" onclick="addCspItem('webHome')">新增 XCTV</button>
                     <button class="md-btn md-btn-tonal" onclick="addCspItem('csp')">新增通用 CSP</button>
                     <button class="md-btn md-btn-tonal" onclick="addCspItem('live')">新增直播</button>
                     <button class="md-btn md-btn-tonal" onclick="loadCspManage(true)">刷新</button>
@@ -407,7 +407,7 @@
     </div>
     <div id="cspCodeDialog" class="md-dialog-overlay">
         <div class="md-dialog editor-dialog">
-            <div class="md-dialog-title">WebHome 代码</div>
+            <div class="md-dialog-title">XCTV 代码</div>
             <div class="md-dialog-body"><textarea id="cspCodeContent" class="code-area modal-code" spellcheck="false" placeholder="粘贴 HTML 代码"></textarea></div>
             <div class="md-dialog-actions">
                 <button onclick="confirmCspCode(0)" class="md-dialog-btn">取消</button>
@@ -417,7 +417,7 @@
     </div>
     <div id="cspLinkDialog" class="md-dialog-overlay">
         <div class="md-dialog">
-            <div class="md-dialog-title">WebHome 链接</div>
+            <div class="md-dialog-title">XCTV 链接</div>
             <div class="md-dialog-body"><input id="cspLinkContent" class="md-input" type="url" placeholder="https://example.com/nostr.html" /></div>
             <div class="md-dialog-actions">
                 <button onclick="confirmCspLink(0)" class="md-dialog-btn">取消</button>

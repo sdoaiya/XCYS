@@ -111,7 +111,7 @@ public class CustomCspDialog extends BaseAlertDialog {
 
     @Override
     protected MaterialAlertDialogBuilder getBuilder() {
-        return new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_WebHTV_LightDialog).setView(getBinding().getRoot());
+        return new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_XCTV_LightDialog).setView(getBinding().getRoot());
     }
 
     @Override
@@ -334,7 +334,7 @@ public class CustomCspDialog extends BaseAlertDialog {
         input.setInputType(InputType.TYPE_CLASS_NUMBER);
         input.setText(String.valueOf(index + 1));
         input.selectAll();
-        showManualCloseDialog(new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_WebHTV_LightDialog)
+        showManualCloseDialog(new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_XCTV_LightDialog)
                 .setTitle(R.string.setting_custom_csp_sort_move_to_title)
                 .setView(createInputPanel(getString(R.string.setting_custom_csp_sort_move_to_hint, adapter.getItemCount()), input))
                 .setPositiveButton(R.string.dialog_positive, (dialog, which) -> moveSortItem(index, parseInt(input.getText().toString(), index + 1) - 1))
@@ -476,7 +476,7 @@ public class CustomCspDialog extends BaseAlertDialog {
         input.setMinLines(10);
         input.setMaxLines(16);
         setupScrollableText(input);
-        showManualCloseDialog(new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_WebHTV_LightDialog)
+        showManualCloseDialog(new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_XCTV_LightDialog)
                 .setTitle(R.string.setting_custom_csp_recognize_title)
                 .setView(createInputPanel(R.string.setting_custom_csp_recognize_hint, input))
                 .setPositiveButton(R.string.dialog_positive, (dialog, which) -> recognize(input.getText().toString()))
@@ -766,7 +766,7 @@ public class CustomCspDialog extends BaseAlertDialog {
         input.setMaxLines(14);
         input.setText(Path.read(CustomCspSetting.file(item.getId(), "index.html")));
         setupScrollableText(input);
-        showManualCloseDialog(new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_WebHTV_LightDialog)
+        showManualCloseDialog(new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_XCTV_LightDialog)
                 .setTitle(R.string.setting_custom_csp_code)
                 .setView(createInputPanel(R.string.setting_custom_csp_code, input))
                 .setPositiveButton(R.string.dialog_positive, (dialog, which) -> saveCode(item, input.getText().toString()))
@@ -777,7 +777,7 @@ public class CustomCspDialog extends BaseAlertDialog {
         syncAllVisibleRows();
         TextInputEditText input = createInput(false);
         input.setText(item.getHomePage());
-        showManualCloseDialog(new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_WebHTV_LightDialog)
+        showManualCloseDialog(new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_XCTV_LightDialog)
                 .setTitle(R.string.setting_custom_csp_link)
                 .setView(createInputPanel(R.string.setting_custom_csp_link, input))
                 .setPositiveButton(R.string.dialog_positive, (dialog, which) -> {

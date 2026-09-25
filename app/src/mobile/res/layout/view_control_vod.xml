@@ -112,8 +112,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/prev"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:background="@drawable/shape_control"
             android:contentDescription="@string/desc_prev"
             android:src="@drawable/exo_icon_previous"
@@ -132,8 +132,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/next"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:background="@drawable/shape_control"
             android:contentDescription="@string/desc_next"
             android:src="@drawable/exo_icon_next"

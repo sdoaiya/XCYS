@@ -5,6 +5,7 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MediaChapter;
@@ -28,6 +29,7 @@ import com.fongmi.android.tv.bean.Result;
 import com.fongmi.android.tv.bean.Sub;
 import com.fongmi.android.tv.bean.Track;
 import com.fongmi.android.tv.impl.ParseCallback;
+import com.fongmi.android.tv.player.danmaku.JsonDanmakuParser;
 import com.fongmi.android.tv.player.engine.ExoPlayerEngine;
 import com.fongmi.android.tv.player.engine.IjkPlayerEngine;
 import com.fongmi.android.tv.player.engine.MpvPlayerEngine;
@@ -74,6 +76,8 @@ public class PlayerManager implements ParseCallback {
     private final Callback callback;
     private final ExoNextEpisodePreloader nextEpisodePreloader = new ExoNextEpisodePreloader();
     private DanmakuController danmakuController;
+    @Nullable
+    private Uri lastEmptyDanmakuUri;
     private PlayerEngine engine;
     private VideoSize videoSize;
     private ParseJob parseJob;
@@ -542,10 +546,13 @@ public class PlayerManager implements ParseCallback {
         danmakuController = controller;
         if (danmakuController == null) return;
         danmakuController.setOkHttpClient(OkHttp.player());
+        danmakuController.registerParser(new JsonDanmakuParser());
         danmakuController.setListener(new DanmakuController.Listener() {
             @Override
             public void onLoadCompleted(Uri uri, int count) {
                 SpiderDebug.log("danmaku", "load completed scheme=%s count=%d enabled=%s", uri == null ? null : uri.getScheme(), count, DanmakuSetting.isEnabled());
+                lastEmptyDanmakuUri = count == 0 ? uri : null;
+                if (count == 0) Notify.show(ResUtil.getString(R.string.danmaku_parse_empty));
             }
 
             @Override
@@ -911,8 +918,15 @@ public class PlayerManager implements ParseCallback {
         if (spec != null) spec.setDanmaku(item);
         if (danmakuController == null) return;
         SpiderDebug.log("danmaku", "source selected present=%s enabled=%s", item != null && !item.isEmpty(), DanmakuSetting.isEnabled());
-        if (item.isEmpty()) danmakuController.clearItems();
-        else danmakuController.setDataSource(Uri.parse(item.getRealUrl()));
+        if (item.isEmpty()) {
+            danmakuController.clearItems();
+        } else {
+            Uri uri = Uri.parse(item.getRealUrl());
+            // An empty parse is not sticky: force a real reload when the user re-selects the source.
+            if (uri.equals(lastEmptyDanmakuUri)) danmakuController.clearItems();
+            danmakuController.setDataSource(uri);
+            if (!DanmakuSetting.isLoad()) Notify.show(ResUtil.getString(R.string.danmaku_load_off));
+        }
         applyDanmakuState();
     }
 

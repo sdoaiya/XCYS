@@ -168,7 +168,7 @@ public class GitCloudDialog extends BaseAlertDialog {
 
     @Override
     protected MaterialAlertDialogBuilder getBuilder() {
-        return new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_WebHTV_LightDialog).setView(getBinding().getRoot());
+        return new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_XCTV_LightDialog).setView(getBinding().getRoot());
     }
 
     @Override
@@ -1093,7 +1093,7 @@ public class GitCloudDialog extends BaseAlertDialog {
 
         TextInput input = input("仓库名", false);
         input.edit.setSingleLine(true);
-        input.edit.setText("webhtv-backup");
+        input.edit.setText("xctv-backup");
         root.addView(input.layout);
 
         MaterialTextView modeLabel = text("可见性", 12, Color.parseColor("#5F6368"), true);
@@ -1151,7 +1151,7 @@ public class GitCloudDialog extends BaseAlertDialog {
 
     private void createRepo(String name, boolean privateRepo) {
         run("创建仓库中", () -> {
-            GitRepo created = provider().createRepo(account, token(), new CreateRepoRequest(name, "WebHTV Git 云盘", privateRepo));
+            GitRepo created = provider().createRepo(account, token(), new CreateRepoRequest(name, "XCTV Git 云盘", privateRepo));
             List<GitFile> files;
             try {
                 files = provider().listFiles(account, token(), created, created.defaultBranch, "");

@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.PictureInPictureParams;
 import android.app.RemoteAction;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.Rect;
 import android.graphics.drawable.Icon;
 import android.os.Build;
@@ -75,6 +76,7 @@ public class PiP {
         try {
             if (noPiP() || activity.isInPictureInPictureMode() || !PlayerSetting.isBackgroundPiP()) return;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) builder.setSeamlessResizeEnabled(true);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) builder.setExpandedAspectRatio(getExpandedRatio(activity));
             if (scale == 1) builder.setAspectRatio(new Rational(16, 9));
             else if (scale == 2) builder.setAspectRatio(new Rational(4, 3));
             else builder.setAspectRatio(getRational(width, height));
@@ -82,6 +84,13 @@ public class PiP {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    // Android 15+ 平板按屏幕比例声明 expanded 档位，画中画窗口才能双指缩放并一键放大到接近全屏。
+    private Rational getExpandedRatio(Activity activity) {
+        Configuration config = activity.getResources().getConfiguration();
+        if (config.screenWidthDp <= 0 || config.screenHeightDp <= 0) return new Rational(9, 16);
+        return new Rational(config.screenWidthDp, config.screenHeightDp);
     }
 
     private Rational getRational(int width, int height) {

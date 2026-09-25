@@ -6,7 +6,7 @@
 
 用户自己找 JSON / 配置源，再在 App 内导入、管理、同步和使用。
 
-[![Release](https://img.shields.io/github/v/release/motao123/webtv?label=release)](https://github.com/motao123/webtv/releases)
+[![Release](https://img.shields.io/github/v/release/motao123/webtv?label=release)](https://github.com/sdoaiya/XCYS/releases)
 [![Android](https://img.shields.io/badge/Android-7.0%2B-3DDC84)](#下载安装)
 [![TV](https://img.shields.io/badge/Android%20TV-Leanback-4285F4)](#下载安装)
 
@@ -78,7 +78,7 @@
 
 下载地址：
 
-- [GitHub Releases](https://github.com/motao123/webtv/releases)
+- [GitHub Releases](https://github.com/sdoaiya/XCYS/releases)
 
 推荐 APK：
 

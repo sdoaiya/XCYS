@@ -95,7 +95,7 @@ public class ShellProxyDialog extends BaseAlertDialog {
 
     @Override
     protected MaterialAlertDialogBuilder getBuilder() {
-        return new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_WebHTV_LightDialog).setView(getBinding().getRoot());
+        return new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_XCTV_LightDialog).setView(getBinding().getRoot());
     }
 
     @Override
@@ -312,7 +312,7 @@ public class ShellProxyDialog extends BaseAlertDialog {
         }
         String[] names = new String[sites.size()];
         for (int i = 0; i < sites.size(); i++) names[i] = getSiteName(sites.get(i));
-        new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_WebHTV_LightDialog).setTitle(R.string.setting_proxy_select_site).setItems(names, (dialog, which) -> suggestRules(sites.get(which))).show();
+        new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_XCTV_LightDialog).setTitle(R.string.setting_proxy_select_site).setItems(names, (dialog, which) -> suggestRules(sites.get(which))).show();
     }
 
     private String getSiteName(Site site) {

@@ -88,7 +88,7 @@ public class WebHomeExtensionDialog extends BaseAlertDialog {
 
     @Override
     protected MaterialAlertDialogBuilder getBuilder() {
-        return new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_WebHTV_LightDialog).setView(getBinding().getRoot());
+        return new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_XCTV_LightDialog).setView(getBinding().getRoot());
     }
 
     @Override
@@ -783,7 +783,7 @@ public class WebHomeExtensionDialog extends BaseAlertDialog {
     }
 
     private void deleteSource(WebHomeExtensionSourceStore.Entry source) {
-        new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_WebHTV_LightDialog)
+        new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_XCTV_LightDialog)
                 .setTitle(R.string.web_home_extension_delete_source_title)
                 .setMessage(getString(R.string.web_home_extension_delete_source_message, source.getName()))
                 .setNegativeButton(R.string.dialog_negative, null)
@@ -895,7 +895,7 @@ public class WebHomeExtensionDialog extends BaseAlertDialog {
     }
 
     private void confirmEnable(WebHomeExtensionRegistry.Item item) {
-        AlertDialog dialog = new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_WebHTV_LightDialog)
+        AlertDialog dialog = new MaterialAlertDialogBuilder(requireActivity(), R.style.ThemeOverlay_XCTV_LightDialog)
                 .setTitle(R.string.web_home_extension_enable_confirm_title)
                 .setMessage(getString(R.string.web_home_extension_enable_confirm_message, item.name, source(item), empty(item.matchText)))
                 .setNegativeButton(R.string.dialog_negative, null)

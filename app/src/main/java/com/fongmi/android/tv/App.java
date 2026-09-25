@@ -3,6 +3,7 @@ package com.fongmi.android.tv;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.system.ErrnoException;
 import android.system.Os;
@@ -13,10 +14,12 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.os.HandlerCompat;
 
 import com.fongmi.android.tv.bean.History;
 import com.fongmi.android.tv.playback.PlaybackRemoteSyncer;
+import com.fongmi.android.tv.api.loader.SpiderJarCompatibility;
 import com.fongmi.android.tv.server.Server;
 import com.fongmi.android.tv.setting.ProxySetting;
 import com.fongmi.android.tv.setting.Setting;
@@ -154,6 +157,9 @@ public class App extends Application implements Application.ActivityLifecycleCal
     @Override
     public void onCreate() {
         super.onCreate();
+        // 全 App 页面都绘制在自定义壁纸上（BaseActivity 注入 CustomWallView），亮色板的前景控件色在壁纸上不可读，固定走夜间资源。
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        installSpiderCrashGuard();
         configureGoRuntime();
         Prefers.remove("theme_color");
         Prefers.remove("wall_color");
@@ -169,6 +175,26 @@ public class App extends Application implements Application.ActivityLifecycleCal
         ProxySetting.apply();
         registerActivityLifecycleCallbacks(this);
         post(this::startBackgroundServices, 1200);
+    }
+
+    private void installSpiderCrashGuard() {
+        Thread.UncaughtExceptionHandler previous = Thread.getDefaultUncaughtExceptionHandler();
+        Thread.setDefaultUncaughtExceptionHandler((thread, throwable) -> {
+            if (!"main".equals(thread.getName()) && isSpiderCrash(throwable)) {
+                Log.e("SpiderCrashGuard", "Swallowed spider thread crash on " + thread.getName(), throwable);
+                return;
+            }
+            if (previous != null) previous.uncaughtException(thread, throwable);
+        });
+    }
+
+    private static boolean isSpiderCrash(Throwable throwable) {
+        for (Throwable current = throwable, cause = null; current != null && current != cause; cause = current, current = current.getCause()) {
+            for (StackTraceElement element : current.getStackTrace()) {
+                if (element.getClassName().startsWith("com.github.catvod.spider.")) return true;
+            }
+        }
+        return false;
     }
 
     private void configureGoRuntime() {
@@ -204,11 +230,19 @@ public class App extends Application implements Application.ActivityLifecycleCal
 
     @Override
     public PackageManager getPackageManager() {
-        return hook != null ? hook : getBaseContext().getPackageManager();
+        PackageManager compatibility = SpiderJarCompatibility.getPackageManager();
+        return compatibility != null ? compatibility : hook != null ? hook : getBaseContext().getPackageManager();
+    }
+
+    @Override
+    public ApplicationInfo getApplicationInfo() {
+        ApplicationInfo compatibility = SpiderJarCompatibility.getApplicationInfo();
+        return compatibility != null ? compatibility : super.getApplicationInfo();
     }
 
     @Override
     public String getPackageName() {
+        if (SpiderJarCompatibility.isActive()) return "com.fongmi.android.tv";
         return hook != null ? hook.getPackageName() : getBaseContext().getPackageName();
     }
 

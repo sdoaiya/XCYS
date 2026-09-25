@@ -2,7 +2,8 @@
 agp = "9.2.1"
 python = "17.0.0"
 minSdk = "24"
-targetSdk = "37"
+# 保持 28：targetSdk≥29 会被 SELinux 拒绝执行 spider jar 解压到数据目录的 Go 引擎二进制（FishGo/pvideo），真机上配置包引擎将无法启动（OK影视即靠 28 保持可用）。
+targetSdk = "28"
 compileSdk = "37"
 
 annotation = "1.10.0"

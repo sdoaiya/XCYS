@@ -45,8 +45,8 @@ import java.util.Set;
 
 public class Updater implements UpdateListener, UpdateTransfer.Callback {
 
-    private static final String GITHUB_RELEASE = "https://github.com/motao123/webtv/releases/latest";
-    private static final String CNB_RELEASE = "https://cnb.cool/code_free/webtv/-/git/raw/main/apk";
+    private static final String GITHUB_RELEASE = "https://github.com/sdoaiya/XCYS/releases/latest/download";
+    private static final String CNB_RELEASE = GITHUB_RELEASE;
 
     private UpdateDialog dialog;
     private FragmentActivity activity;

@@ -8,6 +8,7 @@ import com.fongmi.android.tv.bean.ClearKey;
 import com.fongmi.android.tv.bean.Drm;
 import com.fongmi.android.tv.bean.Group;
 import com.fongmi.android.tv.bean.Live;
+import com.fongmi.android.tv.api.loader.SpiderJarCompatibility;
 import com.fongmi.android.tv.utils.UrlUtil;
 import com.github.catvod.crawler.SpiderDebug;
 import com.github.catvod.net.OkHttp;
@@ -54,7 +55,7 @@ public class LiveParser {
     }
 
     private static String getText(Live live) throws Exception {
-        if (!live.getApi().isEmpty()) return live.spider().liveContent(live.getUrl());
+        if (!live.getApi().isEmpty()) return SpiderJarCompatibility.call(() -> live.spider().liveContent(live.getUrl()));
         return OkHttp.string(UrlUtil.convert(live.getUrl()), live.getHeaders());
     }
 

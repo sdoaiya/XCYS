@@ -330,7 +330,7 @@ class IjkSimplePlayer extends SimpleBasePlayer implements IMediaPlayer.Listener 
         stopStateRefresh();
         playerError = new PlaybackException("IJK error: " + what + ", " + extra, null, errorCode(what));
         SpiderDebug.log("ijk", "error what=%d extra=%d mapped=%d decode=%d state=%d loading=%s uri=%s", what, extra, playerError.errorCode, decode, playbackState, loading, summarizeUri());
-        if (BuildConfig.DEBUG) Log.e("WebHTV-IJK", "error what=" + what + " extra=" + extra + " uri=" + summarizeUri());
+        if (BuildConfig.DEBUG) Log.e("XCTV-IJK", "error what=" + what + " extra=" + extra + " uri=" + summarizeUri());
         invalidateState();
         return true;
     }
@@ -385,7 +385,7 @@ class IjkSimplePlayer extends SimpleBasePlayer implements IMediaPlayer.Listener 
             String playableUrl = sourceUri.toString();
             boolean dash = isLikelyDash(mediaItem, playableUrl);
             currentDash = dash;
-            if (BuildConfig.DEBUG) Log.e("WebHTV-IJK", "open dash=" + dash + " uri=" + playableUrl + " headers=" + headers.keySet());
+            if (BuildConfig.DEBUG) Log.e("XCTV-IJK", "open dash=" + dash + " uri=" + playableUrl + " headers=" + headers.keySet());
             if (dash) {
                 String originalUrl = playableUrl;
                 playableUrl = hlsProxy.proxyDash(playableUrl, headers);

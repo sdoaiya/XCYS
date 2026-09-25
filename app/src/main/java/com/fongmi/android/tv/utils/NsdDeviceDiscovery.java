@@ -27,7 +27,7 @@ public class NsdDeviceDiscovery {
         NsdManager manager = getManager();
         if (manager == null) return;
         NsdServiceInfo service = new NsdServiceInfo();
-        service.setServiceName("WebHTV-" + Util.getDeviceName());
+        service.setServiceName("XCTV-" + Util.getDeviceName());
         service.setServiceType(SERVICE_TYPE);
         service.setPort(Proxy.getPort());
         NsdManager.RegistrationListener pending = new NsdManager.RegistrationListener() {
