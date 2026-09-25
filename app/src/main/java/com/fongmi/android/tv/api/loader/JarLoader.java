@@ -114,13 +114,13 @@ public class JarLoader {
             if (asset) {
                 File file = Download.create(jar, Path.jar(jar)).get();
                 if (Path.exists(file) && (hash.isEmpty() || verify(file, hashType, hash))) load(key, file);
-            } else if (jar.startsWith("https")) {
-                if (hash.isEmpty()) {
-                    SpiderDebug.log("jar", "rejected remote jar without ;sha256;/;md5; key=%s url=%s", key, jar);
+            } else if (jar.startsWith("https") || jar.startsWith("http://")) {
+                File file = Download.create(jar, Path.jar(jar)).get();
+                if (!Path.exists(file)) {
+                    SpiderDebug.log("jar", "remote jar missing key=%s url=%s", key, jar);
                     return;
                 }
-                File file = Download.create(jar, Path.jar(jar)).get();
-                if (!verify(file, hashType, hash)) {
+                if (!hash.isEmpty() && !verify(file, hashType, hash)) {
                     Path.clear(file);
                     SpiderDebug.log("jar", "hash mismatch key=%s url=%s type=%s", key, jar, hashType);
                     return;
@@ -146,6 +146,7 @@ public class JarLoader {
                 }
                 load(key, file);
             } else if (jar.startsWith("http")) {
+                DependencyTrust.rejectInsecure("JAR");
                 SpiderDebug.log("jar", "rejected cleartext http jar key=%s url=%s", key, jar);
             } else {
                 SpiderDebug.log("jar", "skipped unrecognized jar key=%s url=%s", key, jar);

@@ -194,9 +194,15 @@ public final class MPVLib {
             SystemClock.sleep(waitMs);
         }
         contextCreationAttempted = true;
-        create(appctx);
-        contextCreated = true;
-        return true;
+        try {
+            create(appctx);
+            contextCreated = true;
+            return true;
+        } catch (RuntimeException | Error e) {
+            contextCreationAttempted = false;
+            contextCreated = false;
+            throw e;
+        }
     }
 
     public static synchronized void destroyCreatedContext() {

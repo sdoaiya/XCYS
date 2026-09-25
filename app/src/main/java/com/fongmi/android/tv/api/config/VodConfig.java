@@ -171,7 +171,7 @@ public class VodConfig extends BaseConfig {
         Config.delete(config.getUrl(), VOD);
     }
 
-    private void parseConfig(Config config, JsonObject object) {
+    private void parseConfig(Config config, JsonObject object) throws Exception {
         initList(object);
         initLive(config, object);
         initWall(config, object);
@@ -209,7 +209,7 @@ public class VodConfig extends BaseConfig {
         if (sync) WallConfig.get().config(temp.update());
     }
 
-    private void initSite(Config config, JsonObject object) {
+    private void initSite(Config config, JsonObject object) throws Exception {
         String spider = UrlUtil.resolve(config.getUrl(), Json.safeString(object, "spider"));
         BaseLoader.get().parseJar(spider, true);
         setSites(Json.safeListElement(object, "sites").stream().map(e -> Site.objectFrom(e, spider)).distinct().collect(Collectors.toCollection(ArrayList::new)));
@@ -220,6 +220,7 @@ public class VodConfig extends BaseConfig {
         Map<String, Site> items = Site.findAll().stream().collect(Collectors.toMap(Site::getKey, Function.identity()));
         getSites().forEach(site -> site.sync(items.get(site.getKey())));
         CustomCspSetting.Result custom = CustomCspSetting.inject(getSites());
+        if (getSites().isEmpty()) throw new Exception("点播配置未提供任何站点");
         Site home = !custom.home().isEmpty() ? custom.home() : getSites().stream().filter(item -> item.getKey().equals(config.getHome())).findFirst().orElse(getSites().isEmpty() ? new Site() : getSites().get(0));
         setHome(config, home, false);
     }

@@ -1,7 +1,7 @@
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
 
     <!-- App -->
-    <string name="app_name">TV</string>
+    <string name="app_name">星尘影视</string>
     <string name="exit_confirm_title">Exit app?</string>
     <string name="exit_confirm_message">The current page will close. Background playback will continue if it is running.</string>
     <string name="exit_confirm_positive">Exit</string>
@@ -622,6 +622,7 @@ WebHomeTV is a player shell. It does not include content sources. Please use law
     <string name="error_play_parse">Unable to parse url</string>
     <string name="error_play_drm">This device does not support the required DRM scheme</string>
     <string name="error_play_url">Unable to load url</string>
+    <string name="error_dependency_insecure">This source uses an HTTP JAR and was blocked. No trust prompt will appear. Switch to an HTTPS source or contact its provider.</string>
     <string name="error_play_player">Player initialization failed, please try again</string>
     <string name="desc_back">Back</string>
     <string name="desc_cast">Cast to TV</string>
@@ -637,6 +638,7 @@ WebHomeTV is a player shell. It does not include content sources. Please use law
     <string name="desc_rotate">Rotate</string>
     <string name="desc_voice">Voice search</string>
     <string name="live_load_failed">Live source failed to load</string>
+    <string name="live_no_channels">This source has no live channels. Choose a source with live channels in Settings > Live.</string>
     <string name="error_play_flag">No flag data</string>
     <string name="error_play_timeout">Timed out</string>
     <string name="error_play_tvbus">Error code: <xliff:g name="name">%s</xliff:g></string>

@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,7 +44,7 @@ import java.util.Set;
 public class LutPanelDialog extends BaseBottomSheetDialog {
 
     private static final long FAVORITE_DOUBLE_CLICK_MS = 450;
-    private static final int[] PANEL_COLORS = new int[]{0xE62F315E, 0xD6282955, 0xCC303463};
+    private static final int[] PANEL_COLORS = new int[]{0xFF2F315E, 0xFF282955, 0xFF303463};
     private static final int BUTTON_COLOR = 0x1FFFFFFF;
     private static final int BUTTON_FOCUS_COLOR = 0x2EFFFFFF;
     private static final int BUTTON_SELECTED_COLOR = 0x3DFFFFFF;
@@ -155,9 +156,15 @@ public class LutPanelDialog extends BaseBottomSheetDialog {
         LinearLayoutCompat tools = new LinearLayoutCompat(requireContext());
         tools.setGravity(Gravity.CENTER_VERTICAL);
         tools.setOrientation(LinearLayoutCompat.HORIZONTAL);
+        HorizontalScrollView toolsScroll = new HorizontalScrollView(requireContext());
+        toolsScroll.setHorizontalScrollBarEnabled(false);
+        toolsScroll.setHorizontalFadingEdgeEnabled(true);
+        toolsScroll.setFadingEdgeLength(dp(12));
+        toolsScroll.setFillViewport(true);
         LinearLayoutCompat.LayoutParams toolParams = new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         toolParams.setMargins(0, dp(10), 0, dp(4));
-        root.addView(tools, toolParams);
+        root.addView(toolsScroll, toolParams);
+        toolsScroll.addView(tools, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
         delay = chip(0);
         delay.setOnClickListener(view -> cycleDelay());
@@ -326,9 +333,9 @@ public class LutPanelDialog extends BaseBottomSheetDialog {
         MaterialTextView view = text(resId, 13, false);
         view.setFocusable(true);
         view.setGravity(Gravity.CENTER);
-        view.setMinHeight(dp(34));
+        view.setMinHeight(dp(48));
         view.setPadding(dp(12), 0, dp(12), 0);
-        LinearLayoutCompat.LayoutParams params = new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, dp(34));
+        LinearLayoutCompat.LayoutParams params = new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, dp(48));
         params.setMarginStart(dp(7));
         view.setLayoutParams(params);
         setBackground(view, false, false);
@@ -425,7 +432,7 @@ public class LutPanelDialog extends BaseBottomSheetDialog {
             view.setGravity(Gravity.CENTER_VERTICAL);
             view.setSingleLine(true);
             view.setPadding(dp(14), 0, dp(14), 0);
-            RecyclerView.LayoutParams params = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(40));
+            RecyclerView.LayoutParams params = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(48));
             params.setMargins(0, dp(7), dp(7), 0);
             view.setLayoutParams(params);
             return new ViewHolder(view);

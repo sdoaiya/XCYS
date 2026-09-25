@@ -1,7 +1,7 @@
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
 
     <!-- App -->
-    <string name="app_name">影视</string>
+    <string name="app_name">星尘影视</string>
     <string name="exit_confirm_title">确定退出应用？</string>
     <string name="exit_confirm_message">当前页面将关闭；如果正在播放，会继续留在后台。</string>
     <string name="exit_confirm_positive">确认退出</string>
@@ -545,6 +545,7 @@ WebHomeTV 是播放器壳子，不内置内容源，请使用合法配置。</st
     <string name="error_play_parse">播放地址解析失败</string>
     <string name="error_play_drm">此设备不支持所需的 DRM scheme</string>
     <string name="error_play_url">播放地址加载失败</string>
+    <string name="error_dependency_insecure">该线路使用 HTTP JAR，已安全拦截，因此不会弹出信任确认。请更换 HTTPS 线路或联系源提供者。</string>
     <string name="error_play_player">播放器初始化失败，请重试</string>
     <string name="desc_back">返回</string>
     <string name="desc_cast">投播到电视</string>
@@ -560,6 +561,7 @@ WebHomeTV 是播放器壳子，不内置内容源，请使用合法配置。</st
     <string name="desc_rotate">旋转</string>
     <string name="desc_voice">语音搜索</string>
     <string name="live_load_failed">直播源加载失败</string>
+    <string name="live_no_channels">当前线路没有可用直播频道。请到“设置 > 直播”更换或配置直播源。</string>
     <string name="error_play_flag">暂无线路数据</string>
     <string name="error_play_timeout">连接超时</string>
     <string name="error_play_tvbus">错误代码：<xliff:g name="name">%s</xliff:g></string>

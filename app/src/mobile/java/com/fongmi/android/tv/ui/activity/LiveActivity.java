@@ -283,7 +283,8 @@ public class LiveActivity extends PlaybackActivity implements CustomKeyDown.List
 
             @Override
             public void error(String msg) {
-                Notify.show(msg);
+                hideProgress();
+                showError(msg == null || msg.isEmpty() ? getString(R.string.live_load_failed) : msg);
             }
         };
     }
@@ -296,6 +297,10 @@ public class LiveActivity extends PlaybackActivity implements CustomKeyDown.List
     }
 
     private void setGroup(Live live) {
+        if (live.getGroups().stream().noneMatch(group -> !group.getChannel().isEmpty())) {
+            showError(getString(R.string.live_no_channels));
+            return;
+        }
         List<Group> items = new ArrayList<>();
         for (Group group : live.getGroups()) (group.isHidden() ? mHides : items).add(group);
         mGroupAdapter.addAll(items);

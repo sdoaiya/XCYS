@@ -34,6 +34,7 @@ public class ExoPlayerEngine implements PlayerEngine {
     private PlaySpec spec;
     private Player player;
     private int decode;
+    private boolean formatRetryUsed;
 
     public ExoPlayerEngine(int decode, Player.Listener listener) {
         this.audioEffectController = new ExoAudioEffectController();
@@ -106,6 +107,17 @@ public class ExoPlayerEngine implements PlayerEngine {
     }
 
     @Override
+    public boolean applyLut(androidx.media3.effect.ColorLut colorLut, boolean preview, int previewSeconds) {
+        if (!(player instanceof ExoPlayer exo)) return false;
+        return videoEffectController.applyLut(exo, colorLut, preview, previewSeconds);
+    }
+
+    @Override
+    public void clearLut() {
+        if (player instanceof ExoPlayer exo) videoEffectController.clearLut(exo);
+    }
+
+    @Override
     public boolean applyAudioSetting() {
         if (!(player instanceof ExoPlayer exo)) return false;
         int channelCount = exo.getAudioFormat() == null ? 2 : Math.max(1, exo.getAudioFormat().channelCount);
@@ -131,6 +143,7 @@ public class ExoPlayerEngine implements PlayerEngine {
     @Override
     public void start(PlaySpec spec) {
         this.spec = spec;
+        formatRetryUsed = false;
         SpiderDebug.log("player-engine", "start decode=%d url=%s format=%s headerKeys=%s", decode, spec.getUrl(), spec.getFormat(), spec.getHeaders() == null ? null : spec.getHeaders().keySet());
         startInternal();
     }
@@ -221,7 +234,13 @@ public class ExoPlayerEngine implements PlayerEngine {
     }
 
     private ErrorAction retryFormat(int errorCode) {
-        spec.setFormat(ExoUtil.getMimeType(errorCode));
+        String format = ExoUtil.getMimeType(errorCode);
+        if (formatRetryUsed || spec == null || format == null || format.equals(spec.getFormat())) {
+            SpiderDebug.log("player-engine", "retryFormat skipped errorCode=%d used=%s currentFormat=%s candidate=%s", errorCode, formatRetryUsed, spec == null ? null : spec.getFormat(), format);
+            return ErrorAction.FATAL;
+        }
+        formatRetryUsed = true;
+        spec.setFormat(format);
         SpiderDebug.log("player-engine", "retryFormat errorCode=%d newFormat=%s position=%d", errorCode, spec.getFormat(), player.getCurrentPosition());
         startInternal(player.getCurrentPosition());
         return ErrorAction.RECOVERED;

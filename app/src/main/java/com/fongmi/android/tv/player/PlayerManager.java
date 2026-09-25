@@ -62,6 +62,7 @@ import com.github.catvod.crawler.SpiderDebug;
 import com.github.catvod.net.OkHttp;
 import com.google.common.net.HttpHeaders;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -417,7 +418,18 @@ public class PlayerManager implements ParseCallback {
                     if (SpiderDebug.isEnabled()) SpiderDebug.log("lut", "create preset=%s strength=%d preview=%s cost=%dms", preset.getId(), strength, preview, System.currentTimeMillis() - start);
                     App.post(() -> {
                         if (seq != lutApplySeq || engine == null) return;
-                        engine.applyLut(colorLut, preview, previewSeconds);
+                        try {
+                            if (!engine.applyLut(colorLut, preview, previewSeconds)) throw new IllegalStateException("Player engine does not support LUT");
+                        } catch (Throwable e) {
+                            if (SpiderDebug.isEnabled()) SpiderDebug.log("lut", "apply failed preset=%s error=%s", preset.getId(), causeChain(e));
+                            LutSetting.select(null);
+                            try {
+                                engine.clearLut();
+                            } catch (Throwable clearError) {
+                                if (SpiderDebug.isEnabled()) SpiderDebug.log("lut", "clear after apply failure failed preset=%s error=%s", preset.getId(), causeChain(clearError));
+                            }
+                            if (notify) Notify.show(R.string.lut_apply_failed);
+                        }
                     });
                 }
             } catch (Throwable e) {
@@ -523,12 +535,24 @@ public class PlayerManager implements ParseCallback {
             return;
         }
         if (danmakuController != null) {
+            danmakuController.setListener(null);
             danmakuController.clearItems();
             danmakuController.setEnabled(false);
         }
         danmakuController = controller;
         if (danmakuController == null) return;
         danmakuController.setOkHttpClient(OkHttp.player());
+        danmakuController.setListener(new DanmakuController.Listener() {
+            @Override
+            public void onLoadCompleted(Uri uri, int count) {
+                SpiderDebug.log("danmaku", "load completed scheme=%s count=%d enabled=%s", uri == null ? null : uri.getScheme(), count, DanmakuSetting.isEnabled());
+            }
+
+            @Override
+            public void onLoadError(Uri uri, IOException error) {
+                SpiderDebug.log("danmaku", "load failed scheme=%s error=%s", uri == null ? null : uri.getScheme(), error == null ? null : error.getMessage());
+            }
+        });
         applyDanmakuState();
         restoreDanmakuSource();
     }
@@ -886,6 +910,7 @@ public class PlayerManager implements ParseCallback {
     public void setDanmaku(Danmaku item) {
         if (spec != null) spec.setDanmaku(item);
         if (danmakuController == null) return;
+        SpiderDebug.log("danmaku", "source selected present=%s enabled=%s", item != null && !item.isEmpty(), DanmakuSetting.isEnabled());
         if (item.isEmpty()) danmakuController.clearItems();
         else danmakuController.setDataSource(Uri.parse(item.getRealUrl()));
         applyDanmakuState();
@@ -1004,6 +1029,11 @@ public class PlayerManager implements ParseCallback {
 
         @Override
         public void onPlayerError(@NonNull PlaybackException e) {
+            if (engine instanceof MpvPlayerEngine && e.getMessage() != null && e.getMessage().contains("MPV native context creation is already in progress")) {
+                SpiderDebug.log("player", "mpv context is busy; falling back to exo for current playback");
+                switchPlayer(PlayerSetting.EXO);
+                return;
+            }
             PlaybackErrorClassifier.Failure failure = PlaybackErrorClassifier.classify(e, getEffectivePlaybackRoute());
             PlayerEngine.ErrorAction action = engine.handleError(e);
             SpiderDebug.log("player", "error %s action=%s retry=%d spec=%s cause=%s", failure.logSummary(), action, retry, debugSpec(), causeChain(e));

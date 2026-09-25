@@ -2,6 +2,7 @@
 -keepclassmembers class tv.danmaku.ijk.media.player.** { *; }
 -keep class is.xyz.mpv.** { *; }
 -keep class androidx.media3.mpvplayer.** { *; }
+-keep class com.fongmi.android.tv.player.iso.IsoSessionManager { *; }
 
 -dontwarn android.content.res.**
 -dontwarn org.checkerframework.**

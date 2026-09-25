@@ -19,7 +19,6 @@ import com.fongmi.android.tv.api.config.WallConfig;
 import com.fongmi.android.tv.bean.Config;
 import com.fongmi.android.tv.databinding.DialogConfigBinding;
 import com.fongmi.android.tv.impl.ConfigListener;
-import com.fongmi.android.tv.ui.custom.CustomTextListener;
 import com.fongmi.android.tv.utils.ConfigImport;
 import com.fongmi.android.tv.utils.FileChooser;
 import com.github.catvod.utils.Path;
@@ -28,7 +27,6 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 public class ConfigDialog extends BaseAlertDialog {
 
     private DialogConfigBinding binding;
-    private boolean append = true;
     private boolean edit;
     private String ori;
     private int type;
@@ -82,12 +80,6 @@ public class ConfigDialog extends BaseAlertDialog {
     @Override
     protected void initEvent() {
         binding.choose.setEndIconOnClickListener(this::onChoose);
-        binding.url.addTextChangedListener(new CustomTextListener() {
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                detect(s.toString());
-            }
-        });
         binding.url.setOnEditorActionListener((textView, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_DONE) onPositive(null, 0);
             return true;
@@ -105,23 +97,6 @@ public class ConfigDialog extends BaseAlertDialog {
 
     private void onChoose(View view) {
         FileChooser.from(launcher).show();
-    }
-
-    private void detect(String s) {
-        if (append && "h".equalsIgnoreCase(s)) {
-            append = false;
-            binding.url.append("ttp://");
-        } else if (append && "f".equalsIgnoreCase(s)) {
-            append = false;
-            binding.url.append("ile://");
-        } else if (append && "a".equalsIgnoreCase(s)) {
-            append = false;
-            binding.url.append("ssets://");
-        } else if (s.length() > 1) {
-            append = false;
-        } else if (s.isEmpty()) {
-            append = true;
-        }
     }
 
     private void onPositive(DialogInterface dialog, int which) {

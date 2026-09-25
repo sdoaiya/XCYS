@@ -170,6 +170,7 @@ public class VodFragment extends BaseFragment implements ConfigListener, SiteLis
 
     private void setAdapter(Result result) {
         if (mWeb != null && mWeb.isVisible()) return;
+        if (result.hasMsg()) Notify.show(result.getMsg());
         mAdapter.addAll(mResult = result);
         notifyPagerAdapter();
         setFabVisible(0);
@@ -433,6 +434,7 @@ public class VodFragment extends BaseFragment implements ConfigListener, SiteLis
             public void error(String msg) {
                 Notify.dismiss();
                 Notify.show(msg);
+                hideProgress();
                 showContent();
             }
         });

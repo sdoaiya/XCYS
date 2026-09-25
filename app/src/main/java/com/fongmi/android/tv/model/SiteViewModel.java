@@ -94,7 +94,7 @@ public class SiteViewModel extends ViewModel {
     }
 
     public void homeContent() {
-        execute(TaskType.RESULT, result, () -> SiteApi.homeContent(VodConfig.get().getHome()));
+        execute(TaskType.RESULT, result, () -> SiteApi.homeContent(VodConfig.get().getHome()), null, null, true);
     }
 
     public void categoryContent(String key, String tid, String page, boolean filter, HashMap<String, String> extend) {
@@ -180,6 +180,10 @@ public class SiteViewModel extends ViewModel {
     }
 
     private void execute(TaskType type, MutableLiveData<Result> liveData, Callable<Result> callable, Consumer<Result> onSuccess, Consumer<Throwable> onError) {
+        execute(type, liveData, callable, onSuccess, onError, false);
+    }
+
+    private void execute(TaskType type, MutableLiveData<Result> liveData, Callable<Result> callable, Consumer<Result> onSuccess, Consumer<Throwable> onError, boolean surfaceError) {
         AtomicInteger taskId = Objects.requireNonNull(taskIds.get(type));
         int currentId = taskId.incrementAndGet();
         ListenableFuture<?> old = futures.get(type);
@@ -196,7 +200,7 @@ public class SiteViewModel extends ViewModel {
                     if (taskId.get() != currentId) return;
                     if (error instanceof CancellationException) return;
                     if (onError != null) onError.accept(error);
-                    if (error instanceof ExtractException) liveData.postValue(Result.error(error.getMessage()));
+                    if (error instanceof ExtractException || surfaceError) liveData.postValue(Result.error(error.getMessage()));
                     else liveData.postValue(Result.empty());
                     error.printStackTrace();
                 }

@@ -1,7 +1,7 @@
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
 
     <!-- App -->
-    <string name="app_name">影視</string>
+    <string name="app_name">星塵影視</string>
     <string name="exit_confirm_title">確定退出應用？</string>
     <string name="exit_confirm_message">目前頁面將關閉；如果正在播放，會繼續留在後台。</string>
     <string name="exit_confirm_positive">確認退出</string>
@@ -545,6 +545,7 @@ WebHomeTV 是播放器外殼，不內建內容源，請使用合法設定。</st
     <string name="error_play_parse">播放網址解析失敗</string>
     <string name="error_play_drm">本設備不支援所需的 DRM scheme</string>
     <string name="error_play_url">播放網址載入失敗</string>
+    <string name="error_dependency_insecure">此線路使用 HTTP JAR，已安全攔截，因此不會彈出信任確認。請更換 HTTPS 線路或聯絡來源提供者。</string>
     <string name="error_play_player">播放器初始化失敗，請重試</string>
     <string name="desc_back">返回</string>
     <string name="desc_cast">投播到電視</string>
@@ -560,6 +561,7 @@ WebHomeTV 是播放器外殼，不內建內容源，請使用合法設定。</st
     <string name="desc_rotate">旋轉</string>
     <string name="desc_voice">語音搜索</string>
     <string name="live_load_failed">直播源載入失敗</string>
+    <string name="live_no_channels">目前線路沒有可用直播頻道。請到「設定 > 直播」更換或設定直播來源。</string>
     <string name="error_play_flag">暫無線路資料</string>
     <string name="error_play_timeout">連線逾時</string>
     <string name="error_play_tvbus">錯誤代碼：<xliff:g name="name">%s</xliff:g></string>

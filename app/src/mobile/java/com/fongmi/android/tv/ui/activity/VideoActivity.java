@@ -551,7 +551,7 @@ public class VideoActivity extends PlaybackActivity implements Clock.Callback, C
             LutPanelDialog.create().player(player()).callback(new LutPanelDialog.Callback() {
                 @Override
                 public void onLutSelected(LutPreset preset) {
-                    onLutSelected(preset);
+                    VideoActivity.this.onLutSelected(preset);
                 }
 
                 @Override
@@ -812,6 +812,7 @@ public class VideoActivity extends PlaybackActivity implements Clock.Callback, C
     }
 
     private void setPreload(Result result) {
+        if (service() == null || !isOwner()) return;
         if (preloadContext == null || result == null || result.hasMsg() || result.shouldUseParse() || result.needParse() || TextUtils.isEmpty(result.getRealUrl())) return;
         Episode next = mEpisodeAdapter.getNext();
         if (next == null) return;

@@ -4,9 +4,12 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.system.ErrnoException;
+import android.system.Os;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +32,13 @@ import com.github.catvod.Init;
 import com.github.catvod.utils.Prefers;
 import com.google.gson.Gson;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Proxy;
+import java.util.IdentityHashMap;
+import java.util.Map;
+
+import dalvik.system.DexClassLoader;
+
 public class App extends Application implements Application.ActivityLifecycleCallbacks {
 
     private static volatile App instance;
@@ -36,6 +46,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
     private final Handler handler;
     private final Gson gson;
     private final long time;
+    private final Map<ActivityLifecycleCallbacks, ActivityLifecycleCallbacks> extensionCallbacks = new IdentityHashMap<>();
 
     private Activity activity;
     private Hook hook;
@@ -85,6 +96,54 @@ public class App extends Application implements Application.ActivityLifecycleCal
     }
 
     @Override
+    public void registerActivityLifecycleCallbacks(ActivityLifecycleCallbacks callback) {
+        if (callback == this || !(callback.getClass().getClassLoader() instanceof DexClassLoader)) {
+            super.registerActivityLifecycleCallbacks(callback);
+            return;
+        }
+        synchronized (extensionCallbacks) {
+            if (extensionCallbacks.containsKey(callback)) return;
+            ActivityLifecycleCallbacks guarded = (ActivityLifecycleCallbacks) Proxy.newProxyInstance(
+                    callback.getClass().getClassLoader(),
+                    new Class<?>[]{ActivityLifecycleCallbacks.class},
+                    (proxy, method, args) -> {
+                        if (method.getDeclaringClass() == Object.class) {
+                            return switch (method.getName()) {
+                                case "equals" -> proxy == args[0];
+                                case "hashCode" -> System.identityHashCode(proxy);
+                                case "toString" -> "GuardedActivityLifecycleCallback{" + callback.getClass().getName() + "}";
+                                default -> null;
+                            };
+                        }
+                        try {
+                            return method.invoke(callback, args);
+                        } catch (InvocationTargetException e) {
+                            removeFailedExtensionCallback(callback, e.getCause());
+                            return null;
+                        } catch (Throwable e) {
+                            removeFailedExtensionCallback(callback, e);
+                            return null;
+                        }
+                    });
+            extensionCallbacks.put(callback, guarded);
+            super.registerActivityLifecycleCallbacks(guarded);
+        }
+    }
+
+    @Override
+    public void unregisterActivityLifecycleCallbacks(ActivityLifecycleCallbacks callback) {
+        synchronized (extensionCallbacks) {
+            ActivityLifecycleCallbacks guarded = extensionCallbacks.remove(callback);
+            super.unregisterActivityLifecycleCallbacks(guarded == null ? callback : guarded);
+        }
+    }
+
+    private void removeFailedExtensionCallback(ActivityLifecycleCallbacks callback, Throwable error) {
+        Log.e("App", "Unregistering failed extension lifecycle callback " + callback.getClass().getName(), error);
+        unregisterActivityLifecycleCallbacks(callback);
+    }
+
+    @Override
     protected void attachBaseContext(Context base) {
         Init.set(base);
         Context localized = Setting.wrapLanguage(base);
@@ -95,6 +154,7 @@ public class App extends Application implements Application.ActivityLifecycleCal
     @Override
     public void onCreate() {
         super.onCreate();
+        configureGoRuntime();
         Prefers.remove("theme_color");
         Prefers.remove("wall_color");
         Setting.restoreClassicGreenWall();
@@ -109,6 +169,27 @@ public class App extends Application implements Application.ActivityLifecycleCal
         ProxySetting.apply();
         registerActivityLifecycleCallbacks(this);
         post(this::startBackgroundServices, 1200);
+    }
+
+    private void configureGoRuntime() {
+        String current = System.getenv("GODEBUG");
+        StringBuilder value = new StringBuilder();
+        if (current != null) {
+            for (String setting : current.split(",")) {
+                if (setting.startsWith("asyncpreemptoff=")) continue;
+                if (!setting.isEmpty()) {
+                    if (value.length() > 0) value.append(',');
+                    value.append(setting);
+                }
+            }
+        }
+        if (value.length() > 0) value.append(',');
+        value.append("asyncpreemptoff=1");
+        try {
+            Os.setenv("GODEBUG", value.toString(), true);
+        } catch (ErrnoException e) {
+            Log.w("App", "Unable to configure Go runtime", e);
+        }
     }
 
     private void startBackgroundServices() {

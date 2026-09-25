@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.fongmi.android.tv.R;
 import com.fongmi.android.tv.server.Server;
+import com.fongmi.android.tv.server.ServerAuth;
 import com.fongmi.android.tv.utils.Notify;
 import com.github.catvod.crawler.SpiderDebug;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -28,8 +29,8 @@ public final class DebugLogDialog {
 
     public static void show(FragmentActivity activity) {
         Server.get().start();
-        String localUrl = Server.get().getAddress("/debug/logs");
-        String lanUrl = Server.get().getAddress(false) + "/debug/logs";
+        String localUrl = ServerAuth.withToken(Server.get().getAddress("/debug/logs"));
+        String lanUrl = ServerAuth.withToken(Server.get().getAddress(false) + "/debug/logs");
         SpiderDebug.log("debug", "logs service ready url=%s lan=%s", localUrl, lanUrl);
         String message = activity.getString(R.string.debug_log_dialog_message, lanUrl, localUrl);
         AlertDialog dialog = new MaterialAlertDialogBuilder(activity)
