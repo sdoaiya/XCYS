@@ -1,307 +1,85 @@
 <div align="center">
 
-# WebHomeTV
+# 星尘影视 · Xingchen TV
 
-**面向 Android TV / 手机的影视播放器壳子**
+**为 Android TV、手机和平板打造的影音播放器**
 
-用户自己找 JSON / 配置源，再在 App 内导入、管理、同步和使用。
+支持点播与直播，兼顾电视遥控、大屏布局和移动设备操作。
 
-[![Release](https://img.shields.io/github/v/release/motao123/webtv?label=release)](https://github.com/sdoaiya/XCYS/releases)
-[![Android](https://img.shields.io/badge/Android-7.0%2B-3DDC84)](#下载安装)
-[![TV](https://img.shields.io/badge/Android%20TV-Leanback-4285F4)](#下载安装)
+[![Latest release](https://img.shields.io/github/v/release/sdoaiya/XCYS?label=最新版本)](https://github.com/sdoaiya/XCYS/releases)
+[![Android](https://img.shields.io/badge/Android-7.0%2B-3DDC84)](#安装)
+[![TV](https://img.shields.io/badge/Android%20TV-Leanback-4285F4)](#安装)
+
+[下载最新版本](https://github.com/sdoaiya/XCYS/releases/latest) · [查看更新记录](CHANGELOG.md) · [反馈问题](https://github.com/sdoaiya/XCYS/issues)
 
 </div>
 
 ---
 
-## 这是什么
+## 项目介绍
 
-`WebHomeTV` 是基于 **FongMi / CatVod** 生态增强维护的 Android 影音播放器壳子。
+星尘影视是基于 FongMi / CatVod 播放生态持续二次开发的 Android 播放器。项目提供播放器、配置管理和设备同步能力，适用于 Android TV、电视盒子、手机与平板。
 
-它**不内置内容，不分发 JSON**，而是提供一个更好用的壳子，帮助用户：
+应用不内置影视内容或站源。安装后请导入你自己维护、合法可用的点播或直播配置。
 
-- 导入自己的点播 / 直播 / 壁纸配置
-- 使用 WebHome 自定义首页
-- 管理多个配置
-- 在手机和电视之间同步配置与状态
-- 继续观看、收藏、历史跨设备迁移
+## 功能
 
-一句话：
+- **点播与直播**：支持多站点配置、选集、换源、直播频道及 EPG 信息。
+- **多播放内核**：提供 ExoPlayer、IJK 和 MPV；可设置解码、字幕、音轨、倍速、缓存与预加载选项。
+- **弹幕与字幕**：按需启用弹幕，调整显示样式；管理字幕轨道与字幕外观。
+- **WebHome 扩展**：可为站点配置网页首页，并通过受控的 `window.fm` 接口调用原生播放、搜索、请求和缓存能力。
+- **配置管理**：导入点播、直播和壁纸配置；支持 URL、文件及设备间同步，并保留配置历史。
+- **设备同步**：通过局域网迁移配置、播放记录、收藏、应用设置及选择的登录态数据。
+- **播放记录**：继续观看、历史与收藏支持跨配置恢复；可管理同步和 Webhook 行为。
+- **播放器定制**：管理 MPV 配置、画面与音频效果、LUT、歌词、播放控制和 OSD。
+- **手机与平板体验**：针对触控和大屏优化播放页；Android 15+ 平板支持 expanded PiP 比例配置。
+- **本地管理服务**：可在局域网使用管理页、文件操作、同步与调试日志功能。
+- **安全与稳定性**：持续加固本地服务和网页桥接，处理私网请求限制、数据迁移和配置兼容问题。
 
-> 这是一个“让用户自带配置更容易导入、管理和迁移”的播放器壳子。
+## 安装
 
----
+前往 [GitHub Releases](https://github.com/sdoaiya/XCYS/releases/latest) 下载 APK。每个版本提供手机端和电视端的 universal、arm64 与 armv7 包：
 
-## 当前亮点
-
-| 能力 | 说明 |
+| 设备 | 推荐版本 |
 | --- | --- |
-| 配置导入增强 | 导入前预检，失败不覆盖当前配置，支持 URL / 文件 / assets |
-| 配置管理 | 支持查看当前配置、历史配置、来源类型、最后使用时间 |
-| 一键同步 | 局域网同步配置、历史、收藏、WebHome、设置、登录态等壳子状态 |
-| 登录态学习 | 学习 Cookie / 登录态文件路径，供一键同步跨设备迁移网盘登录态 |
-| 最近设备记忆 | 一键同步会记住上次设备，下次优先选中 |
-| 继续观看 / 收藏 | 强化继续观看、收藏恢复与配置缺失时的回退路径 |
-| 播放连续性 | 换源、换集、解析播放后保持进度与倍速等播放状态一致 |
-| 多内核播放 | 支持 EXO / IJK / MPV 切换，默认 EXO |
-| 协议兼容 | 已接入 Force、JianPian、Thunder、TVBus 等 FongMi 协议扩展 |
-| 家庭过滤 | 按标签/关键词屏蔽不适合电视客厅展示的内容，并隐藏配置中心里的指定来源项 |
-| 网盘检测 | 检测网盘分享链接有效性，WebHome 与本地 HTTP 均可调用（可关闭） |
-| CSP 预热与兼容 | 配置加载后预初始化 Jar CSP，并隔离插件自带 protobuf，减少首次打开和版本冲突 |
-| 多语言与界面 | 支持英文、简体中文、繁体中文切换，手机端可调界面缩放 |
-| 播放记录同步管理 | 管理本机写入、远端同步和 Webhook，上报凭据在备份中自动脱敏并禁用 |
-| MPV 配置管理 | 管理 mpv.conf、input.conf 和脚本 profile；安全导入、历史回滚，脚本默认禁用 |
-| 搜索相关性 | 搜索结果按关键词匹配度过滤和排序，减少与关键词无关的结果 |
-| WebHome 首页 | 每个 CSP 站点都可以配置独立网页首页 |
-| Native SDK | 网页可通过 `window.fm` 调用受信任范围内的 App 原生播放、搜索、请求、缓存等能力 |
-| 内嵌 VOD 播放 | WebHome 网页可把剧集数据直接交给播放器（`player.playVodInline`），无需站点接口即可开播 |
-| 本地管理页 | 局域网访问 App 管理页面，支持同步、文件、调试等能力 |
-| 弹幕开关 | 电视/手机设置总开关与播放页显示状态一致；关闭后换集、切内核、云搜或外部注入都不会隐式开启 |
-| 播放控制增强 | 播放中重播、EXO/IJK/MPV 内核切换、0.1x–5x 倍速微调、章节选择、播放 OSD 与错误阶段提示 |
-| 字幕与解码 | 字幕样式高级设置、双字幕、音视频解码偏好、音频直通与 Dolby Vision 输出策略 |
-| 直播增强 | 失败自动换源、自定义 EPG 源与频道信息 |
-| 预加载设置 | 按内核配置预加载开关、线程、缓存大小与预加载时长，并自动预加载下一集 |
-| 弹幕与集数 | 弹幕密度/样式增强、集数标题紧凑显示 |
-| 内置壁纸 | 27 款内置设计壁纸，可在设置中循环切换 |
-| 安全加固 | 本地 HTTP 写操作强制 token、SSRF 拦截、CORS 白名单、路径遍历/XXE/DoS 防护 |
-| 发布与数据保护 | Release 签名缺失会中止构建，数据库异常恢复前保留失败库副本 |
-| Android 兼容性 | 跟进官方 FongMi api37，目标 SDK 更新到 37 |
-| 自动更新 | 多源更新，适配不同网络环境 |
+| Android TV / 电视盒子，架构未知 | `leanback-universal.apk` |
+| Android TV / arm64 设备 | `leanback-arm64_v8a.apk` |
+| Android TV / armv7 设备 | `leanback-armeabi_v7a.apk` |
+| 手机或平板，架构未知 | `mobile-universal.apk` |
+| 手机或平板 / arm64 设备 | `mobile-arm64_v8a.apk` |
+| 手机或平板 / armv7 设备 | `mobile-armeabi_v7a.apk` |
 
----
+不确定设备架构时，下载对应设备类型的 universal 包。安装后从设置页导入自己的配置源即可开始使用。
 
-## 下载安装
+## 配置与内容来源
 
-最新版本：**v5.12.3**
+应用本身不提供 JSON、影视站源或直播源。用户可以通过配置 URL、配置文件或另一台设备导入自己的点播、直播和壁纸配置。使用第三方配置前，请确认来源可信且内容使用符合当地法律及版权要求。
 
-项目主页（GitHub Pages）：https://motao123.github.io/webtv/
+## 项目来源
 
-下载地址：
-
-- [GitHub Releases](https://github.com/sdoaiya/XCYS/releases)
-
-推荐 APK：
-
-| 设备类型 | 推荐 APK |
-| --- | --- |
-| Android TV / 不确定架构 | `leanback-universal.apk` |
-| Android TV / 新电视盒子 | `leanback-arm64_v8a.apk` |
-| Android TV / 老盒子 | `leanback-armeabi_v7a.apk` |
-| Android 手机 / 不确定架构 | `mobile-universal.apk` |
-| Android 手机 / 新设备 | `mobile-arm64_v8a.apk` |
-| Android 手机 / 老设备 | `mobile-armeabi_v7a.apk` |
-
-> 不确定 CPU 架构时，优先下载对应设备的 `universal` 通用包。
-
----
-
-## 首次使用
-
-安装后先导入你自己的配置源。
-
-常见方式：
-
-- 粘贴配置 URL
-- 选择本地配置文件
-- 通过局域网同步从另一台设备导入
-
-可导入的配置类型：
-
-- 点播配置
-- 直播配置
-- 壁纸配置
-
-项目本身不附带内容源，用户需要自行准备合法可用的 JSON / 配置地址。
-
----
-
-## 适合谁
-
-适合这些用户：
-
-- 已经有自己的 TVBox / FongMi / CatVod 配置源
-- 想在电视端使用 WebHome 自定义首页
-- 想把手机和电视上的配置、历史、收藏同步起来
-- 想把播放器壳子和内容源彻底分离
-
-不适合这些用户：
-
-- 希望安装后自带影视内容
-- 希望仓库直接提供 JSON / 站源
-
----
-
-## 主要功能
-
-### 1. 配置导入与管理
-
-- 导入前预检
-- 导入失败不覆盖当前配置
-- 查看当前配置 / 历史配置
-- 显示来源类型和最后使用时间
-- 删除配置前提示关联影响
-
-### 2. 一键同步
-
-可同步的壳子状态包括：
-
-- 配置与站源
-- 本地脚本 / Jar 数据
-- WebHome 数据
-- 搜索记录
-- 继续观看
-- 收藏
-- 应用设置
-- 登录态（Cookie / 登录态文件路径）
-
-### 3. 登录态学习
-
-- 在增强功能中打开「登录态学习」
-- 开始学习 → 完成网盘登录 → 返回完成学习
-- 可管理已选路径与待确认候选，并预览文件内容
-- 一键同步勾选「登录态」即可跨设备迁移
-
-### 4. 继续观看 / 收藏
-
-- 记录最近观看进度
-- 收藏内容可跨配置恢复
-- 配置缺失时提供回退路径
-
-### 5. 家庭过滤
-
-- 在增强功能中开启
-- 使用关键词屏蔽不适合电视端首页展示的内容
-- 适用于原生首页 / 分类 / 搜索等内容流
-- WebHome 页面也可以通过 `fm.config()` 读取过滤策略并自行配合隐藏
-
-### 6. WebHome
-
-- 站点可配置独立网页首页
-- 支持透明背景
-- 支持网页与原生能力联动
-- 可通过 `window.fm` 调用搜索、播放、请求、缓存等能力
-
-### 7. 本地管理页
-
-- 局域网打开管理页
-- 文件管理
-- 同步控制
-- 调试日志
-- 配置相关操作
-
----
-
-## WebHome SDK（简要）
-
-常用能力：
-
-| 能力 | 说明 |
-| --- | --- |
-| `fm.req(url, options)` | 原生请求，绕过普通浏览器 CORS 限制 |
-| `fm.res(url, options)` | 生成本地资源网关地址 |
-| `fm.play(url, title, options)` | 播放直链或 `push://` 地址 |
-| `fm.vod(siteKey, vodId, title, pic)` | 打开原生详情 / 播放链路 |
-| `fm.search(keyword, { direct })` | 调用原生搜索 |
-| `fm.openLive()` / `fm.openKeep()` / `fm.openSetting()` | 打开原生页面 |
-| `fm.history()` | 读取最近观看记录 |
-| `fm.config()` | 获取当前配置与家庭过滤状态 |
-| `fm.site()` | 获取当前站点信息 |
-| `fm.cache` | 本地缓存能力 |
-| `fm.back()` / `fm.reload()` | 处理返回与刷新 |
-
-更完整说明见文档。
-
----
-
-## 文档
-
-- [应用完整开发文档](docs/应用完整开发文档.md)
-- [WebHome 扩展脚本开发指南](docs/webhome-extension/README.md)
-
-如果你是开发者，建议先看：
-
-1. WebHome 首页配置
-2. Native SDK
-3. 配置导入与管理逻辑
-4. 本地管理页与同步逻辑
-
----
+本项目在 FongMi / CatVod 开源播放器生态基础上开发，保留上游播放能力，并持续维护星尘影视自己的应用品牌、界面、播放器功能、WebHome 扩展和设备同步实现。感谢上游项目与相关开源依赖的贡献者。
 
 ## 构建
 
-环境要求：
-
-- JDK 21
-- Android SDK 37
-- 仓库内置 `gradlew`
-
-常用构建命令：
+需要 JDK 21、Android SDK 37，以及 Chaquopy 所需的 Python 3.10。Release 构建还需要本地签名配置；不要将 keystore 或密码提交到仓库。
 
 ```bash
-bash gradlew :app:assembleMobileUniversalRelease
-bash gradlew :app:assembleMobileArm64_v8aRelease
-bash gradlew :app:assembleMobileArmeabi_v7aRelease
-bash gradlew :app:assembleLeanbackUniversalRelease
-bash gradlew :app:assembleLeanbackArm64_v8aRelease
-bash gradlew :app:assembleLeanbackArmeabi_v7aRelease
+./gradlew :app:assembleMobileUniversalRelease
+./gradlew :app:assembleMobileArm64_v8aRelease
+./gradlew :app:assembleMobileArmeabi_v7aRelease
+./gradlew :app:assembleLeanbackUniversalRelease
+./gradlew :app:assembleLeanbackArm64_v8aRelease
+./gradlew :app:assembleLeanbackArmeabi_v7aRelease
 ```
 
-GitHub Actions 支持手动触发，也会在推送 `v*` 标签时自动构建六个 APK 并创建 Release。
+Android Studio 可直接打开此仓库。主要 Android 应用代码位于 `app/`；`catvod/`、`quickjs/` 和 `chaquo/` 提供解析、脚本和 Python 运行时支持。
 
----
+## 文档
 
-## 更新说明
+- [更新记录](CHANGELOG.md)
+- [应用开发文档](docs/应用完整开发文档.md)
+- [WebHome 扩展脚本指南](docs/webhome-extension/README.md)
 
-App 内更新入口：
+## 反馈与贡献
 
-```text
-设置 → 版本检查
-```
-
-更新策略：
-
-- 检查到新版本后下载 APK
-- 下载完成后交给系统安装器
-- 如果自动安装失败，APK 会导出到 Downloads 目录，用户可手动安装
-
----
-
-## 安全加固
-
-针对代码安全审计结果，v5.6.0 修复了以下高危项：
-
-- **本地 HTTP 认证**：管理/写操作端点（`/manage`、`/file`、`/upload`、`/action`、`/debug`、`/cache`、`/pan/check`、播放进度 API 等）现在即使来自本机回环地址也强制要求服务器 token；播放记录/进度端点纳入 token 保护范围。
-- **DNS rebinding 防护**：回环请求校验 `Host` 头必须为 `127.0.0.1`/`localhost`/`::1`。
-- **SSRF 防护**：WebResource 网关禁用自动重定向并逐跳校验；Webhook、网盘检测、WebHome 扩展加载、MPV HLS 代理均拒绝私有/回环/链路本地地址。
-- **CORS 收紧**：播放进度/记录/网盘检测接口不再反射任意 Origin，仅对本地回环 Origin 允许携带凭据。
-- **路径遍历防护**：`file://` 播放入口拒绝目录穿越与应用私有目录，仅接受媒体扩展名。
-- **XXE 防护**：XML 结果解析拒绝 `DOCTYPE`/`ENTITY`。
-- **DoS 防护**：DLNA 服务器与播放进度 API 对请求行、消息体大小设置上限。
-- **信息泄露防护**：`site.info` 桥接方法不再对非受信页面开放；`pan.play` 对非受信页面要求播放确认并限制为 http/https。
-- **Python 依赖下载**：HTTPS 强制校验证书，并限制重定向跳数。
-
-已知可接受风险（记录在案）：
-
-- 迅雷网盘签名密钥内嵌于客户端，属客户端签名固有限制，无法真正隐藏。
-- 直播/媒体源普遍使用明文 HTTP，无法全局禁用；配置源与更新服务器已强制 HTTPS。
-- Android `addJavascriptInterface` 无法按 iframe 区分信任来源，跨源 iframe 信任边界为平台限制。
-
-v5.11.0 追加（基于全面代码审计）：
-
-- `/m3u8` 代理目标强制公网校验，端点纳入 IP 保护清单；`/webResource` 禁止被外部页面 iframe，CORS 白名单收紧到精确端口。
-- WebHome 桥的敏感读取方法要求主帧 bridgeToken（缓解跨源 iframe 冒用受信身份）。
-- 登录态同步档案改为 AES-GCM 加密传输（密钥=对端配对 token）；同步请求统一要求配对码认证。
-- 连接时私网 DNS 过滤（封堵 DNS 重绑定 TOCTOU），私网判定补齐 CGNAT/198.18/NAT64 网段。
-
----
-
-## 开源说明
-
-本仓库只提供技术实现和播放器壳子能力：
-
-- 不内置影视内容
-- 不维护站源
-- 不分发 JSON
-- 不提供内容接口
-
-所有内容来源都应由用户自行配置，并确保合法合规。
+请通过 [GitHub Issues](https://github.com/sdoaiya/XCYS/issues) 提交问题或功能建议。报告问题时，建议附上设备型号、Android 版本、应用版本及可复现步骤；不要在公开 issue 中粘贴账号密码、Cookie、令牌或私有配置。
