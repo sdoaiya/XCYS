@@ -175,7 +175,8 @@ public final class DownloadService extends Service {
             String action = intent.getAction();
             String id = intent.getStringExtra(EXTRA_ID);
             if (id != null && (ACTION_PAUSE.equals(action) || ACTION_RESUME.equals(action) || ACTION_DELETE.equals(action))) {
-                worker.execute(() -> handleAction(action, id));
+                Task.execute(() -> handleAction(action, id));
+                if (ACTION_RESUME.equals(action)) worker.execute(this::drain);
             }
         }
         return START_NOT_STICKY;
