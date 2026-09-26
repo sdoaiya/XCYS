@@ -44,12 +44,19 @@ public final class DownloadActivity extends AppCompatActivity {
         root.addView(actions);
         TextView empty = new TextView(this);
         empty.setText(R.string.download_empty);
-        root.addView(empty);
+        empty.setGravity(android.view.Gravity.CENTER);
+        empty.setTextAppearance(com.google.android.material.R.style.TextAppearance_Material3_BodyLarge);
+        root.addView(empty, new LinearLayout.LayoutParams(-1, 0, 1));
         ListView list = new ListView(this);
+        list.setDivider(null);
+        list.setDividerHeight(0);
         ArrayAdapter<DownloadTask> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_2, android.R.id.text1, tasks) {
             @Override public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
                 DownloadTask task = getItem(position);
+                int horizontal = (int) (16 * getResources().getDisplayMetrics().density);
+                int vertical = (int) (10 * getResources().getDisplayMetrics().density);
+                view.setPadding(horizontal, vertical, horizontal, vertical);
                 ((TextView) view.findViewById(android.R.id.text1)).setText(task.title + " · " + task.episodeName);
                 String progress = Formatter.formatFileSize(DownloadActivity.this, task.downloaded);
                 if (task.total > 0) progress += " / " + Formatter.formatFileSize(DownloadActivity.this, task.total);
@@ -74,6 +81,7 @@ public final class DownloadActivity extends AppCompatActivity {
     private void addButton(LinearLayout row, int text, Runnable action) {
         Button button = new Button(this);
         button.setText(text);
+        button.setMinHeight((int) (48 * getResources().getDisplayMetrics().density));
         button.setOnClickListener(v -> action.run());
         row.addView(button, new LinearLayout.LayoutParams(0, -2, 1));
     }
