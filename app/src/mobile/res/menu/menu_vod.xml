@@ -29,4 +29,11 @@
         app:iconTint="@color/white"
         app:showAsAction="always" />
 
+    <item
+        android:id="@+id/downloads"
+        android:icon="@drawable/ic_sync_download"
+        android:title="@string/download_title"
+        app:iconTint="@color/white"
+        app:showAsAction="always" />
+
 </menu>

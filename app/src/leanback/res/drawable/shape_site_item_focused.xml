@@ -4,11 +4,11 @@
 
     <solid android:color="#2F6FED" />
 
-    <corners android:radius="4dp" />
+    <corners android:radius="@dimen/radius_sm" />
 
     <stroke
         android:width="2dp"
-        android:color="@color/white" />
+        android:color="?attr/colorPrimary" />
 
     <padding
         android:bottom="10dp"

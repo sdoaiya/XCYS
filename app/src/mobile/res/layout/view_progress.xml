@@ -19,7 +19,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
         android:textColor="@color/white"
-        android:textSize="12sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Caption"
         android:visibility="gone"
         tools:text="120 KB/s"
         tools:visibility="visible" />

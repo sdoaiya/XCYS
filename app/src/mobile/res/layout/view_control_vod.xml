@@ -12,8 +12,8 @@
         android:layout_height="?attr/actionBarSize"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="4dp"
-        android:paddingEnd="4dp">
+        android:paddingStart="@dimen/spacing_xs"
+        android:paddingEnd="@dimen/spacing_xs">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/back"
@@ -28,8 +28,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
+            android:layout_marginStart="@dimen/spacing_xs"
+            android:layout_marginEnd="@dimen/spacing_xs"
             android:gravity="center_vertical"
             android:orientation="vertical"
             android:layout_weight="1">
@@ -41,7 +41,7 @@
                 android:ellipsize="marquee"
                 android:singleLine="true"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Title"
                 android:visibility="invisible"
                 tools:text="慶餘年第一季：第一集" />
 
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:textColor="@color/white_80"
-                android:textSize="11sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Micro"
                 android:visibility="gone"
                 tools:text="1920 x 1080"
                 tools:visibility="visible" />
@@ -147,7 +147,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="@dimen/spacing_xs"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -169,7 +169,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="4dp" />
+        android:layout_marginEnd="@dimen/spacing_xs" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/bottom"
@@ -177,7 +177,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
-        android:paddingBottom="8dp">
+        android:paddingBottom="@dimen/spacing_sm">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/parse"
@@ -186,7 +186,7 @@
             android:clipChildren="false"
             android:clipToPadding="false"
             android:orientation="horizontal"
-            android:padding="8dp"
+            android:padding="@dimen/spacing_sm"
             android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="5"
@@ -197,8 +197,8 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingStart="16dp"
-            android:paddingEnd="4dp">
+            android:paddingStart="@dimen/spacing_md"
+            android:paddingEnd="@dimen/spacing_xs">
 
             <com.fongmi.android.tv.ui.custom.CustomSeekView
                 android:id="@+id/seek"

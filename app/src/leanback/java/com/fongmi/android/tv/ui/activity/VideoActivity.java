@@ -412,6 +412,7 @@ public class VideoActivity extends PlaybackActivity implements CustomKeyDownVod.
     @SuppressLint("ClickableViewAccessibility")
     protected void initEvent() {
         mBinding.keep.setOnClickListener(view -> onKeep());
+        mBinding.downloadPill.setOnClickListener(view -> com.fongmi.android.tv.ui.dialog.DownloadEpisodesDialog.show(this, VodConfig.getCid(), getKey(), getId(), getName(), safeFlag(), safeEpisode(), isUseParse()));
         mBinding.video.setOnClickListener(view -> onVideo());
         mBinding.change1.setOnClickListener(view -> onChange());
         mBinding.content.setOnClickListener(view -> onContent());

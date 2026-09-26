@@ -9,5 +9,5 @@
     android:focusableInTouchMode="true"
     android:gravity="center"
     android:textColor="@color/text"
-    android:textSize="14sp"
+    android:textAppearance="@style/TextAppearance.WebTV.Body"
     tools:text="解析" />

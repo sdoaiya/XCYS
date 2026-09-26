@@ -21,7 +21,7 @@
             android:ellipsize="middle"
             android:singleLine="true"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="14sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Body"
             app:backgroundTint="@color/selector_button"
             app:strokeColor="@color/selector_stroke"
             tools:text="https://fongmi.github.io/cat.json" />
@@ -30,11 +30,11 @@
             android:id="@+id/subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/spacing_xs"
             android:ellipsize="middle"
             android:maxLines="2"
             android:textColor="?attr/colorOnSurfaceVariant"
-            android:textSize="12sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Caption"
             tools:text="url · https://fongmi.github.io/cat.json" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -43,7 +43,7 @@
         android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/spacing_md"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_setting_delete" />
 

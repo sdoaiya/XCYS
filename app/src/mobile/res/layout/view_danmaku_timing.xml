@@ -10,8 +10,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingVertical="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingVertical="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -33,7 +33,7 @@
         android:id="@+id/timeOffsetSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:stepSize="1000"
         android:valueFrom="-60000"
         android:valueTo="60000"
@@ -44,8 +44,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -67,7 +67,7 @@
         android:id="@+id/durationSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:stepSize="500"
         android:valueFrom="3000"
         android:valueTo="15000"
@@ -78,8 +78,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -101,7 +101,7 @@
         android:id="@+id/fixedDurationSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:stepSize="500"
         android:valueFrom="2000"
         android:valueTo="10000"

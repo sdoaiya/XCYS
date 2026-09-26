@@ -11,9 +11,9 @@
         android:layout_height="wrap_content"
         android:clipChildren="false"
         android:clipToPadding="false"
-        android:paddingStart="24dp"
-        android:paddingTop="24dp"
-        android:paddingEnd="24dp"
+        android:paddingStart="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_lg"
+        android:paddingEnd="@dimen/spacing_lg"
         app:focusOutEnd="false"
         app:focusOutFront="false" />
 

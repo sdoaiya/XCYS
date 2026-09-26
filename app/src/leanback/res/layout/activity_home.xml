@@ -13,23 +13,23 @@
         android:animateLayoutChanges="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="24dp"
-        android:paddingTop="24dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="8dp">
+        android:paddingStart="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_lg"
+        android:paddingEnd="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_sm">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/logo"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="@dimen/spacing_12"
             android:src="@drawable/ic_logo" />
 
         <com.fongmi.android.tv.ui.custom.CustomTitleView
             android:id="@+id/title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/spacing_md"
             android:layout_weight="1"
             android:ellipsize="marquee"
             android:focusable="false"
@@ -37,14 +37,14 @@
             android:singleLine="true"
             android:text="@string/app_name"
             android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Display" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/clock"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Display"
             tools:text="09:20:00" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -57,10 +57,10 @@
         android:clipToPadding="false"
         android:nextFocusUp="@id/title"
         android:nextFocusDown="@id/recycler"
-        android:paddingStart="24dp"
-        android:paddingTop="4dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="8dp"
+        android:paddingStart="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs"
+        android:paddingEnd="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_sm"
         android:visibility="gone"
         app:focusOutEnd="false"
         app:focusOutFront="false"
@@ -79,10 +79,10 @@
             android:clipChildren="false"
             android:clipToPadding="false"
             android:nextFocusUp="@id/typeRecycler"
-            android:paddingStart="24dp"
-            android:paddingTop="8dp"
-            android:paddingEnd="24dp"
-            android:paddingBottom="24dp"
+            android:paddingStart="@dimen/spacing_lg"
+            android:paddingTop="@dimen/spacing_sm"
+            android:paddingEnd="@dimen/spacing_lg"
+            android:paddingBottom="@dimen/spacing_lg"
             app:focusOutEnd="true"
             app:focusOutFront="true" />
 

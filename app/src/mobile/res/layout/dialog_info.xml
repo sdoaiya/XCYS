@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fillViewport="true"
-    android:padding="24dp">
+    android:padding="@dimen/spacing_lg">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -17,25 +17,25 @@
             android:ellipsize="middle"
             android:linksClickable="false"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="20sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Display" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="14sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/url"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:autoLink="all"
             android:linksClickable="false"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="14sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>

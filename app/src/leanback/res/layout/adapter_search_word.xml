@@ -11,5 +11,5 @@
     android:focusableInTouchMode="true"
     android:singleLine="true"
     android:textColor="@color/white"
-    android:textSize="16sp"
+    android:textAppearance="@style/TextAppearance.WebTV.Title"
     tools:text="推薦" />

@@ -413,6 +413,8 @@ public class VideoActivity extends PlaybackActivity implements Clock.Callback, C
         mBinding.control.cast.setOnClickListener(view -> onCast());
         mBinding.control.info.setOnClickListener(view -> onInfo());
         mBinding.control.keep.setOnClickListener(view -> onKeep());
+        mBinding.keepPill.setOnClickListener(view -> onKeep());
+        mBinding.downloadPill.setOnClickListener(view -> com.fongmi.android.tv.ui.dialog.DownloadEpisodesDialog.show(this, VodConfig.getCid(), getKey(), getId(), getName(), safeFlag(), safeEpisode(), isUseParse()));
         mBinding.control.play.setOnClickListener(view -> checkPlay());
         mBinding.control.next.setOnClickListener(view -> checkNext());
         mBinding.control.prev.setOnClickListener(view -> checkPrev());
@@ -706,6 +708,7 @@ public class VideoActivity extends PlaybackActivity implements Clock.Callback, C
         item.checkName(getName());
         mBinding.progressLayout.showContent();
         mBinding.name.setText(item.getName());
+        ImgUtil.load(item.getName(), item.getPic(), mBinding.poster, true);
         mFlagAdapter.addAll(item.getFlags());
         App.removeCallbacks(mR4);
         checkHistory(item);
@@ -1261,7 +1264,6 @@ public class VideoActivity extends PlaybackActivity implements Clock.Callback, C
     private void enterFullscreen() {
         if (isFullscreen()) return;
         setFullscreen(true);
-        if (isLand() && !player().isPortrait()) setTransition();
         mBinding.video.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
         setRequestedOrientation(player().isPortrait() ? ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT : ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
         mBinding.control.title.setVisibility(View.VISIBLE);
@@ -1275,7 +1277,6 @@ public class VideoActivity extends PlaybackActivity implements Clock.Callback, C
     private void exitFullscreen() {
         if (!isFullscreen()) return;
         setFullscreen(false);
-        if (isLand() && !player().isPortrait()) setTransition();
         setRequestedOrientation(isPort() ? ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT : ActivityInfo.SCREEN_ORIENTATION_FULL_USER);
         mBinding.episode.postDelayed(() -> mBinding.episode.scrollToPosition(mEpisodeAdapter.getPosition()), 100);
         mBinding.control.title.setVisibility(View.INVISIBLE);
@@ -1483,7 +1484,10 @@ public class VideoActivity extends PlaybackActivity implements Clock.Callback, C
     }
 
     private void checkKeepImg() {
-        mBinding.control.keep.setImageResource(Keep.find(getHistoryKey()) == null ? R.drawable.ic_control_keep_off : R.drawable.ic_control_keep_on);
+        boolean kept = Keep.find(getHistoryKey()) != null;
+        mBinding.control.keep.setImageResource(kept ? R.drawable.ic_control_keep_on : R.drawable.ic_control_keep_off);
+        mBinding.keepPillIcon.setImageResource(kept ? R.drawable.ic_control_keep_on : R.drawable.ic_control_keep_off);
+        mBinding.keepPillText.setText(kept ? R.string.detail_keep_done : R.string.detail_keep);
     }
 
     private void checkLockImg() {
@@ -1585,7 +1589,7 @@ public class VideoActivity extends PlaybackActivity implements Clock.Callback, C
     }
 
     private void applyHistorySpeed() {
-        if (mHistory == null) return;
+        if (mHistory == null || service() == null) return;
         mBinding.control.action.speed.setText(player().setSpeed(mHistory.getSpeed()));
     }
 

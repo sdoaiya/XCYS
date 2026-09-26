@@ -9,9 +9,9 @@
     android:focusableInTouchMode="false"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingStart="16dp"
+    android:paddingStart="@dimen/spacing_md"
     android:paddingTop="10dp"
-    android:paddingEnd="16dp"
+    android:paddingEnd="@dimen/spacing_md"
     android:paddingBottom="10dp">
 
     <com.google.android.material.textview.MaterialTextView
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="@color/sync_device_text"
-        android:textSize="13sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Caption"
         tools:text="TV" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -37,7 +37,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:textColor="@color/sync_device_text"
-            android:textSize="15sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Body"
             tools:text="Living Room TV" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -48,7 +48,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:textColor="@color/sync_device_subtext"
-            android:textSize="12sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Caption"
             tools:text="192.168.1.20:9978" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

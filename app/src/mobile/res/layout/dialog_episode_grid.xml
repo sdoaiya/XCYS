@@ -10,16 +10,16 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="24dp"
-        android:paddingBottom="16dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_md">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/detail_episode"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="16sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

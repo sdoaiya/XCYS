@@ -7,12 +7,12 @@
     android:clipChildren="false"
     android:clipToPadding="false"
     android:orientation="horizontal"
-    android:padding="24dp">
+    android:padding="@dimen/spacing_lg">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="@dimen/spacing_lg"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -25,7 +25,7 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginEnd="12dp"
+                android:layout_marginEnd="@dimen/spacing_12"
                 android:contentDescription="@string/desc_voice"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
@@ -50,7 +50,7 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 android:textCursorDrawable="@drawable/shape_cursor"
-                android:textSize="24sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Display" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:clipChildren="false"
             android:clipToPadding="false"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/spacing_md"
             android:overScrollMode="never"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="7"
@@ -85,7 +85,7 @@
                 android:id="@+id/recordLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="@dimen/spacing_md"
                 android:orientation="vertical"
                 android:visibility="gone">
 
@@ -95,7 +95,7 @@
                     android:layout_marginBottom="14dp"
                     android:text="@string/search_record"
                     android:textColor="@color/white"
-                    android:textSize="24sp" />
+                    android:textAppearance="@style/TextAppearance.WebTV.Display" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recordRecycler"
@@ -117,7 +117,7 @@
                 android:layout_marginBottom="14dp"
                 android:text="@string/search_hot"
                 android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Display" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/wordRecycler"
@@ -146,7 +146,7 @@
                     android:layout_marginBottom="14dp"
                     android:text="@string/search_hot_tv"
                     android:textColor="@color/white"
-                    android:textSize="24sp" />
+                    android:textAppearance="@style/TextAppearance.WebTV.Display" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/hotTvRecycler"
@@ -162,11 +162,11 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="@dimen/spacing_md"
                     android:layout_marginBottom="14dp"
                     android:text="@string/search_hot_movie"
                     android:textColor="@color/white"
-                    android:textSize="24sp" />
+                    android:textAppearance="@style/TextAppearance.WebTV.Display" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/hotMovieRecycler"
@@ -182,11 +182,11 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="@dimen/spacing_md"
                     android:layout_marginBottom="14dp"
                     android:text="@string/search_hot_variety"
                     android:textColor="@color/white"
-                    android:textSize="24sp" />
+                    android:textAppearance="@style/TextAppearance.WebTV.Display" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/hotVarietyRecycler"

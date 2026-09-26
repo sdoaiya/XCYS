@@ -8,7 +8,7 @@
         android:id="@+id/top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:padding="@dimen/spacing_md"
         android:visibility="gone"
         tools:visibility="visible">
 
@@ -17,12 +17,12 @@
             style="@style/Shadow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/spacing_md"
             android:layout_toStartOf="@+id/clock"
             android:ellipsize="marquee"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Display"
             tools:text="民視" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -33,7 +33,7 @@
             android:layout_below="@+id/title"
             android:layout_alignStart="@+id/title"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Title"
             tools:text="1920 x 1080" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -44,7 +44,7 @@
             android:layout_alignParentEnd="true"
             android:fontFeatureSettings="tnum"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Display"
             tools:text="09:20:00" />
 
     </RelativeLayout>
@@ -69,10 +69,10 @@
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Title"
             tools:text="@string/error_play_url" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -119,17 +119,17 @@
                 android:layout_height="wrap_content"
                 android:fontFeatureSettings="tnum"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Title"
                 tools:text="00:00:00" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
+                android:layout_marginStart="@dimen/spacing_xs"
+                android:layout_marginEnd="@dimen/spacing_xs"
                 android:text="/"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/duration"
@@ -137,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:fontFeatureSettings="tnum"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Title"
                 tools:text="00:00:00" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -151,8 +151,8 @@
         android:background="@drawable/shape_live_info"
         android:gravity="center"
         android:orientation="horizontal"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        android:paddingStart="@dimen/spacing_md"
+        android:paddingEnd="@dimen/spacing_md"
         android:visibility="gone"
         tools:visibility="visible">
 
@@ -160,38 +160,38 @@
             android:id="@+id/number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="@dimen/spacing_12"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Headline"
             tools:text="005" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/logo"
             android:layout_width="48dp"
             android:layout_height="36dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="@dimen/spacing_12"
             android:visibility="gone" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="@dimen/spacing_12"
             android:maxEms="48"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Headline"
             tools:text="民視" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/play"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="@dimen/spacing_12"
             android:layout_weight="1"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Headline"
             tools:text="正在播放：食神" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -199,7 +199,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Headline"
             tools:text="來源 1" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

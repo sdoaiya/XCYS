@@ -33,13 +33,12 @@
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="-8dp"
             android:clipChildren="false"
             android:clipToPadding="false"
             android:overScrollMode="never"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:paddingBottom="8dp"
+            android:paddingStart="@dimen/spacing_sm"
+            android:paddingEnd="@dimen/spacing_sm"
+            android:paddingBottom="@dimen/spacing_sm"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/adapter_file" />
 

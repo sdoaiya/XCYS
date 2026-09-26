@@ -19,7 +19,7 @@
         android:shadowDy="1.5"
         android:shadowRadius="2"
         android:textColor="@color/white"
-        android:textSize="14sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/osdTopRight"
@@ -33,14 +33,14 @@
         android:shadowDy="1.5"
         android:shadowRadius="2"
         android:textColor="@color/white"
-        android:textSize="14sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/osdBottomLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|start"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="@dimen/spacing_xs"
         android:ellipsize="end"
         android:maxLines="2"
         android:shadowColor="#CC000000"
@@ -48,14 +48,14 @@
         android:shadowDy="1.5"
         android:shadowRadius="2"
         android:textColor="@color/white"
-        android:textSize="14sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/osdBottomRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="@dimen/spacing_xs"
         android:ellipsize="end"
         android:maxLines="2"
         android:shadowColor="#CC000000"
@@ -63,7 +63,7 @@
         android:shadowDy="1.5"
         android:shadowRadius="2"
         android:textColor="@color/white"
-        android:textSize="14sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
     <ProgressBar
         android:id="@+id/osdMiniProgress"

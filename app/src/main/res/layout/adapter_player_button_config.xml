@@ -5,14 +5,14 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="48dp"
-    android:layout_marginBottom="8dp"
+    android:layout_marginBottom="@dimen/spacing_sm"
     android:addStatesFromChildren="true"
     android:background="@drawable/selector_git_cloud_card"
     android:descendantFocusability="afterDescendants"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingStart="12dp"
-    android:paddingEnd="8dp">
+    android:paddingStart="@dimen/spacing_12"
+    android:paddingEnd="@dimen/spacing_sm">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/name"
@@ -22,7 +22,7 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:textColor="#202124"
-        android:textSize="15sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Body"
         tools:text="倍速" />
 
     <androidx.appcompat.widget.AppCompatImageButton
@@ -32,7 +32,7 @@
         android:background="@drawable/selector_dialog_switch"
         android:contentDescription="@string/setting_show"
         android:focusable="true"
-        android:padding="8dp"
+        android:padding="@dimen/spacing_sm"
         android:scaleType="center"
         android:src="@drawable/ic_player_button_visible"
         app:tint="@color/dialog_tonal_button_text" />

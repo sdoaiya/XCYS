@@ -13,17 +13,22 @@
         android:layout_height="wrap_content"
         android:fontFeatureSettings="tnum"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Body"
         tools:text="00:00:00" />
 
     <androidx.media3.ui.DefaultTimeBar
         android:id="@+id/timeBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="@dimen/spacing_sm"
+        android:layout_marginEnd="@dimen/spacing_sm"
         android:layout_weight="1"
-        app:bar_height="2dp" />
+        app:bar_height="3dp"
+        app:buffered_color="@color/white_30"
+        app:played_color="?attr/colorPrimary"
+        app:scrubber_color="@color/white"
+        app:scrubber_dragged_size="12dp"
+        app:unplayed_color="@color/white_30" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/duration"
@@ -31,7 +36,7 @@
         android:layout_height="wrap_content"
         android:fontFeatureSettings="tnum"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Body"
         tools:text="00:00:00" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

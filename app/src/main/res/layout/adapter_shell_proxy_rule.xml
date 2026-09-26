@@ -35,7 +35,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="@dimen/spacing_sm"
         android:layout_weight="1"
         android:hint="@string/setting_proxy_rule_url"
         app:boxBackgroundColor="@color/white"
@@ -61,10 +61,10 @@
         android:id="@+id/delete"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="@dimen/spacing_sm"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/setting_delete"
-        android:padding="8dp"
+        android:padding="@dimen/spacing_sm"
         android:src="@drawable/ic_action_delete"
         app:tint="#C5221F" />
 
@@ -72,9 +72,9 @@
         android:id="@+id/drag"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="@dimen/spacing_sm"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:padding="8dp"
+        android:padding="@dimen/spacing_sm"
         android:src="@drawable/ic_action_drag"
         app:tint="#5F6368" />
 

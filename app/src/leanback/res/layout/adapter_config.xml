@@ -23,18 +23,18 @@
             android:gravity="center"
             android:singleLine="true"
             android:textColor="@color/config_history_text"
-            android:textSize="18sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Headline"
             tools:text="https://fongmi.github.io/cat.json" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/spacing_xs"
             android:ellipsize="middle"
             android:maxLines="2"
             android:textColor="@color/config_history_text"
-            android:textSize="12sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Caption"
             tools:text="url · https://fongmi.github.io/cat.json" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -43,11 +43,11 @@
         android:id="@+id/delete"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="@dimen/spacing_12"
         android:background="@drawable/selector_config_history_item"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:padding="8dp"
+        android:padding="@dimen/spacing_sm"
         android:src="@drawable/ic_setting_delete"
         app:tint="@color/config_history_icon" />
 

@@ -4,7 +4,7 @@
     android:id="@+id/text"
     android:layout_width="wrap_content"
     android:layout_height="36dp"
-    android:layout_margin="4dp"
+    android:layout_margin="@dimen/spacing_xs"
     android:background="@drawable/selector_search_hot_word"
     android:focusable="true"
     android:focusableInTouchMode="true"
@@ -13,5 +13,5 @@
     android:paddingEnd="10dp"
     android:singleLine="true"
     android:textColor="@color/white"
-    android:textSize="15sp"
+    android:textAppearance="@style/TextAppearance.WebTV.Body"
     tools:text="熱搜詞" />

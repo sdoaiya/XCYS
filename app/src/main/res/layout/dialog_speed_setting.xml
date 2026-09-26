@@ -10,10 +10,10 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="24dp"
-        android:paddingTop="16dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="8dp">
+        android:paddingStart="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_md"
+        android:paddingEnd="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_sm">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="24dp">
+            android:paddingBottom="@dimen/spacing_lg">
 
             <include
                 android:id="@+id/speed"
@@ -55,8 +55,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingHorizontal="24dp"
-                android:paddingTop="8dp">
+                android:paddingHorizontal="@dimen/spacing_lg"
+                android:paddingTop="@dimen/spacing_sm">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="0dp"
@@ -79,8 +79,8 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="24dp"
-                android:paddingTop="8dp"
+                android:paddingHorizontal="@dimen/spacing_lg"
+                android:paddingTop="@dimen/spacing_sm"
                 android:text="@string/speed_setting_quick"
                 android:textAppearance="?attr/textAppearanceBodyLarge" />
 
@@ -88,7 +88,7 @@
                 android:id="@+id/presetGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="24dp"
+                android:paddingHorizontal="@dimen/spacing_lg"
                 app:chipSpacingVertical="0dp">
 
                 <com.google.android.material.chip.Chip

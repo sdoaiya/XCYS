@@ -60,6 +60,7 @@ android {
     productFlavors {
         leanback {
             dimension "mode"
+            applicationIdSuffix ".leanback"
         }
         mobile {
             dimension "mode"

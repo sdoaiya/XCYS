@@ -11,9 +11,9 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="24dp"
-        android:paddingBottom="16dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_md">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/keyword"
@@ -27,13 +27,13 @@
             android:maxLength="255"
             android:nextFocusDown="@id/recycler"
             android:maxLines="1"
-            android:textSize="14sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/spacing_md"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:focusable="true"
             android:src="@drawable/ic_danmaku_setting" />
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/spacing_md"
         android:indeterminate="true"
         android:visibility="gone"
         app:indicatorColor="?attr/colorPrimary"
@@ -60,9 +60,9 @@
         android:clipChildren="false"
         android:clipToPadding="false"
         android:overScrollMode="never"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="24dp"
+        android:paddingStart="@dimen/spacing_lg"
+        android:paddingEnd="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_lg"
         android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:maxHeight="204dp"

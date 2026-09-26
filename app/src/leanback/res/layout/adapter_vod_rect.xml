@@ -22,7 +22,7 @@
         android:background="@drawable/shape_vod_year"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Body"
         android:visibility="gone"
         tools:text="2022"
         tools:visibility="visible" />
@@ -34,7 +34,7 @@
         android:background="@drawable/shape_vod_site"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Body"
         android:visibility="gone"
         tools:text="泥巴"
         tools:visibility="visible" />
@@ -48,7 +48,7 @@
         android:ellipsize="marquee"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Body"
         tools:text="1080p" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -64,7 +64,7 @@
         android:padding="6dp"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Title"
         tools:text="蜘蛛人" />
 
 </RelativeLayout>

@@ -4,10 +4,10 @@
     android:id="@+id/text"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_margin="@dimen/spacing_sm"
     android:background="@drawable/shape_item_round"
     android:ellipsize="marquee"
     android:singleLine="true"
     android:textColor="@color/white"
-    android:textSize="14sp"
+    android:textAppearance="@style/TextAppearance.WebTV.Body"
     tools:text="歷史" />

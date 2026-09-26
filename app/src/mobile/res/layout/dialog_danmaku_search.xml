@@ -11,21 +11,34 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="24dp"
-        android:paddingBottom="16dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_md">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/keyword"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/shape_danmaku_search_keyword"
             android:hint="@string/search_keyword"
             android:imeOptions="actionSearch"
             android:inputType="textCapWords|textAutoCorrect|textAutoComplete"
             android:maxLength="255"
             android:singleLine="true"
-            android:textSize="14sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Body" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/go"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/play_search"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_action_search"
+            app:tint="?attr/colorPrimary" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -34,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/spacing_md"
         android:indeterminate="true"
         android:visibility="gone"
         app:indicatorColor="?attr/colorPrimary"
@@ -49,9 +62,9 @@
         android:clipChildren="false"
         android:clipToPadding="false"
         android:overScrollMode="never"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="24dp"
+        android:paddingStart="@dimen/spacing_lg"
+        android:paddingEnd="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_lg"
         android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:maxHeight="204dp"

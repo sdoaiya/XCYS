@@ -13,8 +13,8 @@
         android:ellipsize="end"
         android:gravity="center_vertical"
         android:maxLines="2"
-        android:padding="12dp"
+        android:padding="@dimen/spacing_12"
         android:textColor="@color/white_70"
-        android:textSize="14sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
 </FrameLayout>

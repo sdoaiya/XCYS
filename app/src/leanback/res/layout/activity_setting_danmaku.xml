@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="@dimen/spacing_lg">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/danmakuLoad"
@@ -25,10 +25,10 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:text="@string/danmaku_load"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/danmakuLoadText"
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Headline"
                 tools:text="關" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -45,7 +45,7 @@
             android:id="@+id/danmakuApi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/spacing_md"
             android:background="@drawable/selector_item"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -56,10 +56,10 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:text="@string/danmaku_api"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/danmakuApiText"
@@ -69,7 +69,7 @@
                 android:gravity="end"
                 android:singleLine="true"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Headline"
                 tools:text="https://" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -78,7 +78,7 @@
             android:id="@+id/danmakuAuto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/spacing_md"
             android:background="@drawable/selector_item"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -89,10 +89,10 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:text="@string/danmaku_auto_load"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/danmakuAutoText"
@@ -100,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Headline"
                 tools:text="關" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -109,7 +109,7 @@
             android:id="@+id/danmakuSpider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/spacing_md"
             android:background="@drawable/selector_item"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -120,10 +120,10 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:text="@string/danmaku_spider_first"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/danmakuSpiderText"
@@ -131,7 +131,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Headline"
                 tools:text="關" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

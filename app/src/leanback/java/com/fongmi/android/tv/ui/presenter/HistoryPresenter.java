@@ -78,6 +78,13 @@ public class HistoryPresenter extends Presenter {
         holder.binding.site.setVisibility(item.getSiteVisible());
         holder.binding.delete.setVisibility(!delete ? View.GONE : View.VISIBLE);
         holder.binding.remark.setVisibility(delete || same ? View.GONE : View.VISIBLE);
+        if (item.canSave()) {
+            holder.binding.progress.setVisibility(View.VISIBLE);
+            holder.binding.progress.setMax((int) item.getDuration());
+            holder.binding.progress.setProgressCompat((int) item.getPosition(), true);
+        } else {
+            holder.binding.progress.setVisibility(View.GONE);
+        }
         ImgUtil.load(item.getVodName(), item.getVodPic(), holder.binding.image);
     }
 

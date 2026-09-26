@@ -47,7 +47,6 @@ public abstract class BaseBottomSheetDialog extends BottomSheetDialogFragment {
             androidx.core.view.WindowCompat.setDecorFitsSystemWindows(window, true);
         } else {
             window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-            if (Util.isFullscreen(getActivity())) window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
         return dialog;
     }

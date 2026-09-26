@@ -10,8 +10,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingVertical="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingVertical="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -33,7 +33,7 @@
         android:id="@+id/maxOnScreenSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:nextFocusUp="@id/tabDensity"
@@ -47,8 +47,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -70,7 +70,7 @@
         android:id="@+id/scrollAreaSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:stepSize="0.05"
@@ -83,8 +83,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -106,7 +106,7 @@
         android:id="@+id/scrollGapSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:stepSize="0.1"
@@ -119,8 +119,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -142,7 +142,7 @@
         android:id="@+id/lineSpacingSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:stepSize="0.1"
@@ -156,8 +156,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -179,7 +179,7 @@
         android:id="@+id/maxScrollLinesSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:stepSize="1"
@@ -193,8 +193,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -216,7 +216,7 @@
         android:id="@+id/maxTopLinesSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:stepSize="1"
@@ -230,8 +230,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -253,7 +253,7 @@
         android:id="@+id/maxBottomLinesSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:stepSize="1"

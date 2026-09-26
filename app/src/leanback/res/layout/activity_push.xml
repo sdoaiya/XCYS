@@ -16,20 +16,20 @@
         android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/spacing_lg"
         android:gravity="center"
         android:lineSpacingExtra="8dp"
         android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/clip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/spacing_md"
         android:background="@drawable/shape_item_normal"
         android:text="@string/push_clip"
         android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -11,9 +11,9 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="24dp"
-        android:paddingBottom="16dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_md">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title"
@@ -22,13 +22,13 @@
             android:layout_weight="1"
             android:text="@string/device_select"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="16sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/mode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/spacing_md"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_sync_two"
             android:tag="0"
@@ -39,7 +39,7 @@
             android:id="@+id/scan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/spacing_md"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_action_scan" />
 
@@ -59,8 +59,8 @@
         android:clipChildren="false"
         android:clipToPadding="false"
         android:overScrollMode="never"
-        android:paddingHorizontal="24dp"
-        android:paddingBottom="24dp"
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_lg"
         android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/adapter_device" />

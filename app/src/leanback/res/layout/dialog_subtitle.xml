@@ -3,7 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:padding="@dimen/spacing_md">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/large"
@@ -12,7 +12,7 @@
         android:background="@drawable/selector_subtitle"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:padding="8dp"
+        android:padding="@dimen/spacing_sm"
         android:src="@drawable/ic_subtitle_large" />
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -22,7 +22,7 @@
         android:background="@drawable/selector_subtitle"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:padding="8dp"
+        android:padding="@dimen/spacing_sm"
         android:src="@drawable/ic_subtitle_small" />
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -32,7 +32,7 @@
         android:background="@drawable/selector_subtitle"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:padding="8dp"
+        android:padding="@dimen/spacing_sm"
         android:src="@drawable/ic_subtitle_up" />
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -42,7 +42,7 @@
         android:background="@drawable/selector_subtitle"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:padding="8dp"
+        android:padding="@dimen/spacing_sm"
         android:src="@drawable/ic_subtitle_down" />
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -52,7 +52,7 @@
         android:background="@drawable/selector_subtitle"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:padding="8dp"
+        android:padding="@dimen/spacing_sm"
         android:src="@drawable/ic_subtitle_reset" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

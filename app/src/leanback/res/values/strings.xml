@@ -1,5 +1,7 @@
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
 
+    <string name="app_name">星尘TV</string>
+
     <!-- Home -->
     <string name="home_vod">Vod</string>
     <string name="home_live">Live</string>

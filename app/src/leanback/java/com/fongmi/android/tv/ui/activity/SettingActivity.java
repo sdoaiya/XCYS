@@ -127,6 +127,7 @@ public class SettingActivity extends BaseActivity implements ConfigListener, Sit
         mBinding.recordSync.setOnClickListener(this::setRecordSync);
         mBinding.siteBlock.setOnClickListener(view -> SiteBlockDialog.show(this));
         mBinding.codec.setOnClickListener(view -> CodecCapabilityDialog.show(this, null));
+        mBinding.downloadManager.setOnClickListener(view -> com.fongmi.android.tv.ui.activity.DownloadActivity.start(this));
         mBinding.about.setOnClickListener(view -> AboutDialog.show(this, () -> Updater.create().force().start(this)));
         mBinding.restore.setOnClickListener(this::onRestore);
         mBinding.version.setOnClickListener(this::onVersion);

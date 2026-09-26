@@ -26,9 +26,9 @@
         android:clipToPadding="false"
         android:fillViewport="false"
         android:overScrollMode="never"
-        android:paddingStart="16dp"
+        android:paddingStart="@dimen/spacing_md"
         android:paddingEnd="9dp"
-        android:paddingBottom="20dp">
+        android:paddingBottom="@dimen/spacing_20">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"

@@ -6,27 +6,27 @@
     android:layout_height="wrap_content"
     android:background="@drawable/shape_shell_proxy_dialog"
     android:orientation="vertical"
-    android:paddingStart="20dp"
-    android:paddingTop="16dp"
-    android:paddingEnd="20dp"
-    android:paddingBottom="12dp">
+    android:paddingStart="@dimen/spacing_20"
+    android:paddingTop="@dimen/spacing_md"
+    android:paddingEnd="@dimen/spacing_20"
+    android:paddingBottom="@dimen/spacing_12">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingBottom="8dp">
+        android:paddingBottom="@dimen/spacing_sm">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/spacing_md"
             android:layout_weight="1"
             android:text="@string/playback_remote_sync"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Display"
             android:textStyle="bold" />
 
         <com.google.android.material.button.MaterialButton
@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#5F6368"
-        android:textSize="13sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Caption" />
 
     <com.fongmi.android.tv.ui.custom.CustomNestedScrollView
         android:id="@+id/contentScroll"
@@ -81,7 +81,7 @@
                     android:paddingBottom="28dp"
                     android:text="@string/playback_remote_sync_empty"
                     android:textColor="#5F6368"
-                    android:textSize="14sp" />
+                    android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:id="@+id/sourceList"
@@ -108,11 +108,11 @@
                         android:id="@+id/editTitle"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="12dp"
+                        android:layout_marginEnd="@dimen/spacing_12"
                         android:layout_weight="1"
                         android:text="@string/playback_remote_sync_edit"
                         android:textColor="@color/black"
-                        android:textSize="16sp"
+                        android:textAppearance="@style/TextAppearance.WebTV.Title"
                         android:textStyle="bold" />
 
                     <com.google.android.material.button.MaterialButton
@@ -134,7 +134,7 @@
                     android:id="@+id/nameLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/spacing_sm"
                     android:hint="@string/playback_remote_sync_name"
                     app:boxBackgroundColor="@color/white"
                     app:boxStrokeColor="@color/dialog_outlined_button_stroke"
@@ -159,7 +159,7 @@
                     android:id="@+id/urlLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/spacing_sm"
                     android:hint="@string/playback_remote_sync_url"
                     app:boxBackgroundColor="@color/white"
                     app:boxStrokeColor="@color/dialog_outlined_button_stroke"
@@ -184,7 +184,7 @@
                     android:id="@+id/tokenLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/spacing_sm"
                     android:hint="@string/playback_remote_sync_token_optional"
                     app:boxBackgroundColor="@color/white"
                     app:boxStrokeColor="@color/dialog_outlined_button_stroke"
@@ -228,7 +228,7 @@
                         android:id="@+id/siteKeysLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="@dimen/spacing_sm"
                         android:hint="@string/playback_webhook_site_keys"
                         app:boxBackgroundColor="@color/white"
                         app:boxStrokeColor="@color/dialog_outlined_button_stroke"
@@ -252,7 +252,7 @@
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="@dimen/spacing_sm"
                         android:orientation="horizontal">
 
                         <com.google.android.material.textfield.TextInputLayout
@@ -283,7 +283,7 @@
                             android:id="@+id/maxItemsLayout"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
+                            android:layout_marginStart="@dimen/spacing_sm"
                             android:layout_weight="1"
                             android:hint="@string/playback_remote_sync_max_items"
                             app:boxBackgroundColor="@color/white"
@@ -310,7 +310,7 @@
                         android:id="@+id/syncOnStartup"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="@dimen/spacing_xs"
                         android:text="@string/playback_remote_sync_startup"
                         android:textColor="@color/black" />
 
@@ -326,7 +326,7 @@
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="@dimen/spacing_12"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -335,7 +335,7 @@
             style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/spacing_sm"
             android:layout_weight="1"
             android:minHeight="40dp"
             android:minWidth="0dp"
@@ -363,7 +363,7 @@
             style="@style/Widget.Material3.Button"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/spacing_sm"
             android:layout_weight="1"
             android:minHeight="40dp"
             android:minWidth="0dp"

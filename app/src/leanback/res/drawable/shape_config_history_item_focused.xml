@@ -4,7 +4,7 @@
 
     <solid android:color="#2F6FED" />
 
-    <corners android:radius="22dp" />
+    <corners android:radius="@dimen/radius_sheet" />
 
     <padding
         android:bottom="8dp"
@@ -14,6 +14,6 @@
 
     <stroke
         android:width="2dp"
-        android:color="#D7E5FF" />
+        android:color="?attr/colorPrimary" />
 
 </shape>

@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="4dp"
-    android:layout_marginBottom="4dp"
+    android:layout_marginTop="@dimen/spacing_xs"
+    android:layout_marginBottom="@dimen/spacing_xs"
     android:background="@drawable/shape_live"
     android:orientation="vertical">
 
@@ -16,7 +16,7 @@
         android:ellipsize="marquee"
         android:singleLine="true"
         android:textColor="@color/selector_text"
-        android:textSize="14sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Body"
         tools:text="七龍珠" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -27,7 +27,7 @@
         android:ellipsize="marquee"
         android:singleLine="true"
         android:textColor="@color/selector_text"
-        android:textSize="12sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Caption"
         tools:text="18:00 ~ 19:00" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

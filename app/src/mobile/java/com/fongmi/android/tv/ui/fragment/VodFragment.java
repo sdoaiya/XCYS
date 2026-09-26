@@ -246,6 +246,7 @@ public class VodFragment extends BaseFragment implements ConfigListener, SiteLis
         } else if (item.getItemId() == R.id.keep) KeepActivity.start(requireActivity());
         else if (item.getItemId() == R.id.search) SearchActivity.start(requireActivity());
         else if (item.getItemId() == R.id.history) HistoryActivity.start(requireActivity());
+        else if (item.getItemId() == R.id.downloads) com.fongmi.android.tv.ui.activity.DownloadActivity.start(requireActivity());
         return true;
     }
 
@@ -437,6 +438,16 @@ public class VodFragment extends BaseFragment implements ConfigListener, SiteLis
     @Override
     public void onWebLoading() {
         showProgress();
+    }
+
+    @Override
+    public void onWebProgress(int progress) {
+        if (progress >= 100) {
+            mBinding.webProgress.setVisibility(View.GONE);
+        } else {
+            mBinding.webProgress.setVisibility(View.VISIBLE);
+            mBinding.webProgress.setProgressCompat(progress, true);
+        }
     }
 
     @Override

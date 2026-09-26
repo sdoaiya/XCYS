@@ -5,7 +5,7 @@
     android:layout_height="40dp"
     android:clipChildren="false"
     android:clipToPadding="false"
-    android:padding="4dp">
+    android:padding="@dimen/spacing_xs">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text"
@@ -13,10 +13,10 @@
         android:layout_height="32dp"
         android:background="@drawable/shape_search_hot_word"
         android:gravity="center"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
+        android:paddingStart="@dimen/spacing_sm"
+        android:paddingEnd="@dimen/spacing_sm"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="13sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Caption"
         tools:text="熱搜詞" />
 </FrameLayout>

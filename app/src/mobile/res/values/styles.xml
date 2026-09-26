@@ -24,6 +24,11 @@
         <item name="android:statusBarColor">@color/transparent</item>
         <item name="android:navigationBarColor">@color/transparent</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.WebTV.BottomSheet</item>
+        <item name="android:windowAnimationStyle">@style/Animation.WebTV.Window</item>
+    </style>
+
+    <style name="ThemeOverlay.WebTV.BottomSheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/Widget.WebTV.BottomSheet</item>
     </style>
 
@@ -40,6 +45,7 @@
     <style name="Theme.Splash" parent="Theme.SplashScreen">
         <item name="postSplashScreenTheme">@style/Theme.App</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenBackground">@color/theme_surface</item>
     </style>
 
     <style name="Theme.App" parent="Theme.Base" />
@@ -133,6 +139,37 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">12sp</item>
         <item name="android:focusable">true</item>
+    </style>
+
+    <!-- Setting page rows (fragment_setting*): row container, label, value, summary -->
+    <style name="Widget.WebTV.SettingItem" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/shape_item</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <style name="Widget.WebTV.SettingLabel" parent="">
+        <item name="android:textAppearance">@style/TextAppearance.WebTV.Title</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="Widget.WebTV.SettingValue" parent="">
+        <item name="android:textAppearance">@style/TextAppearance.WebTV.Body</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="Widget.WebTV.SettingSummary" parent="">
+        <item name="android:textAppearance">@style/TextAppearance.WebTV.Caption</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
     </style>
 
 </resources>

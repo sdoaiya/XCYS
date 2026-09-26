@@ -20,6 +20,7 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.LazyHeaders;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.fongmi.android.tv.App;
@@ -105,7 +106,7 @@ public class ImgUtil {
         if (!vod) view.setVisibility(TextUtils.isEmpty(url) ? View.GONE : View.VISIBLE);
         if (TextUtils.isEmpty(url) || failed.contains(url)) view.setImageDrawable(getTextDrawable(text, vod));
         else try {
-            RequestBuilder<Drawable> builder = Glide.with(view).load(getUrl(url)).listener(getListener(text, url, view, vod));
+            RequestBuilder<Drawable> builder = Glide.with(view).load(getUrl(url)).listener(getListener(text, url, view, vod)).placeholder(getTextDrawable(text, vod)).transition(DrawableTransitionOptions.withCrossFade());
             if (width > 0 && height > 0) builder.override(width, height);
             if (vod) builder.centerCrop().into(view);
             else builder.fitCenter().into(view);

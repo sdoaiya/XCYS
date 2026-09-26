@@ -9,7 +9,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="@dimen/spacing_sm"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="14sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/time"
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:textColor="?attr/colorOnSurfaceVariant"
-            android:textSize="12sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Caption" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

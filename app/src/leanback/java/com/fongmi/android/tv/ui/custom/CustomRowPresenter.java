@@ -27,7 +27,7 @@ public class CustomRowPresenter extends ListRowPresenter {
         super(focusZoomFactor);
         this.spacing = spacing;
         this.strategy = strategy;
-        setShadowEnabled(false);
+        setShadowEnabled(true);
         setSelectEffectEnabled(false);
         setKeepChildForeground(false);
     }

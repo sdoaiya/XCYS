@@ -3,18 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_margin="@dimen/spacing_sm"
     android:background="@drawable/shape_vod_list"
     android:foreground="@drawable/shape_vod"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:padding="12dp">
+    android:padding="@dimen/spacing_12">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/image"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="@dimen/spacing_12"
         tools:src="@drawable/ic_folder" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Body"
         tools:text="Download" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

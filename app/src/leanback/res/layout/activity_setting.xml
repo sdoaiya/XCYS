@@ -10,16 +10,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="@dimen/spacing_lg">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_lg"
+            android:background="@drawable/shape_setting_card"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_md">
 
         <com.google.android.material.textview.MaterialTextView
             style="@style/SettingSectionLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:paddingStart="4dp"
+            android:layout_marginBottom="@dimen/spacing_sm"
+            android:paddingStart="@dimen/spacing_xs"
             android:text="@string/setting_group_content"
-            android:textSize="16sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -31,7 +39,7 @@
                 android:id="@+id/vod"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:layout_weight="1"
                 android:background="@drawable/selector_item"
                 android:focusable="true"
@@ -41,11 +49,11 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="@dimen/spacing_md"
                     android:layout_weight="0.3"
                     android:text="@string/setting_vod"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/vodUrl"
@@ -56,7 +64,7 @@
                     android:gravity="end"
                     android:singleLine="true"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textAppearance="@style/TextAppearance.WebTV.Headline"
                     tools:ignore="NestedWeights"
                     tools:text="https://" />
 
@@ -66,11 +74,11 @@
                 android:id="@+id/vodHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:background="@drawable/selector_item"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:padding="8dp"
+                android:padding="@dimen/spacing_sm"
                 android:src="@drawable/ic_setting_home" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -80,7 +88,7 @@
                 android:background="@drawable/selector_item"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:padding="8dp"
+                android:padding="@dimen/spacing_sm"
                 android:src="@drawable/ic_setting_history" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -88,7 +96,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -96,7 +104,7 @@
                 android:id="@+id/live"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:layout_weight="1"
                 android:background="@drawable/selector_item"
                 android:focusable="true"
@@ -106,11 +114,11 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="@dimen/spacing_md"
                     android:layout_weight="0.3"
                     android:text="@string/setting_live"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/liveUrl"
@@ -121,7 +129,7 @@
                     android:gravity="end"
                     android:singleLine="true"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textAppearance="@style/TextAppearance.WebTV.Headline"
                     tools:ignore="NestedWeights"
                     tools:text="https://" />
 
@@ -131,11 +139,11 @@
                 android:id="@+id/liveHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:background="@drawable/selector_item"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:padding="8dp"
+                android:padding="@dimen/spacing_sm"
                 android:src="@drawable/ic_setting_home" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -145,7 +153,7 @@
                 android:background="@drawable/selector_item"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:padding="8dp"
+                android:padding="@dimen/spacing_sm"
                 android:src="@drawable/ic_setting_history" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -153,7 +161,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -161,7 +169,7 @@
                 android:id="@+id/wall"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:layout_weight="1"
                 android:background="@drawable/selector_item"
                 android:focusable="true"
@@ -171,11 +179,11 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="@dimen/spacing_md"
                     android:layout_weight="0.3"
                     android:text="@string/setting_wall"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/wallUrl"
@@ -186,7 +194,7 @@
                     android:gravity="end"
                     android:singleLine="true"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textAppearance="@style/TextAppearance.WebTV.Headline"
                     tools:ignore="NestedWeights"
                     tools:text="https://" />
 
@@ -196,11 +204,11 @@
                 android:id="@+id/wallDefault"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:background="@drawable/selector_item"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:padding="8dp"
+                android:padding="@dimen/spacing_sm"
                 android:src="@drawable/ic_setting_home" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -210,20 +218,29 @@
                 android:background="@drawable/selector_item"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:padding="8dp"
+                android:padding="@dimen/spacing_sm"
                 android:src="@drawable/ic_setting_refresh" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_lg"
+            android:background="@drawable/shape_setting_card"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_md">
 
         <com.google.android.material.textview.MaterialTextView
             style="@style/SettingSectionLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="8dp"
-            android:paddingStart="4dp"
+            android:layout_marginBottom="@dimen/spacing_sm"
+            android:paddingStart="@dimen/spacing_xs"
             android:text="@string/setting_group_playback"
-            android:textSize="16sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/enhance"
@@ -239,7 +256,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/setting_enhance"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -247,7 +264,7 @@
             android:id="@+id/player"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:background="@drawable/selector_item"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -258,7 +275,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/setting_player"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -266,7 +283,7 @@
             android:id="@+id/danmaku"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:background="@drawable/selector_item"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -277,7 +294,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/setting_danmaku"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -285,7 +302,7 @@
             android:id="@+id/incognito"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:background="@drawable/selector_item"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -294,10 +311,10 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:text="@string/setting_incognito"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/incognitoText"
@@ -305,7 +322,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Headline"
                 tools:text="Off" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -314,7 +331,7 @@
             android:id="@+id/size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:background="@drawable/selector_item"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -323,10 +340,10 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:text="@string/setting_size"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/sizeText"
@@ -334,7 +351,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Headline"
                 tools:text="Medium" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -343,7 +360,7 @@
             android:id="@+id/language"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:background="@drawable/selector_item"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -352,10 +369,10 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:text="@string/setting_language"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/languageText"
@@ -363,19 +380,28 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_lg"
+            android:background="@drawable/shape_setting_card"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_md">
 
         <com.google.android.material.textview.MaterialTextView
             style="@style/SettingSectionLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="8dp"
-            android:paddingStart="4dp"
+            android:layout_marginBottom="@dimen/spacing_sm"
+            android:paddingStart="@dimen/spacing_xs"
             android:text="@string/setting_group_network"
-            android:textSize="16sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/doh"
@@ -389,10 +415,10 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:text="@string/setting_doh"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/dohText"
@@ -400,7 +426,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Headline"
                 tools:text="Google" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -409,7 +435,7 @@
             android:id="@+id/codec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:background="@drawable/selector_item"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -420,7 +446,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/codec_capability_short"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -428,7 +454,7 @@
             android:id="@+id/siteBlock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:background="@drawable/selector_item"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -439,25 +465,34 @@
                 android:layout_height="wrap_content"
                 android:text="@string/site_block"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_lg"
+            android:background="@drawable/shape_setting_card"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_md">
 
         <com.google.android.material.textview.MaterialTextView
             style="@style/SettingSectionLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="8dp"
-            android:paddingStart="4dp"
+            android:layout_marginBottom="@dimen/spacing_sm"
+            android:paddingStart="@dimen/spacing_xs"
             android:text="@string/setting_group_data"
-            android:textSize="16sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/recordSync"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:background="@drawable/selector_item"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -466,10 +501,10 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:text="@string/playback_sync"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/recordSyncText"
@@ -477,7 +512,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Headline"
                 tools:text="開" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -485,14 +520,14 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/backup"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:layout_weight="1"
                 android:background="@drawable/selector_item"
                 android:focusable="true"
@@ -504,7 +539,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/setting_backup"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -523,7 +558,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/setting_restore"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -532,7 +567,7 @@
             android:id="@+id/cache"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:background="@drawable/selector_item"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -541,10 +576,10 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:text="@string/setting_cache"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/cacheText"
@@ -552,20 +587,40 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Headline"
                 tools:text="1.0 MB" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_lg"
+            android:background="@drawable/shape_setting_card"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_md">
 
         <com.google.android.material.textview.MaterialTextView
             style="@style/SettingSectionLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="8dp"
-            android:paddingStart="4dp"
+            android:layout_marginBottom="@dimen/spacing_sm"
+            android:paddingStart="@dimen/spacing_xs"
             android:text="@string/setting_group_about"
-            android:textSize="16sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/downloadManager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_item"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/download_title"
+            android:textColor="@color/white"
+            android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/about"
@@ -581,7 +636,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/setting_about"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -589,7 +644,7 @@
             android:id="@+id/version"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:background="@drawable/selector_item"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -598,10 +653,10 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/spacing_md"
                 android:text="@string/setting_version"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/versionText"
@@ -609,9 +664,11 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Headline"
                 tools:text="1.2.1" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>

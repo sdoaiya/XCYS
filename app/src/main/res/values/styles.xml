@@ -5,12 +5,12 @@
     </style>
 
     <style name="Vod.Grid">
-        <item name="cornerSizeTopLeft">8dp</item>
-        <item name="cornerSizeTopRight">8dp</item>
+        <item name="cornerSizeTopLeft">@dimen/radius_sm</item>
+        <item name="cornerSizeTopRight">@dimen/radius_sm</item>
     </style>
 
     <style name="Vod.Grid.Large">
-        <item name="cornerSize">8dp</item>
+        <item name="cornerSize">@dimen/radius_sm</item>
     </style>
 
     <style name="Vod.Circle">
@@ -19,8 +19,8 @@
     </style>
 
     <style name="Vod.List">
-        <item name="cornerSizeTopLeft">8dp</item>
-        <item name="cornerSizeBottomLeft">8dp</item>
+        <item name="cornerSizeTopLeft">@dimen/radius_sm</item>
+        <item name="cornerSizeBottomLeft">@dimen/radius_sm</item>
     </style>
 
     <style name="Player">
@@ -42,6 +42,40 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">0.04</item>
+    </style>
+
+    <style name="Animation.WebTV.Window" parent="">
+        <item name="android:activityOpenEnterAnimation">@anim/webtv_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/webtv_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/webtv_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/webtv_exit</item>
+        <item name="android:taskOpenEnterAnimation">@anim/webtv_enter</item>
+        <item name="android:taskOpenExitAnimation">@anim/webtv_exit</item>
+    </style>
+
+    <!-- WebTV type scale: textSize-only tokens so weight/color stay per-view -->
+    <style name="TextAppearance.WebTV.Display" parent="">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="TextAppearance.WebTV.Headline" parent="">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAppearance.WebTV.Title" parent="">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.WebTV.Body" parent="">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextAppearance.WebTV.Caption" parent="">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextAppearance.WebTV.Micro" parent="">
+        <item name="android:textSize">11sp</item>
     </style>
 
     <style name="Theme.XCTV.LightDialog" parent="Theme.Material3.Light.Dialog.Alert">
@@ -67,6 +101,9 @@
         <item name="colorSurface">@color/white</item>
         <item name="colorOnSurface">#202124</item>
         <item name="colorOnSurfaceVariant">#5F6368</item>
+        <item name="colorSurfaceVariant">#F3F5F7</item>
+        <item name="colorOutlineVariant">#DADCE0</item>
+        <item name="colorError">#B3261E</item>
         <item name="colorPrimary">@color/theme_green_dark</item>
         <item name="isLightTheme">true</item>
     </style>

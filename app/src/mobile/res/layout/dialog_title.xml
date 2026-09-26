@@ -11,9 +11,9 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="24dp"
-        android:paddingBottom="16dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_md">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title"
@@ -22,7 +22,7 @@
             android:layout_weight="1"
             android:text="@string/dialog_select_title"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="16sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -33,9 +33,9 @@
         android:clipChildren="false"
         android:clipToPadding="false"
         android:overScrollMode="never"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="24dp"
+        android:paddingStart="@dimen/spacing_lg"
+        android:paddingEnd="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_lg"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:maxHeight="204dp"
         tools:listitem="@layout/adapter_title" />

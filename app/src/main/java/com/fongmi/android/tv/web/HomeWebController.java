@@ -498,6 +498,11 @@ public class HomeWebController {
     private WebChromeClient chrome() {
         return new WebChromeClient() {
             @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                listener.onWebProgress(newProgress);
+            }
+
+            @Override
             public boolean onConsoleMessage(ConsoleMessage message) {
                 if (message != null) {
                     String line = String.format(Locale.ROOT, "%s %s:%s %s", message.messageLevel(), message.sourceId(), message.lineNumber(), message.message());
@@ -858,6 +863,9 @@ public class HomeWebController {
     public interface Listener {
 
         void onWebLoading();
+
+        default void onWebProgress(int progress) {
+        }
 
         void onWebReady();
 

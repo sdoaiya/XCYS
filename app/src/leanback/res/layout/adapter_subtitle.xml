@@ -10,5 +10,5 @@
     android:focusableInTouchMode="true"
     android:singleLine="true"
     android:textColor="@color/white"
-    android:textSize="14sp"
+    android:textAppearance="@style/TextAppearance.WebTV.Body"
     tools:text="Subtitle" />

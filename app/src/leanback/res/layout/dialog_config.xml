@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="24dp">
+    android:padding="@dimen/spacing_lg">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/code"
@@ -15,16 +15,16 @@
         android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="@dimen/spacing_12"
         android:layout_toEndOf="@+id/code"
         android:ellipsize="end"
         android:focusable="true"
         android:lineSpacingExtra="4dp"
         android:maxLines="3"
-        android:paddingStart="4dp"
-        android:paddingEnd="4dp"
+        android:paddingStart="@dimen/spacing_xs"
+        android:paddingEnd="@dimen/spacing_xs"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Headline"
         tools:text="@string/push_info" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -46,7 +46,7 @@
         android:inputType="text"
         android:nextFocusDown="@id/positive"
         android:singleLine="true"
-        android:textSize="18sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Headline" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/bottom"
@@ -60,7 +60,7 @@
             android:id="@+id/choose"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/spacing_md"
             android:layout_weight="1"
             android:background="@drawable/selector_button"
             android:focusable="true"
@@ -69,13 +69,13 @@
             android:singleLine="true"
             android:text="@string/setting_choose"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/positive"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/spacing_md"
             android:layout_weight="1"
             android:background="@drawable/selector_button"
             android:focusable="true"
@@ -84,7 +84,7 @@
             android:singleLine="true"
             android:text="@string/dialog_positive"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/negative"
@@ -98,7 +98,7 @@
             android:singleLine="true"
             android:text="@string/dialog_negative"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </RelativeLayout>

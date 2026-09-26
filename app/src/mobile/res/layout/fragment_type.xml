@@ -16,9 +16,10 @@
             android:layout_height="match_parent"
             android:clipChildren="false"
             android:clipToPadding="false"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:paddingBottom="8dp"
+            android:layoutAnimation="@anim/grid_layout_animation"
+            android:paddingStart="@dimen/spacing_sm"
+            android:paddingEnd="@dimen/spacing_sm"
+            android:paddingBottom="@dimen/spacing_sm"
             tools:listitem="@layout/adapter_vod_rect" />
 
     </com.fongmi.android.tv.ui.custom.ProgressLayout>

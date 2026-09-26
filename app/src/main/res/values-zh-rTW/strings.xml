@@ -1358,4 +1358,8 @@ XCTV 是播放器外殼，不內建內容源，請使用合法設定。</string>
         <item>Texture</item>
     </string-array>
 
+
+    <string name="detail_keep">收藏</string>
+    <string name="detail_keep_done">已收藏</string>
+
 </resources>

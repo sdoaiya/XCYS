@@ -10,8 +10,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingVertical="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingVertical="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -32,8 +32,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -55,7 +55,7 @@
         android:id="@+id/textSizeSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:stepSize="0.1"
         android:valueFrom="0.5"
         android:valueTo="3.0"
@@ -66,8 +66,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -89,7 +89,7 @@
         android:id="@+id/alphaSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:stepSize="0.05"
         android:valueFrom="0"
         android:valueTo="0.9"
@@ -98,8 +98,8 @@
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp"
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs"
         android:text="@string/danmaku_style_mode"
         android:textAppearance="?attr/textAppearanceBodyLarge" />
 
@@ -107,7 +107,7 @@
         android:id="@+id/styleChipGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="24dp"
+        android:paddingHorizontal="@dimen/spacing_lg"
         app:selectionRequired="true"
         app:singleSelection="true">
 
@@ -147,8 +147,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp"
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs"
         android:visibility="gone">
 
         <com.google.android.material.textview.MaterialTextView
@@ -171,7 +171,7 @@
         android:id="@+id/shadowAlphaSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:stepSize="0.05"
         android:valueFrom="0"
         android:valueTo="0.9"
@@ -184,8 +184,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp"
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs"
         android:visibility="gone">
 
         <com.google.android.material.textview.MaterialTextView
@@ -208,7 +208,7 @@
         android:id="@+id/strokeWidthSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:stepSize="0.01"
         android:valueFrom="0.05"
         android:valueTo="0.3"
@@ -221,8 +221,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp"
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs"
         android:visibility="gone">
 
         <com.google.android.material.textview.MaterialTextView
@@ -245,7 +245,7 @@
         android:id="@+id/projectionOffsetXSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:stepSize="0.01"
         android:valueFrom="0.02"
         android:valueTo="0.15"
@@ -258,8 +258,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp"
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs"
         android:visibility="gone">
 
         <com.google.android.material.textview.MaterialTextView
@@ -282,7 +282,7 @@
         android:id="@+id/projectionOffsetYSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:stepSize="0.01"
         android:valueFrom="0.02"
         android:valueTo="0.15"
@@ -295,8 +295,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp"
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs"
         android:visibility="gone">
 
         <com.google.android.material.textview.MaterialTextView
@@ -319,7 +319,7 @@
         android:id="@+id/projectionAlphaSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_12"
         android:stepSize="0.05"
         android:valueFrom="0"
         android:valueTo="0.9"
@@ -329,8 +329,8 @@
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="4dp"
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs"
         android:text="@string/danmaku_color_mode"
         android:textAppearance="?attr/textAppearanceBodyLarge" />
 
@@ -338,7 +338,7 @@
         android:id="@+id/colorChipGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="24dp"
+        android:paddingHorizontal="@dimen/spacing_lg"
         app:selectionRequired="true"
         app:singleSelection="true">
 
@@ -369,8 +369,8 @@
         android:id="@+id/colorOverrideHint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="24dp"
-        android:paddingVertical="4dp"
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingVertical="@dimen/spacing_xs"
         android:text="@string/danmaku_color_override_hint"
         android:textAppearance="?attr/textAppearanceBodySmall"
         android:textColor="?attr/colorError"

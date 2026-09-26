@@ -6,12 +6,15 @@
     <dimen name="spacing_md">16dp</dimen>
     <dimen name="spacing_lg">24dp</dimen>
     <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="spacing_12">12dp</dimen>
+    <dimen name="spacing_20">20dp</dimen>
 
     <!-- corner radius scale -->
     <dimen name="radius_sm">8dp</dimen>
     <dimen name="radius_md">12dp</dimen>
     <dimen name="radius_lg">16dp</dimen>
     <dimen name="radius_sheet">22dp</dimen>
+    <dimen name="radius_full">999dp</dimen>
 
     <!-- touch targets -->
     <dimen name="touch_target">48dp</dimen>

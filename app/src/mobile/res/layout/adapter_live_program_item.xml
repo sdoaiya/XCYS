@@ -8,7 +8,7 @@
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:paddingStart="10dp"
-    android:paddingEnd="8dp">
+    android:paddingEnd="@dimen/spacing_sm">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/time"
@@ -18,21 +18,21 @@
         android:gravity="center_vertical"
         android:singleLine="true"
         android:textColor="@color/selector_control_sheet_text"
-        android:textSize="12sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Caption"
         tools:text="20:00 ~ 21:00" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="@dimen/spacing_sm"
         android:layout_weight="1"
         android:duplicateParentState="true"
         android:ellipsize="end"
         android:gravity="center_vertical"
         android:singleLine="true"
         android:textColor="@color/selector_control_sheet_text"
-        android:textSize="13sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Caption"
         tools:text="新闻联播" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -44,7 +44,7 @@
         android:gravity="center"
         android:minWidth="40dp"
         android:textColor="@color/selector_control_sheet_text"
-        android:textSize="12sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Caption"
         tools:text="直播中" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

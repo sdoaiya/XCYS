@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingStart="24dp"
-    android:paddingTop="16dp"
-    android:paddingEnd="24dp">
+    android:paddingStart="@dimen/spacing_lg"
+    android:paddingTop="@dimen/spacing_md"
+    android:paddingEnd="@dimen/spacing_lg">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:letterSpacing="0.02"
             android:lineSpacingExtra="8dp"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="14sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Body"
             tools:text="1. 新增 ffmpeg 音頻軟解\n2. 詳情頁新增分詞快搜\n3. 修復搜尋閃退問題\n4. 設定支援渲染切換" />
 
     </androidx.core.widget.NestedScrollView>

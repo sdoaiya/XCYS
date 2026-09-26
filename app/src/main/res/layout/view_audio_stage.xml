@@ -10,9 +10,9 @@
     android:focusable="true"
     android:clipChildren="false"
     android:clipToPadding="false"
-    android:paddingStart="32dp"
+    android:paddingStart="@dimen/spacing_xl"
     android:paddingTop="18dp"
-    android:paddingEnd="32dp"
+    android:paddingEnd="@dimen/spacing_xl"
     android:paddingBottom="14dp"
     android:visibility="gone"
     tools:visibility="visible">
@@ -29,7 +29,7 @@
             android:id="@+id/audioDisc"
             android:layout_width="168dp"
             android:layout_height="168dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:background="@drawable/shape_audio_disc_back"
             android:padding="11dp">
 
@@ -57,7 +57,7 @@
             android:shadowDy="1"
             android:shadowRadius="3"
             android:textColor="@color/white"
-            android:textSize="22sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Display"
             android:textStyle="bold"
             tools:text="八段锦口令音乐" />
 
@@ -65,12 +65,12 @@
             android:id="@+id/audioSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/spacing_xs"
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="1"
             android:textColor="@color/white_70"
-            android:textSize="14sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Body"
             tools:text="站源 · 当前播放列表" />
 
         <com.fongmi.android.tv.ui.custom.LyricsOverlayView
@@ -84,7 +84,7 @@
             android:id="@+id/audioKaraoke"
             android:layout_width="match_parent"
             android:layout_height="96dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             android:visibility="gone" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -103,7 +103,7 @@
                 android:id="@+id/audioTransport"
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="@dimen/spacing_xs"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -123,8 +123,8 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/audioPlay"
                     style="@style/AudioActionIconButton"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="24dp"
+                    android:layout_marginStart="@dimen/spacing_lg"
+                    android:layout_marginEnd="@dimen/spacing_lg"
                     android:contentDescription="@string/play"
                     android:src="@drawable/ic_audio_play" />
 
@@ -154,7 +154,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/audioLyricsAction"
                     style="@style/VideoActionButton"
-                    android:layout_marginEnd="4dp"
+                    android:layout_marginEnd="@dimen/spacing_xs"
                     app:drawableTopCompat="@drawable/ic_audio_lyrics"
                     android:text="@string/player_lyrics_search" />
 

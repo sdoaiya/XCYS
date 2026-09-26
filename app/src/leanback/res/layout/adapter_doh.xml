@@ -10,5 +10,5 @@
     android:gravity="center"
     android:singleLine="true"
     android:textColor="@color/text"
-    android:textSize="18sp"
+    android:textAppearance="@style/TextAppearance.WebTV.Headline"
     tools:text="Google" />

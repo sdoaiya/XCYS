@@ -19,8 +19,8 @@
             android:layout_weight="1"
             android:gravity="start|center_vertical"
             android:text="@string/mpv_config_create_title"
-            android:textColor="#202124"
-            android:textSize="18sp"
+            android:textColor="?attr/colorOnSurface"
+            android:textAppearance="@style/TextAppearance.WebTV.Headline"
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatImageButton
@@ -32,7 +32,7 @@
             android:focusable="true"
             android:padding="10dp"
             android:src="@drawable/ic_dialog_close"
-            android:tint="#5F6368" />
+            android:tint="?attr/colorOnSurfaceVariant" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -45,25 +45,25 @@
         android:padding="10dp"
         android:text="@string/mpv_config_script_warning"
         android:textColor="#7A4E00"
-        android:textSize="13sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Caption"
         android:visibility="gone" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/chooseAction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/spacing_sm"
         android:text="@string/mpv_config_create_desc"
-        android:textColor="#5F6368"
-        android:textSize="13sp" />
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textAppearance="@style/TextAppearance.WebTV.Caption" />
 
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/spacing_20"
         android:text="@string/mpv_config_name_optional"
-        android:textColor="#3C4043"
-        android:textSize="14sp"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textAppearance="@style/TextAppearance.WebTV.Body"
         android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -71,7 +71,7 @@
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/spacing_sm"
         app:hintEnabled="false">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -88,10 +88,10 @@
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/spacing_20"
         android:text="@string/mpv_config_choose_action"
-        android:textColor="#3C4043"
-        android:textSize="14sp"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textAppearance="@style/TextAppearance.WebTV.Body"
         android:textStyle="bold" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -105,7 +105,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="14dp"
-        android:paddingEnd="12dp">
+        android:paddingEnd="@dimen/spacing_12">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="36dp"
@@ -116,7 +116,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="@dimen/spacing_12"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -124,16 +124,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/mpv_config_text_edit"
-                android:textColor="#202124"
-                android:textSize="15sp"
+                android:textColor="?attr/colorOnSurface"
+                android:textAppearance="@style/TextAppearance.WebTV.Body"
                 android:textStyle="bold" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/mpv_config_text_edit_desc"
-                android:textColor="#80868B"
-                android:textSize="12sp" />
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textAppearance="@style/TextAppearance.WebTV.Caption" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -141,7 +141,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_sync_arrow_right"
-            android:tint="#80868B" />
+            android:tint="?attr/colorOnSurfaceVariant" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -149,14 +149,14 @@
         android:id="@+id/urlOption"
         android:layout_width="match_parent"
         android:layout_height="68dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/spacing_sm"
         android:background="@drawable/selector_mpv_create_action"
         android:clickable="true"
         android:focusable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="14dp"
-        android:paddingEnd="12dp">
+        android:paddingEnd="@dimen/spacing_12">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="36dp"
@@ -167,7 +167,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="@dimen/spacing_12"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -175,16 +175,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/mpv_config_import_url"
-                android:textColor="#202124"
-                android:textSize="15sp"
+                android:textColor="?attr/colorOnSurface"
+                android:textAppearance="@style/TextAppearance.WebTV.Body"
                 android:textStyle="bold" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/mpv_config_import_url_desc"
-                android:textColor="#80868B"
-                android:textSize="12sp" />
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textAppearance="@style/TextAppearance.WebTV.Caption" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -192,7 +192,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_sync_arrow_right"
-            android:tint="#80868B" />
+            android:tint="?attr/colorOnSurfaceVariant" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -200,7 +200,7 @@
         android:id="@+id/importOption"
         android:layout_width="match_parent"
         android:layout_height="68dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/spacing_sm"
         android:layout_marginBottom="2dp"
         android:background="@drawable/selector_mpv_create_action"
         android:clickable="true"
@@ -208,7 +208,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="14dp"
-        android:paddingEnd="12dp">
+        android:paddingEnd="@dimen/spacing_12">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="36dp"
@@ -219,7 +219,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="@dimen/spacing_12"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -227,16 +227,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/mpv_config_import_file"
-                android:textColor="#202124"
-                android:textSize="15sp"
+                android:textColor="?attr/colorOnSurface"
+                android:textAppearance="@style/TextAppearance.WebTV.Body"
                 android:textStyle="bold" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/mpv_config_import_file_desc"
-                android:textColor="#80868B"
-                android:textSize="12sp" />
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textAppearance="@style/TextAppearance.WebTV.Caption" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -244,7 +244,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_sync_arrow_right"
-            android:tint="#80868B" />
+            android:tint="?attr/colorOnSurfaceVariant" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -252,7 +252,7 @@
         android:id="@+id/urlPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/spacing_20"
         android:orientation="vertical"
         android:visibility="gone">
 
@@ -260,8 +260,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/mpv_config_import_url"
-            android:textColor="#3C4043"
-            android:textSize="14sp"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textAppearance="@style/TextAppearance.WebTV.Body"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -269,7 +269,7 @@
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/spacing_sm"
             app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -286,7 +286,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/spacing_md"
             android:gravity="end|center_vertical"
             android:orientation="horizontal">
 
@@ -306,7 +306,7 @@
                 style="@style/Widget.Material3.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="@dimen/spacing_sm"
                 android:minHeight="40dp"
                 android:text="@string/mpv_config_import"
                 android:textColor="@color/dialog_primary_button_text"

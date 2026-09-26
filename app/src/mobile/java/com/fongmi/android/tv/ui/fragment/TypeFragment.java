@@ -95,7 +95,7 @@ public class TypeFragment extends BaseFragment implements CustomScroller.Callbac
 
     @Override
     protected void initView() {
-        mBinding.progressLayout.showProgress();
+        mBinding.progressLayout.showSkeleton();
         mScroller = new CustomScroller(this);
         mExtends = getExtend();
         setRecyclerView();
@@ -133,7 +133,7 @@ public class TypeFragment extends BaseFragment implements CustomScroller.Callbac
     private void getVideo() {
         mScroller.reset();
         mAdapter.clear(() -> {
-            if (!mBinding.swipeLayout.isRefreshing()) mBinding.progressLayout.showProgress();
+            if (!mBinding.swipeLayout.isRefreshing()) mBinding.progressLayout.showSkeleton();
             if (isHome()) setAdapter(getParent().getResult());
             else getVideo(getTypeId(), "1");
         });

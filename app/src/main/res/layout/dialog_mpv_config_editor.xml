@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="#202124"
-                android:textSize="17sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Headline"
                 android:textStyle="bold" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -47,7 +47,7 @@
                 android:gravity="center"
                 android:maxLines="1"
                 android:textColor="#80868B"
-                android:textSize="11sp" />
+                android:textAppearance="@style/TextAppearance.WebTV.Micro" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -70,7 +70,7 @@
         android:id="@+id/editor"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="@dimen/spacing_12"
         android:layout_weight="1"
         android:minHeight="420dp"
         android:background="@drawable/shape_mpv_editor"
@@ -79,22 +79,22 @@
         android:overScrollMode="ifContentScrolls"
         android:scrollbars="vertical|horizontal"
         android:textColor="#303134"
-        android:textSize="13sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Caption" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="36dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="4dp"
-        android:paddingEnd="4dp">
+        android:paddingStart="@dimen/spacing_xs"
+        android:paddingEnd="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/mpv_config_encoding"
             android:textColor="#80868B"
-            android:textSize="11sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Micro" />
 
         <Space
             android:layout_width="0dp"
@@ -106,7 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#80868B"
-            android:textSize="11sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Micro" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

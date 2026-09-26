@@ -14,18 +14,18 @@
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/spacing_md"
         android:gravity="center"
         android:lineSpacingExtra="4dp"
         android:text="@string/crash_info"
         android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/restart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/spacing_md"
         android:background="@drawable/selector_button"
         android:focusable="true"
         android:focusableInTouchMode="true"
@@ -36,7 +36,7 @@
         android:id="@+id/details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/spacing_md"
         android:background="@drawable/selector_button"
         android:focusable="true"
         android:focusableInTouchMode="true"

@@ -202,6 +202,7 @@ public class SettingFragment extends BaseFragment implements ConfigListener, Sit
         mBinding.pushPlay.setOnClickListener(this::onPushPlay);
         mBinding.siteBlock.setOnClickListener(view -> SiteBlockDialog.show(requireActivity()));
         mBinding.codec.setOnClickListener(view -> CodecCapabilityDialog.show(requireActivity(), null));
+        mBinding.downloadManager.setOnClickListener(view -> com.fongmi.android.tv.ui.activity.DownloadActivity.start(requireActivity()));
         mBinding.about.setOnClickListener(view -> AboutDialog.show(requireActivity(), () -> Updater.create().force().start(requireActivity())));
         mBinding.restore.setOnClickListener(this::onRestore);
         mBinding.version.setOnClickListener(this::onVersion);

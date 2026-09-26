@@ -10,13 +10,13 @@
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="@dimen/spacing_lg"
+        android:layout_marginTop="@dimen/spacing_lg"
+        android:layout_marginEnd="@dimen/spacing_lg"
+        android:layout_marginBottom="@dimen/spacing_md"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Display"
         tools:text="@string/collect_result" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -31,9 +31,9 @@
             android:layout_height="match_parent"
             android:clipChildren="false"
             android:clipToPadding="false"
-            android:paddingStart="24dp"
-            android:paddingEnd="12dp"
-            android:paddingBottom="24dp"
+            android:paddingStart="@dimen/spacing_lg"
+            android:paddingEnd="@dimen/spacing_12"
+            android:paddingBottom="@dimen/spacing_lg"
             app:focusOutEnd="true"
             app:focusOutFront="false" />
 
@@ -45,8 +45,8 @@
             android:clipChildren="true"
             android:clipToPadding="true"
             android:overScrollMode="never"
-            android:paddingEnd="24dp"
-            android:paddingBottom="24dp" />
+            android:paddingEnd="@dimen/spacing_lg"
+            android:paddingBottom="@dimen/spacing_lg" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

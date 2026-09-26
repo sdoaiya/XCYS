@@ -24,124 +24,104 @@
             android:layout_height="match_parent"
             android:animateLayoutChanges="true"
             android:orientation="vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="16dp">
+            android:paddingStart="@dimen/spacing_md"
+            android:paddingEnd="@dimen/spacing_md"
+            android:paddingBottom="@dimen/spacing_md">
 
             <androidx.appcompat.widget.LinearLayoutCompat
+                style="@style/Widget.WebTV.SettingItem"
                 android:id="@+id/danmakuLoad"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/shape_item"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingTop="12dp"
-                android:paddingBottom="12dp">
+                android:orientation="horizontal">
 
                 <com.google.android.material.textview.MaterialTextView
+                    style="@style/Widget.WebTV.SettingLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:text="@string/danmaku_load"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:layout_marginEnd="@dimen/spacing_md"
+                    android:text="@string/danmaku_load" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    style="@style/Widget.WebTV.SettingValue"
                     android:id="@+id/danmakuLoadText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
                     tools:text="開" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
+                style="@style/Widget.WebTV.SettingItem"
                 android:id="@+id/danmakuApi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/shape_item"
+                android:layout_marginTop="@dimen/spacing_md"
                 android:orientation="horizontal"
                 android:visibility="gone"
                 tools:visibility="visible">
 
                 <com.google.android.material.textview.MaterialTextView
+                    style="@style/Widget.WebTV.SettingLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:text="@string/danmaku_api"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:layout_marginEnd="@dimen/spacing_md"
+                    android:text="@string/danmaku_api" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    style="@style/Widget.WebTV.SettingValue"
                     android:id="@+id/danmakuApiText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="middle"
                     android:gravity="end"
-                    android:singleLine="true"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
                     tools:text="https://" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
+                style="@style/Widget.WebTV.SettingItem"
                 android:id="@+id/danmakuAuto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/shape_item"
+                android:layout_marginTop="@dimen/spacing_md"
                 android:orientation="horizontal"
                 android:visibility="gone"
                 tools:visibility="visible">
 
                 <com.google.android.material.textview.MaterialTextView
+                    style="@style/Widget.WebTV.SettingLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:text="@string/danmaku_auto_load"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:layout_marginEnd="@dimen/spacing_md"
+                    android:text="@string/danmaku_auto_load" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    style="@style/Widget.WebTV.SettingValue"
                     android:id="@+id/danmakuAutoText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
                     tools:text="關" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
+                style="@style/Widget.WebTV.SettingItem"
                 android:id="@+id/danmakuSpider"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/shape_item"
+                android:layout_marginTop="@dimen/spacing_md"
                 android:orientation="horizontal"
                 android:visibility="gone"
                 tools:visibility="visible">
 
                 <com.google.android.material.textview.MaterialTextView
+                    style="@style/Widget.WebTV.SettingLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:text="@string/danmaku_spider_first"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:layout_marginEnd="@dimen/spacing_md"
+                    android:text="@string/danmaku_spider_first" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    style="@style/Widget.WebTV.SettingValue"
                     android:id="@+id/danmakuSpiderText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
                     tools:text="關" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>

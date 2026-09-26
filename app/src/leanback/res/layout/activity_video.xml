@@ -10,7 +10,7 @@
         android:id="@+id/video"
         android:layout_width="400dp"
         android:layout_height="225dp"
-        android:layout_margin="24dp"
+        android:layout_margin="@dimen/spacing_lg"
         android:background="@color/black"
         android:focusable="true"
         android:focusableInTouchMode="true"
@@ -75,12 +75,12 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginTop="@dimen/spacing_lg"
+        android:layout_marginEnd="@dimen/spacing_lg"
         android:layout_toEndOf="@+id/video"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Display"
         tools:text="慶餘年第二季" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -90,10 +90,10 @@
         android:layout_below="@+id/name"
         android:layout_alignStart="@+id/name"
         android:layout_marginTop="6dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="@dimen/spacing_lg"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Title"
         tools:text="更新到第二季" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -103,37 +103,37 @@
         android:layout_below="@+id/remark"
         android:layout_alignStart="@+id/remark"
         android:layout_marginTop="6dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="@dimen/spacing_lg"
         android:orientation="horizontal">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/site"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="@dimen/spacing_12"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Title"
             tools:text="站源：泥巴" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="@dimen/spacing_12"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Title"
             tools:text="年份：2022" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/area"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="@dimen/spacing_12"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Title"
             tools:text="地區：台灣" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -142,7 +142,7 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Title"
             tools:text="類型：科幻" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -154,11 +154,11 @@
         android:layout_below="@+id/row1"
         android:layout_alignStart="@+id/name"
         android:layout_marginTop="6dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="@dimen/spacing_lg"
         android:nextFocusDown="@id/actor"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Title"
         tools:text="導演：FongMi" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -168,12 +168,12 @@
         android:layout_below="@+id/director"
         android:layout_alignStart="@+id/name"
         android:layout_marginTop="6dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="@dimen/spacing_lg"
         android:ellipsize="end"
         android:maxLines="2"
         android:nextFocusDown="@id/content"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Title"
         tools:text="演員：FongMi" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -188,7 +188,7 @@
             android:id="@+id/content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/spacing_md"
             android:background="@drawable/selector_item"
             android:drawablePadding="6dp"
             android:focusable="true"
@@ -199,14 +199,14 @@
             android:singleLine="true"
             android:text="@string/detail_desc"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Title"
             app:drawableStartCompat="@drawable/ic_detail_desc" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/keep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/spacing_md"
             android:background="@drawable/selector_item"
             android:drawablePadding="6dp"
             android:focusable="true"
@@ -217,8 +217,23 @@
             android:singleLine="true"
             android:text="@string/keep"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Title"
             app:drawableStartCompat="@drawable/ic_detail_keep_off" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/downloadPill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_md"
+            android:background="@drawable/selector_item"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:nextFocusUp="@id/actor"
+            android:nextFocusDown="@id/flag"
+            android:text="@string/download_select"
+            android:textColor="@color/white"
+            android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/change1"
@@ -235,7 +250,7 @@
             android:singleLine="true"
             android:text="@string/play_change"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Title"
             app:drawableStartCompat="@drawable/ic_detail_change" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -249,17 +264,17 @@
         android:clipChildren="true"
         android:clipToPadding="true"
         android:orientation="vertical"
-        android:paddingBottom="8dp">
+        android:paddingBottom="@dimen/spacing_sm">
 
         <androidx.leanback.widget.HorizontalGridView
             android:id="@+id/flag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="@dimen/spacing_12"
             android:clipChildren="false"
             android:clipToPadding="false"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
+            android:paddingStart="@dimen/spacing_lg"
+            android:paddingEnd="@dimen/spacing_lg"
             android:visibility="gone"
             tools:visibility="visible" />
 
@@ -267,11 +282,11 @@
             android:id="@+id/quality"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="@dimen/spacing_12"
             android:clipChildren="false"
             android:clipToPadding="false"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
+            android:paddingStart="@dimen/spacing_lg"
+            android:paddingEnd="@dimen/spacing_lg"
             android:visibility="gone"
             tools:visibility="visible" />
 
@@ -279,11 +294,11 @@
             android:id="@+id/array"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="@dimen/spacing_12"
             android:clipChildren="false"
             android:clipToPadding="false"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
+            android:paddingStart="@dimen/spacing_lg"
+            android:paddingEnd="@dimen/spacing_lg"
             android:visibility="gone" />
 
         <androidx.leanback.widget.VerticalGridView
@@ -293,31 +308,31 @@
             android:layout_weight="1"
             android:clipChildren="true"
             android:clipToPadding="true"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
-            android:paddingBottom="8dp"
+            android:paddingStart="@dimen/spacing_lg"
+            android:paddingEnd="@dimen/spacing_lg"
+            android:paddingBottom="@dimen/spacing_sm"
             android:visibility="gone" />
 
         <androidx.leanback.widget.HorizontalGridView
             android:id="@+id/part"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="@dimen/spacing_12"
             android:clipChildren="false"
             android:clipToPadding="false"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
+            android:paddingStart="@dimen/spacing_lg"
+            android:paddingEnd="@dimen/spacing_lg"
             android:visibility="gone" />
 
         <androidx.leanback.widget.HorizontalGridView
             android:id="@+id/quick"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="@dimen/spacing_12"
             android:clipChildren="false"
             android:clipToPadding="false"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
+            android:paddingStart="@dimen/spacing_lg"
+            android:paddingEnd="@dimen/spacing_lg"
             android:visibility="gone" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

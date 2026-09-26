@@ -1359,4 +1359,8 @@ XCTV is a player shell. It does not include content sources. Please use lawful c
         <item>Strict</item>
     </string-array>
 
+
+    <string name="detail_keep">Favorite</string>
+    <string name="detail_keep_done">Favorited</string>
+
 </resources>

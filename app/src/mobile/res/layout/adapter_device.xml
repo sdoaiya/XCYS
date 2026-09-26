@@ -16,7 +16,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="@dimen/spacing_sm"
         android:orientation="vertical">
 
         <com.google.android.material.textview.MaterialTextView
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="14sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Body"
             tools:text="Google Chrome Cast" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -35,7 +35,7 @@
             android:layout_marginTop="2dp"
             android:singleLine="true"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="12sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Caption"
             tools:text="127.0.0.1" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

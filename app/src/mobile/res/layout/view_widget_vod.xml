@@ -10,11 +10,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|center"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/spacing_lg"
         android:background="@drawable/shape_widget"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Body"
         android:visibility="gone"
         tools:text="@string/error_play_url"
         tools:visibility="visible" />
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|center"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/spacing_lg"
         android:background="@drawable/shape_widget"
         android:gravity="center"
         android:orientation="horizontal"
@@ -35,7 +35,7 @@
             android:id="@+id/action"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/spacing_sm"
             android:src="@drawable/ic_widget_rewind" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:fontFeatureSettings="tnum"
             android:textColor="@color/white"
-            android:textSize="14sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Body"
             tools:text="00:00:00" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -54,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|center"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/spacing_lg"
         android:src="@drawable/ic_widget_forward"
         android:visibility="gone" />
 
@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|center"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/spacing_lg"
         android:background="@drawable/shape_widget"
         android:gravity="center"
         android:orientation="horizontal"
@@ -74,7 +74,7 @@
             android:id="@+id/brightIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="@dimen/spacing_12"
             tools:src="@drawable/ic_widget_bright_high" />
 
         <com.google.android.material.progressindicator.LinearProgressIndicator
@@ -91,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|center"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/spacing_lg"
         android:background="@drawable/shape_widget"
         android:gravity="center"
         android:orientation="horizontal"
@@ -102,7 +102,7 @@
             android:id="@+id/volumeIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="@dimen/spacing_12"
             tools:src="@drawable/ic_widget_volume_high" />
 
         <com.google.android.material.progressindicator.LinearProgressIndicator

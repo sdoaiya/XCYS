@@ -11,5 +11,5 @@
     android:nextFocusUp="@id/quality"
     android:nextFocusDown="@id/episode"
     android:textColor="@color/white"
-    android:textSize="16sp"
+    android:textAppearance="@style/TextAppearance.WebTV.Title"
     tools:text="11" />

@@ -101,114 +101,184 @@
                     android:clipChildren="false"
                     android:clipToPadding="false"
                     android:orientation="vertical"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="8dp">
+                    android:paddingTop="@dimen/spacing_md"
+                    android:paddingBottom="@dimen/spacing_sm">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/name"
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_marginEnd="@dimen/spacing_md"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/poster"
+                            android:layout_width="96dp"
+                            android:layout_height="144dp"
+                            android:background="@color/black_20"
+                            android:scaleType="centerCrop"
+                            app:shapeAppearanceOverlay="@style/Vod.Grid.Large" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_md"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="3"
+                                android:textColor="@color/white"
+                                android:textAppearance="@style/TextAppearance.WebTV.Display"
+                                tools:text="慶餘年第二季" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/remark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_sm"
+                                android:singleLine="true"
+                                android:textColor="@color/white_90"
+                                android:textAppearance="@style/TextAppearance.WebTV.Body"
+                                tools:text="更新到第二季" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/site"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_xs"
+                                android:singleLine="true"
+                                android:textColor="@color/white_70"
+                                android:textAppearance="@style/TextAppearance.WebTV.Body"
+                                tools:text="站源：泥巴" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:ellipsize="end"
-                        android:maxLines="3"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        tools:text="慶餘年第二季" />
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:orientation="horizontal">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/remark"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="16dp"
-                        android:singleLine="true"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
-                        tools:text="更新到第二季" />
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/keepPill"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/shape_action_pill"
+                            android:gravity="center_vertical"
+                            android:minHeight="40dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/site"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="16dp"
-                        android:singleLine="true"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
-                        tools:text="站源：泥巴" />
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/keepPillIcon"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_control_keep_off" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/keepPillText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:text="@string/detail_keep"
+                                android:textColor="@color/white_70"
+                                android:textAppearance="@style/TextAppearance.WebTV.Body" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/downloadPill"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/shape_action_pill"
+                            android:gravity="center"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            android:text="@string/download_select"
+                            android:textColor="@color/white_70" />
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/other"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:layout_marginEnd="@dimen/spacing_md"
                         android:singleLine="true"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
+                        android:textColor="@color/white_70"
+                        android:textAppearance="@style/TextAppearance.WebTV.Body"
                         tools:text="年份：2022 地區：台灣 類型：科幻" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/director"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:layout_marginEnd="@dimen/spacing_md"
                         android:singleLine="true"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
+                        android:textColor="@color/white_70"
+                        android:textAppearance="@style/TextAppearance.WebTV.Body"
                         tools:text="導演：FongMi" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/actor"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:layout_marginEnd="@dimen/spacing_md"
                         android:ellipsize="end"
                         android:maxLines="1"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
+                        android:textColor="@color/white_70"
+                        android:textAppearance="@style/TextAppearance.WebTV.Body"
                         tools:text="演員：FongMi" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:layout_marginEnd="@dimen/spacing_md"
                         android:text="@string/detail_flag"
                         android:textColor="@color/white"
-                        android:textSize="16sp" />
+                        android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/flag"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="@dimen/spacing_sm"
                         android:clipChildren="false"
                         android:clipToPadding="false"
                         android:orientation="horizontal"
-                        android:paddingStart="16dp"
-                        android:paddingEnd="16dp"
+                        android:paddingStart="@dimen/spacing_md"
+                        android:paddingEnd="@dimen/spacing_md"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/quality_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:layout_marginEnd="@dimen/spacing_md"
                         android:text="@string/detail_quality"
                         android:textColor="@color/white"
-                        android:textSize="16sp"
+                        android:textAppearance="@style/TextAppearance.WebTV.Title"
                         android:visibility="gone"
                         tools:visibility="visible" />
 
@@ -216,12 +286,12 @@
                         android:id="@+id/quality"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="@dimen/spacing_sm"
                         android:clipChildren="false"
                         android:clipToPadding="false"
                         android:orientation="horizontal"
-                        android:paddingStart="16dp"
-                        android:paddingEnd="16dp"
+                        android:paddingStart="@dimen/spacing_md"
+                        android:paddingEnd="@dimen/spacing_md"
                         android:visibility="gone"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         tools:visibility="visible" />
@@ -229,9 +299,9 @@
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="12dp"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:layout_marginEnd="@dimen/spacing_12"
                         android:gravity="center_vertical">
 
                         <com.google.android.material.textview.MaterialTextView
@@ -239,13 +309,13 @@
                             android:layout_height="wrap_content"
                             android:text="@string/detail_episode"
                             android:textColor="@color/white"
-                            android:textSize="16sp" />
+                            android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
                         <androidx.appcompat.widget.AppCompatImageView
                             android:id="@+id/reverse"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_marginStart="8dp"
+                            android:layout_marginStart="@dimen/spacing_sm"
                             android:background="?attr/selectableItemBackgroundBorderless"
                             android:src="@drawable/ic_action_reverse"
                             android:visibility="gone"
@@ -271,13 +341,13 @@
                         android:id="@+id/episode"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:layout_marginBottom="@dimen/spacing_sm"
                         android:clipChildren="false"
                         android:clipToPadding="false"
                         android:orientation="horizontal"
-                        android:paddingStart="16dp"
-                        android:paddingEnd="16dp"
+                        android:paddingStart="@dimen/spacing_md"
+                        android:paddingEnd="@dimen/spacing_md"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -289,26 +359,26 @@
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="@dimen/spacing_md"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:layout_marginEnd="@dimen/spacing_md"
                             android:text="@string/detail_content"
                             android:textColor="@color/white"
-                            android:textSize="16sp" />
+                            android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/content"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="16dp"
-                            android:layout_marginBottom="8dp"
+                            android:layout_marginStart="@dimen/spacing_md"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:layout_marginEnd="@dimen/spacing_md"
+                            android:layout_marginBottom="@dimen/spacing_sm"
                             android:ellipsize="end"
                             android:lineSpacingExtra="4dp"
                             android:maxLines="3"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
+                            android:textAppearance="@style/TextAppearance.WebTV.Body"
                             tools:text="一個身世神秘的少年范閒（張若昀飾），因對自身身世的好奇而離開故鄉澹州，前赴南慶京都。范閒在京中各大勢力之間遊走，以探查自己屢遭刺殺的原因。其間結識靖王世子、二皇子，與太子、長公主等人對抗，並遊歷四方、闖蕩江湖，卻意外發現這世界隱藏著的秘密。本劇第一季上半部主要描述范閒在南慶京都追查刺殺的幕後黑手，京中各式人等對范閒繼承內庫的態度和應對，以及監察院院長陳萍萍希望范閒接掌監察院所做的一切舉動。下半部劇情發生在北齊上京。南慶駐北齊上京諜報首領言冰雲被北齊官方抓獲，慶帝與陳萍萍同意用已被關在監察院大牢多年的前北魏諜報首領肖恩交換言冰雲，並派范閒親率南慶使團負責此事。" />
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -320,8 +390,8 @@
                         android:clipChildren="false"
                         android:clipToPadding="false"
                         android:nestedScrollingEnabled="false"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp"
+                        android:paddingStart="@dimen/spacing_sm"
+                        android:paddingEnd="@dimen/spacing_sm"
                         android:visibility="gone"
                         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                         app:spanCount="2"

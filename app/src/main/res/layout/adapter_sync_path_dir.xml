@@ -11,10 +11,10 @@
     android:gravity="center_vertical"
     android:minHeight="48dp"
     android:orientation="horizontal"
-    android:paddingStart="12dp"
-    android:paddingTop="8dp"
-    android:paddingEnd="8dp"
-    android:paddingBottom="8dp">
+    android:paddingStart="@dimen/spacing_12"
+    android:paddingTop="@dimen/spacing_sm"
+    android:paddingEnd="@dimen/spacing_sm"
+    android:paddingBottom="@dimen/spacing_sm">
 
     <com.google.android.material.checkbox.MaterialCheckBox
         android:id="@+id/check"
@@ -28,7 +28,7 @@
     <ImageView
         android:layout_width="22dp"
         android:layout_height="22dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="@dimen/spacing_xs"
         android:contentDescription="@null"
         android:src="@drawable/ic_folder" />
 
@@ -46,7 +46,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:textColor="@color/sync_device_text"
-            android:textSize="15sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Body"
             tools:text="TV" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -57,7 +57,7 @@
             android:ellipsize="middle"
             android:maxLines="1"
             android:textColor="@color/sync_device_subtext"
-            android:textSize="12sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Caption"
             tools:text="TV" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

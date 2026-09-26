@@ -24,7 +24,7 @@
         android:maxWidth="96dp"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="13sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Caption"
         android:visibility="gone" />
 
     <TextView
@@ -38,7 +38,7 @@
         android:ellipsize="end"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="14sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
     <TextView
         android:id="@+id/name"
@@ -53,6 +53,6 @@
         android:padding="6dp"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
 </RelativeLayout>

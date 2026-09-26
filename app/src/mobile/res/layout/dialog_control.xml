@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp"
+    android:padding="@dimen/spacing_lg"
     tools:background="@color/white">
 
     <com.google.android.material.textview.MaterialTextView
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/control_speed"
         android:textColor="?attr/colorOnSurface"
-        android:textSize="16sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/speed"
@@ -30,10 +30,10 @@
         android:id="@+id/parseText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/spacing_sm"
         android:text="@string/parse"
         android:textColor="?attr/colorOnSurface"
-        android:textSize="16sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Title"
         android:visibility="gone"
         tools:visibility="visible" />
 
@@ -41,7 +41,7 @@
         android:id="@+id/parse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/spacing_md"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:orientation="horizontal"
@@ -55,10 +55,10 @@
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/spacing_sm"
         android:text="@string/control_scale"
         android:textColor="?attr/colorOnSurface"
-        android:textSize="16sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -75,44 +75,44 @@
                 android:id="@+id/scale_0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="@dimen/spacing_sm"
                 android:background="@drawable/shape_accent"
                 android:tag="0"
                 android:textColor="@color/selector_control"
-                android:textSize="14sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Body"
                 tools:text="預設" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/scale_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="@dimen/spacing_sm"
                 android:background="@drawable/shape_accent"
                 android:tag="1"
                 android:textColor="@color/selector_control"
-                android:textSize="14sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Body"
                 tools:text="16:9" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/scale_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="@dimen/spacing_sm"
                 android:background="@drawable/shape_accent"
                 android:tag="2"
                 android:textColor="@color/selector_control"
-                android:textSize="14sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Body"
                 tools:text="4:3" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/scale_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="@dimen/spacing_sm"
                 android:background="@drawable/shape_accent"
                 android:tag="3"
                 android:textColor="@color/selector_control"
-                android:textSize="14sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Body"
                 tools:text="填充" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -122,7 +122,7 @@
                 android:background="@drawable/shape_accent"
                 android:tag="4"
                 android:textColor="@color/selector_control"
-                android:textSize="14sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Body"
                 tools:text="裁剪" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -131,11 +131,11 @@
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:layout_marginBottom="@dimen/spacing_sm"
         android:text="@string/play"
         android:textColor="?attr/colorOnSurface"
-        android:textSize="16sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -152,40 +152,40 @@
                 android:id="@+id/player"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="@dimen/spacing_sm"
                 android:background="@drawable/shape_accent"
                 android:textColor="@color/selector_control"
-                android:textSize="14sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Body"
                 tools:text="EXO" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/decode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="@dimen/spacing_sm"
                 android:background="@drawable/shape_accent"
                 android:textColor="@color/selector_control"
-                android:textSize="14sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Body"
                 tools:text="硬解" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/opening"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="@dimen/spacing_sm"
                 android:background="@drawable/shape_accent"
                 android:textColor="@color/selector_control"
-                android:textSize="14sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Body"
                 tools:text="片頭" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/ending"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="@dimen/spacing_sm"
                 android:background="@drawable/shape_accent"
                 android:textColor="@color/selector_control"
-                android:textSize="14sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Body"
                 tools:text="片尾" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -195,7 +195,7 @@
                 android:background="@drawable/shape_accent"
                 android:text="@string/play_title"
                 android:textColor="@color/selector_control"
-                android:textSize="14sp"
+                android:textAppearance="@style/TextAppearance.WebTV.Body"
                 android:visibility="gone"
                 tools:visibility="visible" />
 
@@ -206,11 +206,11 @@
         android:id="@+id/track"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:layout_marginBottom="@dimen/spacing_sm"
         android:text="@string/control_track"
         android:textColor="?attr/colorOnSurface"
-        android:textSize="16sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Title"
         android:visibility="gone"
         tools:visibility="visible" />
 
@@ -223,12 +223,12 @@
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/spacing_sm"
             android:background="@drawable/shape_accent"
             android:tag="3"
             android:text="@string/play_track_text"
             android:textColor="@color/selector_control"
-            android:textSize="14sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Body"
             android:visibility="gone"
             tools:visibility="visible" />
 
@@ -236,12 +236,12 @@
             android:id="@+id/audio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/spacing_sm"
             android:background="@drawable/shape_accent"
             android:tag="1"
             android:text="@string/play_track_audio"
             android:textColor="@color/selector_control"
-            android:textSize="14sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Body"
             android:visibility="gone"
             tools:visibility="visible" />
 
@@ -253,7 +253,7 @@
             android:tag="2"
             android:text="@string/play_track_video"
             android:textColor="@color/selector_control"
-            android:textSize="14sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Body"
             android:visibility="gone"
             tools:visibility="visible" />
 
@@ -263,11 +263,11 @@
         android:id="@+id/other"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:layout_marginBottom="@dimen/spacing_sm"
         android:text="@string/control_other"
         android:textColor="?attr/colorOnSurface"
-        android:textSize="16sp" />
+        android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
@@ -278,11 +278,11 @@
             android:id="@+id/danmaku"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/spacing_sm"
             android:background="@drawable/shape_accent"
             android:text="@string/danmaku"
             android:textColor="@color/selector_control"
-            android:textSize="14sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Body"
             android:visibility="gone"
             tools:visibility="visible" />
 
@@ -290,21 +290,21 @@
             android:id="@+id/repeat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/spacing_sm"
             android:background="@drawable/shape_accent"
             android:text="@string/play_repeat"
             android:textColor="@color/selector_control"
-            android:textSize="14sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/lut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/spacing_sm"
             android:background="@drawable/shape_accent"
             android:text="@string/play_lut"
             android:textColor="@color/selector_control"
-            android:textSize="14sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/timer"
@@ -313,7 +313,7 @@
             android:background="@drawable/shape_accent"
             android:text="@string/play_timer"
             android:textColor="@color/selector_control"
-            android:textSize="14sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.appcompat.widget.LinearLayoutCompat>

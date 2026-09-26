@@ -11,9 +11,9 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="24dp"
-        android:paddingBottom="16dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_md">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title"
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="16sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Title"
             tools:text="選擇字幕" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -37,7 +37,7 @@
             android:id="@+id/search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/spacing_md"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_action_search"
             android:visibility="gone"
@@ -47,7 +47,7 @@
             android:id="@+id/setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/spacing_md"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_danmaku_setting"
             android:visibility="gone"
@@ -57,7 +57,7 @@
             android:id="@+id/subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/spacing_md"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_action_subtitle"
             android:visibility="gone"
@@ -67,7 +67,7 @@
             android:id="@+id/offset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/spacing_md"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_action_offset"
             android:visibility="gone"
@@ -82,9 +82,9 @@
         android:clipChildren="false"
         android:clipToPadding="false"
         android:overScrollMode="never"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="24dp"
+        android:paddingStart="@dimen/spacing_lg"
+        android:paddingEnd="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_lg"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:maxHeight="204dp"
         tools:listitem="@layout/adapter_track" />

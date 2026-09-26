@@ -3,7 +3,7 @@
     <item android:drawable="@color/startup_background" />
     <item>
         <bitmap
-            android:gravity="fill"
+            android:gravity="center"
             android:src="@drawable/startup_logo" />
     </item>
 </layer-list>

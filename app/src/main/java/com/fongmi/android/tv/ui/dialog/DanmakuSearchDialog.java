@@ -78,6 +78,9 @@ public final class DanmakuSearchDialog extends BaseBottomSheetDialog implements 
 
     @Override
     protected void initEvent() {
+        binding.go.setOnClickListener(view -> {
+            if (!binding.keyword.getText().toString().trim().isEmpty()) search();
+        });
         binding.keyword.setOnEditorActionListener((textView, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH && !binding.keyword.getText().toString().trim().isEmpty()) search();
             return true;

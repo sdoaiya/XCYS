@@ -62,12 +62,22 @@ public class ParseJob implements ParseCallback {
         return this;
     }
 
+    public ParseJob startDownload(Result result, boolean useParse) {
+        setParse(result, useParse);
+        // Downloads cannot keep a WebView or a shared native extractor alive offline.
+        if (parse.getType() != 1) throw new IllegalArgumentException("下载暂不支持此解析方式，请选择直链或 JSON 解析线路");
+        execute(result);
+        return this;
+    }
+
     private void setParse(Result result, boolean useParse) {
         if (useParse) parse = VodConfig.get().getParse();
         if (result.getPlayUrl().startsWith("json:")) parse = Parse.get(1, result.getPlayUrl().substring(5));
         if (result.getPlayUrl().startsWith("parse:")) parse = VodConfig.get().getParse(result.getPlayUrl().substring(6));
         if (parse == null || parse.isEmpty()) parse = Parse.get(0, result.getPlayUrl());
-        parse.setHeader(result.getHeader());
+        // Each job owns its headers/click state; the selected site parser is shared.
+        parse = Parse.objectFrom(App.gson().toJsonTree(parse));
+        parse.setHeader(new HashMap<>(result.getHeader()));
         parse.setClick(getClick(result));
     }
 

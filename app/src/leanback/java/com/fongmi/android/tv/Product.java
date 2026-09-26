@@ -26,7 +26,9 @@ public class Product {
     }
 
     public static int[] getSpec(int space, int column, Style style) {
-        int base = ResUtil.getScreenWidth() - space;
+        // TV 渲染恒为横屏：取显示长边为宽度，规避竖屏面板设备（如模拟器）窗口度量未随旋转更新的问题
+        int screen = Math.max(ResUtil.getScreenWidth(), ResUtil.getScreenHeight());
+        int base = screen - space;
         int width = base / column;
         int height = (int) (width / style.getRatio());
         return new int[]{width, height};

@@ -4,18 +4,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_margin="@dimen/spacing_sm"
     android:background="@drawable/shape_vod_list"
     android:foreground="@drawable/shape_vod"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:padding="12dp">
+    android:padding="@dimen/spacing_12">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/image"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="@dimen/spacing_12"
         app:shapeAppearanceOverlay="@style/Vod.Grid.Large" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textSize="14sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Body"
             tools:text="蜘蛛人" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -40,7 +40,7 @@
             android:layout_marginTop="2dp"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Caption"
             tools:text="1080p" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

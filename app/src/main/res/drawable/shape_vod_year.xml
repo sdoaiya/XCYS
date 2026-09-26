@@ -3,9 +3,9 @@
     android:shape="rectangle">
 
     <corners
-        android:bottomRightRadius="8dp"
-        android:topLeftRadius="8dp"
-        android:topRightRadius="8dp" />
+        android:bottomRightRadius="@dimen/radius_sm"
+        android:topLeftRadius="@dimen/radius_sm"
+        android:topRightRadius="@dimen/radius_sm" />
 
     <solid android:color="@color/bg_year" />
 

@@ -192,6 +192,31 @@ public class SiteApi {
         }
     }
 
+    /** Resolves a download without stopping or taking ownership of playback extractors. */
+    @NonNull
+    public static Result downloadContent(@NonNull String key, @NonNull String flag, @NonNull String id) throws Exception {
+        if (WebHomeInlineVodStore.KEY.equals(key)) return WebHomeInlineVodStore.player(flag, id);
+        Site site = VodConfig.get().getSite(key);
+        Result result;
+        if (site.getType() == 3) {
+            result = Result.fromJson(SpiderJarCompatibility.call(() -> site.recent().spider().playerContent(flag, id, VodConfig.get().getFlags())));
+        } else if (site.getType() == 4) {
+            ArrayMap<String, String> params = new ArrayMap<>();
+            params.put("play", id);
+            params.put("flag", flag);
+            result = Result.fromJson(call(site, params));
+        } else {
+            result = new Result();
+            result.setUrl(id);
+            result.setPlayUrl(site.getPlayUrl());
+            result.setParse(Sniffer.isVideoFormat(id) && result.getPlayUrl().isEmpty() ? 0 : 1);
+        }
+        if (result.getFlag().isEmpty()) result.setFlag(flag);
+        result.setHeader(site.getHeader());
+        result.setKey(key);
+        return result;
+    }
+
     @NonNull
     public static Result searchContent(@NonNull Site site, @NonNull String keyword, boolean quick, @NonNull String page) throws Exception {
         SpiderDebug.log("search", "site=%s,keyword=%s,quick=%s,page=%s", site.getName(), keyword, quick, page);

@@ -13,9 +13,9 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="20dp"
+        android:paddingHorizontal="@dimen/spacing_20"
         android:paddingTop="2dp"
-        android:paddingBottom="8dp">
+        android:paddingBottom="@dimen/spacing_sm">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title"
@@ -26,7 +26,7 @@
             android:gravity="start|center_vertical"
             android:maxLines="1"
             android:textColor="@color/white"
-            android:textSize="17sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Headline"
             android:textStyle="bold"
             tools:text="快搜 “仙逆”" />
 
@@ -37,8 +37,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
+        android:paddingStart="@dimen/spacing_20"
+        android:paddingEnd="@dimen/spacing_20"
         android:paddingBottom="10dp">
 
         <androidx.appcompat.widget.AppCompatEditText
@@ -53,12 +53,12 @@
             android:includeFontPadding="false"
             android:inputType="text"
             android:maxLines="1"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
+            android:paddingStart="@dimen/spacing_12"
+            android:paddingEnd="@dimen/spacing_12"
             android:singleLine="true"
             android:textColor="@color/white"
             android:textColorHint="@color/white_50"
-            android:textSize="15sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/search"
@@ -92,7 +92,7 @@
             android:clipToPadding="false"
             android:overScrollMode="never"
             android:paddingStart="14dp"
-            android:paddingTop="8dp"
+            android:paddingTop="@dimen/spacing_sm"
             android:paddingEnd="14dp"
             android:paddingBottom="18dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -104,10 +104,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:paddingHorizontal="24dp"
+            android:paddingHorizontal="@dimen/spacing_lg"
             android:text="@string/error_empty"
             android:textColor="@color/white_70"
-            android:textSize="14sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Body"
             android:visibility="gone"
             tools:visibility="visible" />
 

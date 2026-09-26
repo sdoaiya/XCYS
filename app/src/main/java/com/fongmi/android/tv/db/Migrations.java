@@ -6,6 +6,13 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 public class Migrations {
 
+    public static final Migration MIGRATION_38_39 = new Migration(38, 39) {
+        @Override
+        public void migrate(@NonNull SupportSQLiteDatabase database) {
+            database.execSQL("CREATE TABLE IF NOT EXISTS DownloadTask (`id` TEXT NOT NULL, `title` TEXT, `episodeName` TEXT, `siteKey` TEXT, `vodId` TEXT, `flag` TEXT, `episodeUrl` TEXT, `source` TEXT, `state` TEXT, `error` TEXT, `etag` TEXT, `lastModified` TEXT, `mime` TEXT, `configId` INTEGER NOT NULL, `downloaded` INTEGER NOT NULL, `total` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, `updatedAt` INTEGER NOT NULL, `useParse` INTEGER NOT NULL, PRIMARY KEY(`id`))");
+        }
+    };
+
     public static final Migration MIGRATION_30_31 = new Migration(30, 31) {
         @Override
         public void migrate(@NonNull SupportSQLiteDatabase database) {

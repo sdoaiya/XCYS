@@ -9,9 +9,9 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="24dp"
-        android:paddingBottom="16dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_md">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title"
@@ -20,7 +20,7 @@
             android:layout_weight="1"
             android:text="@string/player_engine"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Title" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -28,33 +28,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="24dp">
+        android:paddingStart="@dimen/spacing_lg"
+        android:paddingEnd="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_lg">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/exo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/spacing_sm"
             android:background="@drawable/selector_chip_round"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:text="@string/play_exo"
             android:textColor="@color/text"
-            android:textSize="14sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/ijk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/spacing_sm"
             android:background="@drawable/selector_chip_round"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:text="IJK"
             android:textColor="@color/text"
-            android:textSize="14sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/mpv"
@@ -65,7 +65,7 @@
             android:focusableInTouchMode="true"
             android:text="MPV"
             android:textColor="@color/text"
-            android:textSize="14sp" />
+            android:textAppearance="@style/TextAppearance.WebTV.Body" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.appcompat.widget.LinearLayoutCompat>

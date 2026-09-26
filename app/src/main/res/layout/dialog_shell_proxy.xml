@@ -6,26 +6,26 @@
     android:layout_height="wrap_content"
     android:background="@drawable/shape_shell_proxy_dialog"
     android:orientation="vertical"
-    android:paddingStart="20dp"
-    android:paddingTop="16dp"
-    android:paddingEnd="20dp"
-    android:paddingBottom="12dp">
+    android:paddingStart="@dimen/spacing_20"
+    android:paddingTop="@dimen/spacing_md"
+    android:paddingEnd="@dimen/spacing_20"
+    android:paddingBottom="@dimen/spacing_12">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingBottom="12dp">
+        android:paddingBottom="@dimen/spacing_12">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/spacing_md"
             android:layout_weight="1"
             android:text="@string/setting_shell_proxy_config"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textAppearance="@style/TextAppearance.WebTV.Display"
             android:textStyle="bold" />
 
         <com.google.android.material.button.MaterialButton
@@ -86,7 +86,7 @@
                 android:id="@+id/tools"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="@dimen/spacing_12"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -98,8 +98,8 @@
                     android:layout_weight="1"
                     android:minHeight="40dp"
                     android:minWidth="0dp"
-                    android:paddingStart="4dp"
-                    android:paddingEnd="4dp"
+                    android:paddingStart="@dimen/spacing_xs"
+                    android:paddingEnd="@dimen/spacing_xs"
                     android:text="@string/setting_proxy_suggest"
                     android:textColor="@color/dialog_tonal_button_text"
                     app:backgroundTint="@color/dialog_tonal_button_bg" />
@@ -109,12 +109,12 @@
                     style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="@dimen/spacing_sm"
                     android:layout_weight="1"
                     android:minHeight="40dp"
                     android:minWidth="0dp"
-                    android:paddingStart="4dp"
-                    android:paddingEnd="4dp"
+                    android:paddingStart="@dimen/spacing_xs"
+                    android:paddingEnd="@dimen/spacing_xs"
                     android:text="@string/setting_proxy_test"
                     android:textColor="@color/dialog_outlined_button_text"
                     app:backgroundTint="@color/dialog_outlined_button_bg"
@@ -126,7 +126,7 @@
                 android:id="@+id/modeGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="@dimen/spacing_12"
                 app:selectionRequired="true"
                 app:singleSelection="true">
 
@@ -158,7 +158,7 @@
                 android:id="@+id/modePanel"
                 android:layout_width="match_parent"
                 android:layout_height="260dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="@dimen/spacing_12"
                 android:background="@color/white">
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -215,7 +215,7 @@
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="@dimen/spacing_12"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -227,8 +227,8 @@
             android:layout_weight="1"
             android:minHeight="40dp"
             android:minWidth="0dp"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp"
+            android:paddingStart="@dimen/spacing_xs"
+            android:paddingEnd="@dimen/spacing_xs"
             android:text="@string/setting_proxy_add_rule"
             android:textColor="@color/dialog_tonal_button_text"
             app:backgroundTint="@color/dialog_tonal_button_bg" />
@@ -238,12 +238,12 @@
             style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/spacing_sm"
             android:layout_weight="1"
             android:minHeight="40dp"
             android:minWidth="0dp"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp"
+            android:paddingStart="@dimen/spacing_xs"
+            android:paddingEnd="@dimen/spacing_xs"
             android:text="@string/dialog_negative"
             android:textColor="@color/dialog_outlined_button_text"
             app:backgroundTint="@color/dialog_outlined_button_bg"
@@ -254,12 +254,12 @@
             style="@style/Widget.Material3.Button"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/spacing_sm"
             android:layout_weight="1"
             android:minHeight="40dp"
             android:minWidth="0dp"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp"
+            android:paddingStart="@dimen/spacing_xs"
+            android:paddingEnd="@dimen/spacing_xs"
             android:text="@string/dialog_positive"
             android:textColor="@color/dialog_primary_button_text"
             app:backgroundTint="@color/dialog_primary_button_bg" />

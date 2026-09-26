@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_margin="@dimen/spacing_sm"
     android:foreground="@drawable/shape_vod">
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -36,7 +36,7 @@
         android:background="@drawable/shape_vod_site"
         android:singleLine="true"
         android:textColor="@color/text_site"
-        android:textSize="12sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Caption"
         android:visibility="gone"
         tools:text="泥巴"
         tools:visibility="visible" />
@@ -46,11 +46,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/progress"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/spacing_md"
         android:background="@drawable/shape_vod_remark"
         android:singleLine="true"
         android:textColor="@color/text_remark"
-        android:textSize="12sp"
+        android:textAppearance="@style/TextAppearance.WebTV.Caption"
         tools:text="1080p" />
 
     <com.google.android.material.progressindicator.LinearProgressIndicator

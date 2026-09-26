@@ -11,7 +11,7 @@
         android:top="4dp" />
 
     <corners
-        android:bottomRightRadius="4dp"
-        android:topRightRadius="4dp" />
+        android:bottomRightRadius="@dimen/radius_sm"
+        android:topRightRadius="@dimen/radius_sm" />
 
 </shape>

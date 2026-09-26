@@ -9,8 +9,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingVertical="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingVertical="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -31,8 +31,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingVertical="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingVertical="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -53,8 +53,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingVertical="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingVertical="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -75,8 +75,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingVertical="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingVertical="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -97,8 +97,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingVertical="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingVertical="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -119,8 +119,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingVertical="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingVertical="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
@@ -141,8 +141,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="24dp"
-        android:paddingVertical="4dp">
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingVertical="@dimen/spacing_xs">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="0dp"
